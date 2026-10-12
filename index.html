@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Camilla Rebouças — Conversation Designer & AI Agent Builder</title>
+  <meta name="description" content="Portfolio of Camilla Alves Rebouças: conversation design and enterprise AI agents — persona, dialogue, grounding, guardrails and measurable results.">
+  <meta name="author" content="Camilla Alves Rebouças">
+  <meta name="theme-color" content="#0D0D0D">
+  <link rel="canonical" href="https://camomilla013.github.io/">
+  <!-- Link preview (LinkedIn, WhatsApp, Slack) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Camilla Rebouças">
+  <meta property="og:title" content="Camilla Rebouças — Conversation Designer & AI Agent Builder">
+  <meta property="og:description" content="Portfolio of Camilla Alves Rebouças: conversation design and enterprise AI agents — persona, dialogue, grounding, guardrails and measurable results.">
+  <meta property="og:url" content="https://camomilla013.github.io/">
+  <meta property="og:image" content="https://camomilla013.github.io/assets/img/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- apply the saved theme before the page paints (dark is the default) -->
+  <script>try{if(localStorage.getItem("theme")==="light")document.documentElement.dataset.theme="light"}catch(e){}</script>
+</head>
+<body data-page="home">
+  <a class="skip-link" href="#main" data-i18n="ui.skip">Skip to content</a>
+  <header id="site-header" class="site-header"></header>
+  <main id="main">
+
+    <!-- HERO: the portfolio introduces itself as a conversation -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container">
+        <div>
+          <p class="hero__name"><span class="dot" aria-hidden="true"></span>Camilla Alves Rebouças</p>
+          <h1 id="hero-title"><span data-i18n="hero.l1">Conversation Designer</span> <span class="line2" data-i18n="hero.l2">&amp; AI Agent Builder</span></h1>
+          <p class="hero__lede" data-i18n="hero.lede">I design how AI agents talk, reason and recover when they don't know — and then I build them. 16 years in design, from TV news graphics to enterprise agents at GOL Airlines.</p>
+          <div class="btn-row">
+            <a class="btn btn--primary" href="agents.html" data-internal><span data-i18n="hero.cta1">See AI agents</span> <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn--ghost" href="work.html" data-internal><span data-i18n="hero.cta2">See design work</span></a>
+          </div>
+        </div>
+
+        <div class="chat" role="figure" aria-labelledby="chat-caption">
+          <p id="chat-caption" class="sr-only" data-i18n="chat.caption">A sample conversation in which the portfolio's agent introduces Camilla.</p>
+          <div class="chat__bar">
+            <span class="chat__avatar" aria-hidden="true">CR</span>
+            <span class="chat__title" data-i18n="chat.title">Portfolio agent</span>
+            <span class="chat__online" data-i18n="chat.online">online</span>
+          </div>
+          <div class="chat__body">
+            <p class="chat__sys">&gt; <span data-i18n="chat.sys1">initializing portfolio…</span><br>&gt; <span data-i18n="chat.sys2">loading 7 agents, 8 design projects</span><br>&gt; status: <b>ready</b></p>
+            <div class="msg msg--user" data-step="1"><p data-i18n="chat.q">So, what do you actually do?</p></div>
+            <div class="msg msg--agent" data-step="2"><p data-stream data-i18n="chat.a">I turn scattered knowledge and real user needs into AI agents people trust. I design the persona, the dialogue, the guardrails and the metrics — then I build it in Copilot Studio.</p></div>
+            <dl class="trace" data-step="3" aria-label="Conversation trace">
+              <dt>intent</dt><dd>about_camilla</dd>
+              <dt>confidence</dt><dd>0.97</dd>
+              <dt data-i18n="chat.grounded">grounded in</dt><dd data-i18n="chat.groundedV">7 agents, 16 years of design</dd>
+              <dt>fallback</dt><dd class="ok" data-i18n="chat.fallback">not needed ✓</dd>
+            </dl>
+          </div>
+          <div class="chips" data-step="4" aria-label="Suggested replies" data-i18n-attr="aria-label:chat.chipsLabel">
+            <a class="chip" href="agents.html" data-internal data-i18n="chat.chip1">Show me the agents</a>
+            <a class="chip" href="#skills" data-i18n="chat.chip2">How do your skills connect?</a>
+            <a class="chip" href="about.html" data-internal data-i18n="chat.chip3">Tell me your story</a>
+          </div>
+          <a class="chat__input" href="https://www.linkedin.com/in/careboucas" target="_blank" rel="noopener"><span data-i18n="chat.input">Want to talk? Message me on LinkedIn</span><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-send"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT I BRING -->
+    <section class="section" aria-labelledby="caps-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="comment" data-i18n="caps.label">what I bring to an agent</span>
+          <h2 id="caps-title" data-i18n="caps.title">Six layers of a good agent — I work on all of them</h2>
+          <p data-i18n="caps.lede">A conversational agent is more than a prompt. It needs a voice, a structure, reliable knowledge, limits, plumbing and proof that it works.</p>
+        </div>
+        <div class="caps">
+          <div class="cap">
+            <div class="cap__head"><span class="cap__icon" style="color:var(--viz-craft)"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-persona"/></svg></span><h3 data-i18n="cap.persona">Persona & tone of voice</h3></div>
+            <p data-i18n="cap.persona.t">Agents that sound like the brand and adapt to the moment — from a busy store counter to a premium customer on WhatsApp.</p>
+            <code>persona.md</code>
+          </div>
+          <div class="cap">
+            <div class="cap__head"><span class="cap__icon" style="color:var(--viz-talk)"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-dialog"/></svg></span><h3 data-i18n="cap.dialog">Dialogue & flow design</h3></div>
+            <p data-i18n="cap.dialog.t">Intents, routing and progressive disclosure: the short answer first, details on demand, and Adaptive Cards when a form beats a chat.</p>
+            <code>flows/</code>
+          </div>
+          <div class="cap">
+            <div class="cap__head"><span class="cap__icon" style="color:var(--viz-build)"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-book"/></svg></span><h3 data-i18n="cap.ground">Knowledge & grounding</h3></div>
+            <p data-i18n="cap.ground.t">Messy documents turned into RAG-friendly knowledge bases, with answers that cite where they came from.</p>
+            <code>knowledge/</code>
+          </div>
+          <div class="cap">
+            <div class="cap__head"><span class="cap__icon" style="color:var(--viz-talk)"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-shield"/></svg></span><h3 data-i18n="cap.trust">Trust & guardrails</h3></div>
+            <p data-i18n="cap.trust.t">Fallbacks, confidence cues, human hand-offs and responsible-AI limits — especially where medical, legal or personal data is involved.</p>
+            <code>guardrails/</code>
+          </div>
+          <div class="cap">
+            <div class="cap__head"><span class="cap__icon" style="color:var(--viz-build)"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-nodes"/></svg></span><h3 data-i18n="cap.orch">Orchestration & build</h3></div>
+            <p data-i18n="cap.orch.t">Parent, child and connected agents in Copilot Studio, with Power Automate, Dataverse, APIs and a clean Dev/Test/Prod release path.</p>
+            <code>orchestrator/</code>
+          </div>
+          <div class="cap">
+            <div class="cap__head"><span class="cap__icon" style="color:var(--viz-craft)"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-chart"/></svg></span><h3 data-i18n="cap.value">Research & measurable value</h3></div>
+            <p data-i18n="cap.value.t">Testing with real users and tracking what matters: assertiveness, adoption and the time people get back.</p>
+            <code>metrics/</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS INFOGRAPHIC -->
+    <section class="section" id="skills" aria-labelledby="skills-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="comment" data-i18n="skills.label">how my skills connect</span>
+          <h2 id="skills-title" data-i18n="skills.title">Many disciplines, one craft</h2>
+          <p data-i18n="skills.lede">Every chapter of my career left a skill behind. Today they all meet in the same place: the design of AI agents. Tap any item to trace its path.</p>
+        </div>
+        <div class="flow-wrap" id="skills-flow"></div>
+      </div>
+    </section>
+
+    <!-- FEATURED AGENTS -->
+    <section class="section" aria-labelledby="fa-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="comment" data-i18n="fa.label">featured AI agents</span>
+          <h2 id="fa-title" data-i18n="fa.title">Agents in production at GOL</h2>
+          <p data-i18n="fa.lede">Pain, solution and results. Internal data and screens are left out for confidentiality.</p>
+        </div>
+        <div class="grid grid--3" id="featured-agents"></div>
+        <p style="margin-top:var(--s4)"><a class="btn btn--ghost" href="agents.html" data-internal><span data-i18n="fa.all">See all 7 agents</span> <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-arrow"/></svg></a></p>
+      </div>
+    </section>
+
+    <!-- FEATURED DESIGN WORK -->
+    <section class="section" aria-labelledby="fw-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="comment" data-i18n="fw.label">design foundations</span>
+          <h2 id="fw-title" data-i18n="fw.title">Where the conversation started</h2>
+          <p data-i18n="fw.lede">Before generative AI, I designed GOL's first voice skill and products used by millions of passengers.</p>
+        </div>
+        <div class="grid grid--2" id="featured-work"></div>
+        <p style="margin-top:var(--s4)"><a class="btn btn--ghost" href="work.html" data-internal><span data-i18n="fw.all">See all design work</span> <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-arrow"/></svg></a></p>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="section" aria-labelledby="cta-title">
+      <div class="container cta-band">
+        <div>
+          <span class="comment" data-i18n="cta.label">next step</span>
+          <h2 id="cta-title" data-i18n="cta.title">Looking for someone to design your agents?</h2>
+        </div>
+        <div>
+          <p class="muted" data-i18n="cta.text">I'm open to Conversation Designer and AI agent roles, in Brazil or remote. Let's talk on LinkedIn.</p>
+          <div class="btn-row">
+            <a class="btn btn--primary" href="https://www.linkedin.com/in/careboucas" target="_blank" rel="noopener"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-linkedin"/></svg> <span data-i18n="cta.btn">Message me on LinkedIn</span></a>
+            <a class="btn btn--ghost" href="about.html" data-internal data-i18n="cta.about">About me</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer id="site-footer" class="site-footer"></footer>
+
+  <script src="assets/js/data.js" defer></script>
+  <script src="assets/js/i18n.js" defer></script>
+  <script src="assets/js/skills-flow.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,243 @@
+/* ==========================================================================
+   i18n.js — interface texts in English (en) and Portuguese (pt).
+   Static texts in the HTML are written in English; elements marked with
+   data-i18n="key" are swapped for the "pt" value below when PT is chosen.
+   ========================================================================== */
+window.STRINGS = {
+  /* ---------- page titles ---------- */
+  "title.home":    { en: "Camilla Rebouças — Conversation Designer & AI Agent Builder", pt: "Camilla Rebouças — Designer Conversacional & AI Agent Builder" },
+  "title.agents":  { en: "AI agents — Camilla Rebouças", pt: "Agentes de IA — Camilla Rebouças" },
+  "title.work":    { en: "Design work — Camilla Rebouças", pt: "Projetos de design — Camilla Rebouças" },
+  "title.about":   { en: "About — Camilla Rebouças", pt: "Sobre — Camilla Rebouças" },
+  "title.contact": { en: "Contact — Camilla Rebouças", pt: "Contato — Camilla Rebouças" },
+  "title.notfound": { en: "Page not found — Camilla Rebouças", pt: "Página não encontrada — Camilla Rebouças" },
+
+  /* ---------- navigation & shared UI ---------- */
+  "nav.home":    { en: "Home", pt: "Início" },
+  "nav.label":   { en: "Main navigation", pt: "Navegação principal" },
+  "nav.agents":  { en: "AI agents", pt: "Agentes de IA" },
+  "nav.work":    { en: "Design work", pt: "Design" },
+  "nav.about":   { en: "About", pt: "Sobre" },
+  "nav.contact": { en: "Contact", pt: "Contato" },
+  "ui.language": { en: "Language", pt: "Idioma" },
+  "ui.theme":    { en: "Switch light or dark theme", pt: "Alternar tema claro ou escuro" },
+  "ui.menu":     { en: "Open menu", pt: "Abrir menu" },
+  "ui.skip":     { en: "Skip to content", pt: "Pular para o conteúdo" },
+  "footer.made": { en: "Designed and coded with care — and a little help from AI.", pt: "Desenhado e codado com cuidado — e uma ajudinha da IA." },
+  "ui.goal":     { en: "Goal", pt: "Meta" },
+  "ui.result":   { en: "Result", pt: "Resultado" },
+  "ui.readCase": { en: "Read case", pt: "Ver case" },
+  "ui.agent":    { en: "Agent", pt: "Agente" },
+  "ui.allAgents": { en: "All agents", pt: "Todos os agentes" },
+  "ui.allWork":  { en: "All design work", pt: "Todos os projetos" },
+  "ui.nextAgent": { en: "Next agent", pt: "Próximo agente" },
+  "ui.nextProject": { en: "Next project", pt: "Próximo projeto" },
+  "ui.notFound": { en: "I couldn't find that case.", pt: "Não encontrei esse case." },
+  "ui.notFoundText": { en: "The link may be incomplete. Pick one from the full list.", pt: "O link pode estar incompleto. Escolha um na lista completa." },
+  "ui.confidential": {
+    en: "Screens, internal documents and operational data are omitted for confidentiality. Diagrams are illustrative.",
+    pt: "Telas, documentos internos e dados operacionais foram omitidos por confidencialidade. Os diagramas são ilustrativos."
+  },
+
+  /* ---------- home: hero & chat ---------- */
+  "hero.l1":   { en: "Conversation Designer", pt: "Designer Conversacional" },
+  "hero.l2":   { en: "&amp; AI Agent Builder", pt: "&amp; AI Agent Builder" },
+  "hero.lede": {
+    en: "I design how AI agents talk, reason and recover when they don't know — and then I build them. 16 years in design, from TV news graphics to enterprise agents at GOL Airlines.",
+    pt: "Desenho como agentes de IA conversam, raciocinam e se recuperam quando não sabem — e depois eu construo esses agentes. São 16 anos de design, da arte para telejornais aos agentes corporativos da GOL Linhas Aéreas."
+  },
+  "hero.cta1": { en: "See AI agents", pt: "Ver agentes de IA" },
+  "hero.cta2": { en: "See design work", pt: "Ver projetos de design" },
+  "chat.caption": { en: "A sample conversation in which the portfolio's agent introduces Camilla.", pt: "Uma conversa de exemplo em que o agente do portfólio apresenta a Camilla." },
+  "chat.title":  { en: "Portfolio agent", pt: "Agente do portfólio" },
+  "chat.online": { en: "online", pt: "online" },
+  "chat.sys1":   { en: "initializing portfolio…", pt: "inicializando portfólio…" },
+  "chat.sys2":   { en: "loading 7 agents, 8 design projects", pt: "carregando 7 agentes, 8 projetos de design" },
+  "chat.q":      { en: "So, what do you actually do?", pt: "E aí, o que você faz de verdade?" },
+  "chat.a": {
+    en: "I turn scattered knowledge and real user needs into AI agents people trust. I design the persona, the dialogue, the guardrails and the metrics — then I build it in Copilot Studio.",
+    pt: "Transformo conhecimento espalhado e necessidades reais de usuários em agentes de IA em que as pessoas confiam. Desenho a persona, o diálogo, os guardrails e as métricas — e depois construo tudo no Copilot Studio."
+  },
+  "chat.grounded":  { en: "grounded in", pt: "baseado em" },
+  "chat.groundedV": { en: "7 agents, 16 years of design", pt: "7 agentes, 16 anos de design" },
+  "chat.fallback":  { en: "not needed ✓", pt: "não necessário ✓" },
+  "chat.chipsLabel": { en: "Suggested replies", pt: "Respostas sugeridas" },
+  "chat.chip1": { en: "Show me the agents", pt: "Me mostra os agentes" },
+  "chat.chip2": { en: "How do your skills connect?", pt: "Como suas habilidades se conectam?" },
+  "chat.chip3": { en: "Tell me your story", pt: "Conta sua história" },
+  "chat.input": { en: "Want to talk? Message me on LinkedIn", pt: "Quer conversar? Me chama no LinkedIn" },
+
+  /* ---------- home: capabilities ---------- */
+  "caps.label": { en: "what I bring to an agent", pt: "o que eu levo para um agente" },
+  "caps.title": { en: "Six layers of a good agent — I work on all of them", pt: "Seis camadas de um bom agente — eu trabalho em todas" },
+  "caps.lede":  { en: "A conversational agent is more than a prompt. It needs a voice, a structure, reliable knowledge, limits, plumbing and proof that it works.", pt: "Um agente conversacional é mais do que um prompt. Ele precisa de voz, estrutura, conhecimento confiável, limites, integrações e prova de que funciona." },
+  "cap.persona":   { en: "Persona & tone of voice", pt: "Persona e tom de voz" },
+  "cap.persona.t": { en: "Agents that sound like the brand and adapt to the moment — from a busy store counter to a premium customer on WhatsApp.", pt: "Agentes que soam como a marca e se adaptam ao momento — do balcão movimentado de uma loja a um cliente premium no WhatsApp." },
+  "cap.dialog":    { en: "Dialogue & flow design", pt: "Design de diálogos e fluxos" },
+  "cap.dialog.t":  { en: "Intents, routing and progressive disclosure: the short answer first, details on demand, and Adaptive Cards when a form beats a chat.", pt: "Intenções, roteamento e revelação progressiva: a resposta curta primeiro, detalhes sob demanda, e Adaptive Cards quando um formulário funciona melhor que o chat." },
+  "cap.ground":    { en: "Knowledge & grounding", pt: "Conhecimento e grounding" },
+  "cap.ground.t":  { en: "Messy documents turned into RAG-friendly knowledge bases, with answers that cite where they came from.", pt: "Documentos bagunçados transformados em bases de conhecimento prontas para RAG, com respostas que citam de onde vieram." },
+  "cap.trust":     { en: "Trust & guardrails", pt: "Confiança e guardrails" },
+  "cap.trust.t":   { en: "Fallbacks, confidence cues, human hand-offs and responsible-AI limits — especially where medical, legal or personal data is involved.", pt: "Fallbacks, sinais de confiança, handoff para humanos e limites de IA responsável — principalmente quando envolve dados médicos, jurídicos ou pessoais." },
+  "cap.orch":      { en: "Orchestration & build", pt: "Orquestração e construção" },
+  "cap.orch.t":    { en: "Parent, child and connected agents in Copilot Studio, with Power Automate, Dataverse, APIs and a clean Dev/Test/Prod release path.", pt: "Agentes pai, filho e conectados no Copilot Studio, com Power Automate, Dataverse, APIs e um caminho de release limpo entre Dev, HML e Prod." },
+  "cap.value":     { en: "Research & measurable value", pt: "Pesquisa e valor mensurável" },
+  "cap.value.t":   { en: "Testing with real users and tracking what matters: assertiveness, adoption and the time people get back.", pt: "Testes com usuários reais e acompanhamento do que importa: assertividade, adoção e o tempo que as pessoas ganham de volta." },
+
+  /* ---------- home: skills infographic ---------- */
+  "skills.label": { en: "how my skills connect", pt: "como minhas habilidades se conectam" },
+  "skills.title": { en: "Many disciplines, one craft", pt: "Muitas disciplinas, um só ofício" },
+  "skills.lede":  { en: "Every chapter of my career left a skill behind. Today they all meet in the same place: the design of AI agents. Tap any item to trace its path.", pt: "Cada capítulo da minha carreira deixou uma habilidade. Hoje todas se encontram no mesmo lugar: o design de agentes de IA. Toque em qualquer item para ver seu caminho." },
+  "flow.title":   { en: "How Camilla's skills connect", pt: "Como as habilidades da Camilla se conectam" },
+  "flow.legend":  { en: "Filter by skill family", pt: "Filtrar por família de habilidades" },
+  "flow.hint":    { en: "Tap a family or any item to highlight it. Esc clears.", pt: "Toque em uma família ou item para destacar. Esc limpa." },
+  "flow.col1":    { en: "Where it came from", pt: "De onde veio" },
+  "flow.col2":    { en: "What I learned", pt: "O que aprendi" },
+  "flow.col3":    { en: "What it builds in an agent", pt: "O que constrói em um agente" },
+  "flow.now":     { en: "now", pt: "hoje" },
+  "flow.from":    { en: "comes from", pt: "vem de" },
+  "flow.to":      { en: "builds", pt: "constrói" },
+  "flow.caption": { en: "Line weight shows how strongly one item feeds the next. It's an editorial map of my experience, not a measurement.", pt: "A espessura da linha mostra o quanto um item alimenta o próximo. É um mapa editorial da minha experiência, não uma medição." },
+  "flow.showTable": { en: "View as table", pt: "Ver como tabela" },
+  "flow.hideTable": { en: "Hide table", pt: "Ocultar tabela" },
+
+  /* ---------- home: featured & CTA ---------- */
+  "fa.label": { en: "featured AI agents", pt: "agentes de IA em destaque" },
+  "fa.title": { en: "Agents in production at GOL", pt: "Agentes em produção na GOL" },
+  "fa.lede":  { en: "Pain, solution and results. Internal data and screens are left out for confidentiality.", pt: "Dor, solução e resultados. Dados internos e telas ficaram de fora por confidencialidade." },
+  "fa.all":   { en: "See all 7 agents", pt: "Ver os 7 agentes" },
+  "fw.label": { en: "design foundations", pt: "fundamentos de design" },
+  "fw.title": { en: "Where the conversation started", pt: "Onde a conversa começou" },
+  "fw.lede":  { en: "Before generative AI, I designed GOL's first voice skill and products used by millions of passengers.", pt: "Antes da IA generativa, desenhei a primeira skill de voz da GOL e produtos usados por milhões de passageiros." },
+  "fw.all":   { en: "See all design work", pt: "Ver todos os projetos de design" },
+  "cta.label": { en: "next step", pt: "próximo passo" },
+  "cta.title": { en: "Looking for someone to design your agents?", pt: "Procurando alguém para desenhar seus agentes?" },
+  "cta.text":  { en: "I'm open to Conversation Designer and AI agent roles, in Brazil or remote. Let's talk on LinkedIn.", pt: "Estou aberta a posições de Designer Conversacional e de agentes de IA, no Brasil ou remotas. Vamos conversar no LinkedIn." },
+  "cta.btn":   { en: "Message me on LinkedIn", pt: "Me chama no LinkedIn" },
+  "cta.about": { en: "About me", pt: "Sobre mim" },
+
+  /* ---------- agents page ---------- */
+  "ag.label":  { en: "AI agents portfolio", pt: "portfólio de agentes de IA" },
+  "ag.title":  { en: "Seven agents, one goal: answers people can trust", pt: "Sete agentes, um objetivo: respostas em que as pessoas confiam" },
+  "ag.lede":   { en: "Agents I designed and built at GOL Labs, GOL Airlines' innovation lab. For each one: the pain we found, the solution and the results — or the goals, when it's still in progress.", pt: "Agentes que desenhei e construí no GOL Labs, o laboratório de inovação da GOL Linhas Aéreas. Para cada um: a dor que encontramos, a solução e os resultados — ou as metas, quando ainda está em andamento." },
+  "ag.lcTitle": { en: "Where each agent is today", pt: "Onde cada agente está hoje" },
+  "ag.lcLede":  { en: "From an approved MVP to agents already in production. Select an agent to read its case.", pt: "De um MVP aprovado a agentes já em produção. Selecione um agente para ver o case." },
+  "ag.gridTitle": { en: "All agents", pt: "Todos os agentes" },
+
+  /* ---------- work page ---------- */
+  "wk.label": { en: "UX/UI & design portfolio", pt: "portfólio de UX/UI e design" },
+  "wk.title": { en: "The design foundations behind every agent", pt: "Os fundamentos de design por trás de cada agente" },
+  "wk.lede":  { en: "Voice skills, digital products, news graphics and brands. Each one taught me something I still use in every conversation I design.", pt: "Skills de voz, produtos digitais, arte para telejornais e marcas. Cada um me ensinou algo que ainda uso em toda conversa que desenho." },
+  "wk.gridLabel": { en: "Projects", pt: "Projetos" },
+
+  /* ---------- case pages ---------- */
+  "case.role":    { en: "My role", pt: "Meu papel" },
+  "case.channel": { en: "Channel", pt: "Canal" },
+  "case.stage":   { en: "Stage", pt: "Estágio" },
+  "case.org":     { en: "Where", pt: "Onde" },
+  "case.company": { en: "Company", pt: "Empresa" },
+  "case.year":    { en: "Year", pt: "Ano" },
+  "case.focus":   { en: "Focus", pt: "Foco" },
+  "case.l.problem":  { en: "the problem", pt: "o problema" },
+  "case.l.solution": { en: "the solution", pt: "a solução" },
+  "case.l.arch":     { en: "architecture", pt: "arquitetura" },
+  "case.l.flow":     { en: "decision flow", pt: "fluxo de decisão" },
+  "case.l.results":  { en: "results", pt: "resultados" },
+  "case.l.next":     { en: "next steps", pt: "próximos passos" },
+  "case.l.approach": { en: "design process", pt: "processo de design" },
+  "case.l.learn":    { en: "learnings", pt: "aprendizados" },
+  "case.problem":   { en: "The pain we found", pt: "A dor que encontramos" },
+  "case.challenge": { en: "The challenge", pt: "O desafio" },
+  "case.solution":  { en: "What we built", pt: "O que construímos" },
+  "case.decisions": { en: "Key design decisions", pt: "Principais decisões de design" },
+  "case.arch":      { en: "How it's put together", pt: "Como ele é montado" },
+  "case.flow":      { en: "How a conversation flows", pt: "Como uma conversa acontece" },
+  "case.results":   { en: "Results", pt: "Resultados" },
+  "case.goals":     { en: "Goals", pt: "Metas" },
+  "case.resultsGoals": { en: "Results & goals", pt: "Resultados e metas" },
+  "case.next":      { en: "What's next", pt: "O que vem a seguir" },
+  "case.approach":  { en: "How I approached it", pt: "Como abordei" },
+  "case.learnings": { en: "What I took with me", pt: "O que levei comigo" },
+  "case.yamlNote":  { en: "illustrative summary", pt: "resumo ilustrativo" },
+  "arch.user":     { en: "user channel", pt: "canal do usuário" },
+  "arch.agent":    { en: "agent", pt: "agente" },
+  "arch.children": { en: "skills & child agents", pt: "habilidades e agentes filhos" },
+  "arch.sources":  { en: "knowledge & data", pt: "conhecimento e dados" },
+  "flow.defaultNote": { en: "The standard conversation pattern I use for knowledge agents.", pt: "O padrão de conversa que uso em agentes de conhecimento." },
+  "flow.default": {
+    en: "", pt: "",
+    list: [
+      { en: ["Understand", "Identify the intent and what the person really needs."], pt: ["Entender", "Identificar a intenção e o que a pessoa realmente precisa."] },
+      { en: ["Retrieve", "Search only approved knowledge, never the open web."], pt: ["Buscar", "Pesquisar apenas conhecimento aprovado, nunca a web aberta."] },
+      { en: ["Answer", "Short answer first, then details and the source."], pt: ["Responder", "Resposta curta primeiro, depois detalhes e a fonte."] },
+      { en: ["Recover or hand off", "When unsure, say so and point to who can help."], pt: ["Recuperar ou encaminhar", "Na dúvida, dizer isso e indicar quem pode ajudar."] }
+    ]
+  },
+
+  /* ---------- about ---------- */
+  "ab.label": { en: "about me", pt: "sobre mim" },
+  "ab.title": { en: "Hi, I'm Camilla.", pt: "Oi, eu sou a Camilla." },
+  "ab.photoAlt": { en: "Portrait of Camilla Alves Rebouças, smiling, on a city street", pt: "Retrato de Camilla Alves Rebouças, sorrindo, em uma rua da cidade" },
+  "ab.b1": { en: "I'm a conversation designer and AI agent builder with 16 years in design.", pt: "Sou designer conversacional e AI agent builder, com 16 anos de design." },
+  "ab.b2": {
+    en: "At GOL Labs, GOL Airlines' innovation lab, I set the experience direction for GAL — the company's first generative-AI assistant — and lead a portfolio of AI and automation initiatives from discovery to rollout. I design each agent's persona, dialogue, knowledge and guardrails, and I build them hands-on in Copilot Studio and Power Platform.",
+    pt: "No GOL Labs, o laboratório de inovação da GOL Linhas Aéreas, defini a direção de experiência da GAL — o primeiro assistente de IA generativa da empresa — e conduzo um portfólio de iniciativas de IA e automação do discovery ao rollout. Desenho a persona, o diálogo, o conhecimento e os guardrails de cada agente, e coloco a mão na massa para construí-los no Copilot Studio e na Power Platform."
+  },
+  "ab.b3": {
+    en: "My path is unusual, and that's the point. Information design for TV news taught me to make the complex clear in seconds. Art direction taught me systems. UX taught me to listen. Voice assistants taught me that a conversation has no screen to hide behind. All of it goes into agents people actually use.",
+    pt: "Meu caminho é pouco comum, e esse é o ponto. O design de informação para telejornais me ensinou a deixar o complexo claro em segundos. A direção de arte me ensinou sistemas. O UX me ensinou a escutar. Os assistentes de voz me ensinaram que uma conversa não tem tela para se esconder. Tudo isso vai para agentes que as pessoas realmente usam."
+  },
+  "ab.b4": { en: "A good week, for me, ends with a problem solved, a user giving good feedback and a healthy team.", pt: "Uma boa semana, para mim, termina com um desafio solucionado, um usuário trazendo um bom feedback e uma equipe saudável." },
+  "ab.langs": { en: "Portuguese (native) · English (fluent) · Spanish (basic)", pt: "Português (nativo) · Inglês (fluente) · Espanhol (básico)" },
+  "ab.tlLabel": { en: "career timeline", pt: "linha do tempo" },
+  "ab.tlTitle": { en: "From news graphics to AI agents", pt: "Da arte para TV aos agentes de IA" },
+  "ab.eduLabel": { en: "education", pt: "formação" },
+  "ab.eduTitle": { en: "Education & learning", pt: "Formação e aprendizado" },
+  "ab.certTitle": { en: "Certifications & events", pt: "Certificações e eventos" },
+  "ab.cert1": { en: "Artificial Intelligence: Concepts and Insights Beyond Engineering — LinkedIn Learning, 2024", pt: "Inteligência Artificial: Noções e Curiosidades Além da Engenharia — LinkedIn Learning, 2024" },
+  "ab.cert4": { en: "Rio Innovation Week, HXconf 2021, Adobe MAX 2020, Interaction Latin America (IxDA) 2018 and 2019", pt: "Rio Innovation Week, HXconf 2021, Adobe MAX 2020, Interaction Latin America (IxDA) 2018 e 2019" },
+  "ab.cert5": { en: "Journalism award for the animated idents of Globo's 2014 Elections coverage", pt: "Prêmio de jornalismo pelas vinhetas animadas da cobertura Eleições 2014 da Globo" },
+  "ab.procLabel": { en: "how I work", pt: "como eu trabalho" },
+  "ab.procTitle": { en: "Two processes that run side by side", pt: "Dois processos que andam juntos" },
+  "ab.procLede":  { en: "One shapes what the agent says. The other makes sure it ships safely and keeps improving.", pt: "Um define o que o agente diz. O outro garante que ele seja entregue com segurança e continue melhorando." },
+  "ab.p1": { en: "Conversation design", pt: "Design conversacional" },
+  "ab.p1.1": { en: "Discover", pt: "Descobrir" },
+  "ab.p1.1t": { en: "Interviews, shadowing and the real questions people ask.", pt: "Entrevistas, observação e as perguntas reais que as pessoas fazem." },
+  "ab.p1.2": { en: "Persona & voice", pt: "Persona e voz" },
+  "ab.p1.2t": { en: "Who the agent is, how it speaks and what it never says.", pt: "Quem é o agente, como ele fala e o que ele nunca diz." },
+  "ab.p1.3": { en: "Flows & prompts", pt: "Fluxos e prompts" },
+  "ab.p1.3t": { en: "Intents, dialogue, system prompts and output templates.", pt: "Intenções, diálogos, system prompts e templates de saída." },
+  "ab.p1.4": { en: "Ground & guard", pt: "Fundamentar e proteger" },
+  "ab.p1.4t": { en: "Curated knowledge, fallbacks, hand-offs and limits.", pt: "Conhecimento curado, fallbacks, handoffs e limites." },
+  "ab.p1.5": { en: "Test with users", pt: "Testar com usuários" },
+  "ab.p1.5t": { en: "Usability rounds and QA with the people who will use it.", pt: "Rodadas de usabilidade e QA com quem vai usar." },
+  "ab.p1.6": { en: "Measure & iterate", pt: "Medir e iterar" },
+  "ab.p1.6t": { en: "Assertiveness, adoption, time saved — then the next version.", pt: "Assertividade, adoção, tempo economizado — e então a próxima versão." },
+  "ab.p2": { en: "Agent build lifecycle", pt: "Ciclo de construção do agente" },
+  "ab.p2.1": { en: "Maturity & backlog", pt: "Maturidade e backlog" },
+  "ab.p2.1t": { en: "Is the knowledge ready? Prioritise in Azure DevOps or Jira.", pt: "O conhecimento está pronto? Priorizar no Azure DevOps ou Jira." },
+  "ab.p2.2": { en: "Build in Dev", pt: "Construir em Dev" },
+  "ab.p2.2t": { en: "Copilot Studio, Power Automate, Dataverse and connectors.", pt: "Copilot Studio, Power Automate, Dataverse e conectores." },
+  "ab.p2.3": { en: "Evaluate", pt: "Avaliar" },
+  "ab.p2.3t": { en: "Test sets, rubrics and evaluator agents.", pt: "Conjuntos de teste, rubricas e agentes avaliadores." },
+  "ab.p2.4": { en: "Release", pt: "Publicar" },
+  "ab.p2.4t": { en: "Managed solutions through Dev, Test and Prod pipelines.", pt: "Soluções gerenciadas por pipelines de Dev, HML e Prod." },
+  "ab.p2.5": { en: "Monitor", pt: "Monitorar" },
+  "ab.p2.5t": { en: "Logs and conversations feed the next improvement.", pt: "Logs e conversas alimentam a próxima melhoria." },
+  "ab.tkLabel": { en: "tools & stack", pt: "ferramentas e stack" },
+  "ab.tkTitle": { en: "Toolkit", pt: "Caixa de ferramentas" },
+
+  /* ---------- contact ---------- */
+  "ct.label": { en: "contact", pt: "contato" },
+  "ct.h1":    { en: "Let's talk", pt: "Vamos conversar" },
+  "ct.title": { en: "Building an AI agent your users will trust?", pt: "Construindo um agente de IA em que seus usuários vão confiar?" },
+  "ct.text":  {
+    en: "I'm open to Conversation Designer, Conversational AI and AI agent design roles — in Brazil or remote. The best way to reach me is a message on LinkedIn.",
+    pt: "Estou aberta a posições de Designer Conversacional, IA Conversacional e design de agentes de IA — no Brasil ou remotas. A melhor forma de falar comigo é uma mensagem no LinkedIn."
+  },
+
+  /* ---------- 404 ---------- */
+  "nf.title": { en: "I couldn't find that page.", pt: "Não encontrei essa página." },
+  "nf.text":  { en: "That's what a good fallback looks like: say what happened, then offer a way forward.", pt: "É assim que um bom fallback funciona: dizer o que aconteceu e oferecer um caminho." },
+  "nf.home":  { en: "Go to the home page", pt: "Ir para a página inicial" }
+};
