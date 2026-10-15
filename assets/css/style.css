@@ -590,3 +590,18 @@ ul.contrib__chips { list-style: none; margin: 0; padding: 0; }
 .stat-line { display: flex; align-items: baseline; gap: 14px; margin-top: var(--s3); }
 .stat-line b { font-size: clamp(2rem, 1.5rem + 2vw, 2.8rem); font-weight: 600; letter-spacing: -.03em; color: var(--cyan); }
 .stat-line span { color: var(--muted); max-width: 32ch; line-height: 1.4; }
+
+/* Hero illustration: a conversation flow (replaces the chat demo) */
+.hero-art { margin: 0; width: 100%; max-width: 520px; justify-self: center; }
+.hero-art svg { width: 100%; height: auto; overflow: visible; }
+.hero-art .ha-label { font-family: var(--mono); font-size: 11px; fill: var(--faint); }
+.hero-art .ha-chip { font-family: var(--mono); font-size: 12px; fill: var(--text); }
+.hero-art .ha-path { stroke-dasharray: 1; stroke-dashoffset: 1; animation: ha-draw 1.6s .2s cubic-bezier(.6,.1,.2,1) forwards; }
+.hero-art .ha-alt, .hero-art .ha-docs, .hero-art .ha-out { opacity: 0; animation: ha-fade .6s ease forwards; }
+.hero-art .ha-docs { animation-delay: .9s; }
+.hero-art .ha-alt { animation-delay: 1.3s; }
+.hero-art .ha-out { animation-delay: 1.5s; }
+.hero-art .ha-dot { filter: drop-shadow(0 0 6px var(--cyan)); }
+@keyframes ha-draw { to { stroke-dashoffset: 0; } }
+@keyframes ha-fade { to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .hero-art .ha-dot { display: none; } .hero-art .ha-path { stroke-dashoffset: 0; } }

@@ -715,7 +715,7 @@ PORTFOLIO.skillsFlow = {
     build: { en: "Build & product", pt: "Construção e produto" }
   },
   origins: [
-    { id: "o-tv",     years: "2010–2015", en: "Video, animation & TV news graphics", pt: "Vídeo, animação e arte para TV" },
+    { id: "o-tv",     years: "2010–2015", en: "Graphics, video & animation", pt: "Gráficos, vídeo e animação" },
     { id: "o-art",    years: "2015–2018", en: "Art direction & head of design",      pt: "Direção de arte e head of design" },
     { id: "o-ux",     years: "2018–2022", en: "UX/UI for digital products",          pt: "UX/UI de produtos digitais" },
     { id: "o-voice",  years: "2018–2022", en: "Voice assistants",                    pt: "Assistentes de voz" },

@@ -80,7 +80,8 @@ window.STRINGS = {
   "cap.trust":     { en: "Trust & guardrails", pt: "Confiança e guardrails" },
   "cap.trust.t":   { en: "Fallbacks, confidence cues, human hand-offs and responsible-AI limits — especially where medical, legal or personal data is involved.", pt: "Fallbacks, sinais de confiança, handoff para humanos e limites de IA responsável — principalmente quando envolve dados médicos, jurídicos ou pessoais." },
   "cap.orch":      { en: "Orchestration & build", pt: "Orquestração e construção" },
-  "cap.orch.t":    { en: "Parent, child and connected agents in Copilot Studio, with Power Automate, Dataverse, APIs and a clean Dev/Test/Prod release path.", pt: "Agentes pai, filho e conectados no Copilot Studio, com Power Automate, Dataverse, APIs e um caminho de release limpo entre Dev, HML e Prod." },
+  "cap.orch.t":    { en: "Parent, child and connected agents in Copilot Studio and Claude Code, with Power Automate, Dataverse, Azure resources, APIs and a clean Dev/Test/Prod release path.", pt: "Agentes pai, filho e conectados no Copilot Studio e no Claude Code, com Power Automate, Dataverse, recursos do Azure, APIs e um caminho de release limpo entre Dev, HML e Prod." },
+  "art.caption":   { en: "Illustration of a conversation flow: a question is understood, grounded in knowledge and answered, with a fallback path that hands off to a person.", pt: "Ilustração de um fluxo de conversa: a pergunta é entendida, fundamentada em conhecimento e respondida, com um caminho de fallback que encaminha para uma pessoa." },
   "cap.value":     { en: "Research & measurable value", pt: "Pesquisa e valor mensurável" },
   "cap.value.t":   { en: "Testing with real users and tracking what matters: assertiveness, adoption and the time people get back.", pt: "Testes com usuários reais e acompanhamento do que importa: assertividade, adoção e o tempo que as pessoas ganham de volta." },
 
@@ -103,7 +104,7 @@ window.STRINGS = {
 
   /* ---------- home: featured & CTA ---------- */
   "fa.label": { en: "featured AI agents", pt: "agentes de IA em destaque" },
-  "fa.title": { en: "Agents in production at GOL", pt: "Agentes em produção na GOL" },
+  "fa.title": { en: "Agents in production", pt: "Agentes em produção" },
   "fa.lede":  { en: "Pain, solution and results. Internal data and screens are left out for confidentiality.", pt: "Dor, solução e resultados. Dados internos e telas ficaram de fora por confidencialidade." },
   "fa.all":   { en: "See all 5 agents", pt: "Ver os 5 agentes" },
   "fw.label": { en: "design foundations", pt: "fundamentos de design" },

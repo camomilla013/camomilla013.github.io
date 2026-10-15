@@ -31,7 +31,7 @@
   <header id="site-header" class="site-header"></header>
   <main id="main">
 
-    <!-- HERO: the portfolio introduces itself as a conversation -->
+    <!-- HERO: headline + illustration of a conversation flow -->
     <section class="hero" aria-labelledby="hero-title">
       <div class="container">
         <div>
@@ -44,31 +44,71 @@
           </div>
         </div>
 
-        <div class="chat" role="figure" aria-labelledby="chat-caption">
-          <p id="chat-caption" class="sr-only" data-i18n="chat.caption">A sample conversation in which the portfolio's agent introduces Camilla.</p>
-          <div class="chat__bar">
-            <span class="chat__avatar" aria-hidden="true">CR</span>
-            <span class="chat__title" data-i18n="chat.title">Portfolio agent</span>
-            <span class="chat__online" data-i18n="chat.online">online</span>
-          </div>
-          <div class="chat__body">
-            <p class="chat__sys">&gt; <span data-i18n="chat.sys1">initializing portfolio…</span><br>&gt; <span data-i18n="chat.sys2">loading 5 agents, 8 design projects</span><br>&gt; status: <b>ready</b></p>
-            <div class="msg msg--user" data-step="1"><p data-i18n="chat.q">So, what do you actually do?</p></div>
-            <div class="msg msg--agent" data-step="2"><p data-stream data-i18n="chat.a">I turn scattered knowledge and real user needs into AI agents people trust. I design the persona, the dialogue, the guardrails and the metrics — then I implement it in Copilot Studio.</p></div>
-            <dl class="trace" data-step="3" aria-label="Conversation trace">
-              <dt>intent</dt><dd>about_camilla</dd>
-              <dt>confidence</dt><dd>0.97</dd>
-              <dt data-i18n="chat.grounded">grounded in</dt><dd data-i18n="chat.groundedV">5 agents, 16 years of design</dd>
-              <dt>fallback</dt><dd class="ok" data-i18n="chat.fallback">not needed ✓</dd>
-            </dl>
-          </div>
-          <div class="chips" data-step="4" aria-label="Suggested replies" data-i18n-attr="aria-label:chat.chipsLabel">
-            <a class="chip" href="agents.html" data-internal data-i18n="chat.chip1">Show me the agents</a>
-            <a class="chip" href="#skills" data-i18n="chat.chip2">How do your skills connect?</a>
-            <a class="chip" href="about.html" data-internal data-i18n="chat.chip3">Tell me your story</a>
-          </div>
-          <a class="chat__input" href="https://www.linkedin.com/in/careboucas" target="_blank" rel="noopener"><span data-i18n="chat.input">Want to talk? Message me on LinkedIn</span><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-send"/></svg></a>
-        </div>
+        <figure class="hero-art" aria-labelledby="hero-art-cap">
+          <figcaption id="hero-art-cap" class="sr-only" data-i18n="art.caption">Illustration of a conversation flow: a question is understood, grounded in knowledge and answered, with a fallback path that hands off to a person.</figcaption>
+          <svg viewBox="0 0 520 520" role="img" aria-hidden="true" focusable="false">
+            <defs>
+              <linearGradient id="ha-grad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="var(--cyan)"/><stop offset="1" stop-color="var(--purple)"/>
+              </linearGradient>
+            </defs>
+            <!-- faint rings: the voice / signal past -->
+            <g class="ha-rings" fill="none" stroke="var(--line)">
+              <circle cx="260" cy="270" r="120"/><circle cx="260" cy="270" r="180"/><circle cx="260" cy="270" r="240"/>
+            </g>
+            <!-- question bubble -->
+            <g class="ha-in">
+              <path d="M44 52h176a16 16 0 0 1 16 16v44a16 16 0 0 1-16 16H92l-20 18v-18H44a16 16 0 0 1-16-16V68a16 16 0 0 1 16-16z" fill="var(--surface)" stroke="var(--line-strong)" stroke-width="1.5"/>
+              <rect x="48" y="74" width="132" height="7" rx="3.5" fill="var(--text)" opacity=".75"/>
+              <rect x="48" y="92" width="86" height="7" rx="3.5" fill="var(--muted)" opacity=".6"/>
+              <text x="248" y="70" class="ha-label">user.message</text>
+            </g>
+            <!-- main path -->
+            <path class="ha-path" pathLength="1" d="M132 146 C132 196 260 186 260 236 L260 300 C260 340 380 330 380 380" fill="none" stroke="url(#ha-grad)" stroke-width="2.5" stroke-linecap="round"/>
+            <!-- fallback branch -->
+            <path class="ha-alt" d="M260 300 C260 350 140 340 140 392" fill="none" stroke="var(--faint)" stroke-width="1.5" stroke-dasharray="5 6" stroke-linecap="round"/>
+            <!-- intent node -->
+            <g>
+              <rect x="226" y="222" width="68" height="28" rx="14" fill="var(--bg)" stroke="var(--cyan)" stroke-width="1.5"/>
+              <text x="260" y="240" text-anchor="middle" class="ha-chip">intent</text>
+            </g>
+            <!-- knowledge stack -->
+            <g class="ha-docs">
+              <rect x="318" y="196" width="92" height="64" rx="8" fill="var(--surface-2)" stroke="var(--line)" transform="rotate(-6 364 228)"/>
+              <rect x="322" y="200" width="92" height="64" rx="8" fill="var(--surface-2)" stroke="var(--line-strong)"/>
+              <rect x="334" y="214" width="56" height="5" rx="2.5" fill="var(--muted)" opacity=".7"/>
+              <rect x="334" y="226" width="68" height="5" rx="2.5" fill="var(--muted)" opacity=".5"/>
+              <rect x="334" y="238" width="40" height="5" rx="2.5" fill="var(--cyan)"/>
+              <text x="322" y="286" class="ha-label">knowledge · cited</text>
+              <path d="M294 236 H318" stroke="var(--cyan)" stroke-width="1.5" stroke-dasharray="3 4"/>
+            </g>
+            <!-- guardrail gate -->
+            <g>
+              <circle cx="260" cy="300" r="9" fill="var(--bg)" stroke="var(--purple)" stroke-width="2"/>
+              <text x="276" y="304" class="ha-label">guardrail</text>
+            </g>
+            <!-- answer bubble -->
+            <g class="ha-out">
+              <path d="M296 380h184a16 16 0 0 1 16 16v52a16 16 0 0 1-16 16h-30v18l-20-18H296a16 16 0 0 1-16-16v-52a16 16 0 0 1 16-16z" fill="url(#ha-grad)" opacity=".16"/>
+              <path d="M296 380h184a16 16 0 0 1 16 16v52a16 16 0 0 1-16 16h-30v18l-20-18H296a16 16 0 0 1-16-16v-52a16 16 0 0 1 16-16z" fill="none" stroke="url(#ha-grad)" stroke-width="1.5"/>
+              <rect x="300" y="402" width="150" height="7" rx="3.5" fill="var(--text)" opacity=".8"/>
+              <rect x="300" y="420" width="120" height="7" rx="3.5" fill="var(--text)" opacity=".55"/>
+              <rect x="300" y="438" width="72" height="7" rx="3.5" fill="var(--cyan)" opacity=".9"/>
+              <text x="296" y="500" class="ha-label">answer · confidence 0.97</text>
+            </g>
+            <!-- hand-off -->
+            <g>
+              <circle cx="140" cy="414" r="22" fill="var(--surface)" stroke="var(--faint)" stroke-dasharray="4 4"/>
+              <circle cx="140" cy="408" r="6" fill="none" stroke="var(--muted)" stroke-width="1.5"/>
+              <path d="M128 426a12 10 0 0 1 24 0" fill="none" stroke="var(--muted)" stroke-width="1.5"/>
+              <text x="140" y="460" text-anchor="middle" class="ha-label">fallback → human</text>
+            </g>
+            <!-- traveling signal -->
+            <circle class="ha-dot" r="5" fill="var(--cyan)">
+              <animateMotion dur="5.5s" repeatCount="indefinite" path="M132 146 C132 196 260 186 260 236 L260 300 C260 340 380 330 380 380"/>
+            </circle>
+          </svg>
+        </figure>
       </div>
     </section>
 
@@ -103,7 +143,7 @@
           </div>
           <div class="cap">
             <div class="cap__head"><span class="cap__icon" style="color:var(--viz-build)"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-nodes"/></svg></span><h3 data-i18n="cap.orch">Orchestration & build</h3></div>
-            <p data-i18n="cap.orch.t">Parent, child and connected agents in Copilot Studio, with Power Automate, Dataverse, APIs and a clean Dev/Test/Prod release path.</p>
+            <p data-i18n="cap.orch.t">Parent, child and connected agents in Copilot Studio and Claude Code, with Power Automate, Dataverse, Azure resources, APIs and a clean Dev/Test/Prod release path.</p>
             <code>orchestrator/</code>
           </div>
           <div class="cap">
@@ -132,7 +172,7 @@
       <div class="container">
         <div class="section-head">
           <span class="comment" data-i18n="fa.label">featured AI agents</span>
-          <h2 id="fa-title" data-i18n="fa.title">Agents in production at GOL</h2>
+          <h2 id="fa-title" data-i18n="fa.title">Agents in production</h2>
           <p data-i18n="fa.lede">Pain, solution and results. Internal data and screens are left out for confidentiality.</p>
         </div>
         <div class="grid grid--2" id="featured-agents"></div>
