@@ -29,6 +29,11 @@
   --viz-craft: #9D5CFF;
   --viz-talk: #0EA0B2;
   --viz-build: #4E79F5;
+  /* Contribution families (agents page) — validated for color-vision deficiency */
+  --fam-craft: #A35CFF;    /* Design craft */
+  --fam-agentic: #1AA0C2;  /* Agentic build */
+  --fam-testing: #BF8210;  /* Testing */
+  --fam-product: #E85C8A;  /* Product */
   /* Status (always shown with a label and a shape) */
   --st-live: #3DDC97;
   --st-testing: #FFC857;
@@ -75,6 +80,10 @@
   --viz-craft: #7B3FE0;
   --viz-talk: #00919F;
   --viz-build: #3360E0;
+  --fam-craft: #7B3FE0;
+  --fam-agentic: #0A7FA3;
+  --fam-testing: #A86800;
+  --fam-product: #D43A78;
   --st-live: #138A55;
   --st-testing: #A86A00;
   --st-building: #3D55C9;
@@ -328,11 +337,13 @@ a.card:hover .card__go { color: var(--cyan); transform: translateX(3px); }
 .status--testing::before { background: linear-gradient(90deg, var(--st-testing) 50%, transparent 50%); border: 1.5px solid var(--st-testing); }
 .status--building::before { border: 1.5px solid var(--st-building); }
 .status--planned::before { border: 1.5px dashed var(--st-planned); }
+.status--mvp::before { background: linear-gradient(90deg, var(--st-testing) 50%, transparent 50%); border: 1.5px solid var(--st-testing); }
 @keyframes pulse { 50% { box-shadow: 0 0 2px var(--st-live); } }
 
 /* Project card thumbnail (SVG generated in JS) */
 .thumb { aspect-ratio: 16 / 9; border-radius: 10px; background: var(--surface-2); border: 1px solid var(--line); overflow: hidden; }
 .thumb svg { width: 100%; height: 100%; }
+.thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
 /* capability rows on home */
 .caps { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
@@ -395,29 +406,58 @@ a.card:hover .card__go { color: var(--cyan); transform: translateX(3px); }
   .flow-legend .flow-hint { margin-left: 0; width: 100%; }
 }
 
-/* 7b. Agent lifecycle (agents page) */
-.lifecycle { background: var(--surface); border: 1px solid var(--line); border-radius: 20px; padding: var(--s3); }
-.lifecycle__head, .lifecycle__row { display: grid; grid-template-columns: minmax(130px, 1.1fr) 3fr; gap: 14px; align-items: center; }
-.lifecycle__head { font-family: var(--mono); font-size: .7rem; color: var(--faint); padding-bottom: 10px; border-bottom: 1px solid var(--line); }
-.lifecycle__stages { display: grid; grid-template-columns: repeat(5, 1fr); gap: 2px; }
-.lifecycle__row { padding-block: 12px; border-bottom: 1px solid var(--line); text-decoration: none; }
-.lifecycle__row:last-child { border-bottom: 0; }
-.lifecycle__row:hover .lifecycle__name { color: var(--cyan); }
-.lifecycle__name { font-weight: 600; font-size: .9rem; line-height: 1.25; transition: color .2s; }
-.lifecycle__bar { display: grid; grid-template-columns: repeat(5, 1fr); gap: 2px; height: 14px; }
-.lifecycle__bar i { border-radius: 2px; background: var(--surface-2); border: 1px solid var(--line); }
-.lifecycle__bar i.on { background: color-mix(in srgb, var(--cyan) 38%, var(--surface-2)); border-color: transparent; transform-origin: left; }
-.lifecycle__bar i.on:last-of-type { border-radius: 2px 4px 4px 2px; }
-.lifecycle__bar i.now { background: var(--cyan); box-shadow: 0 0 12px var(--cyan); }
-.lifecycle.is-visible .lifecycle__bar i.on { animation: grow .5s ease-out both; animation-delay: calc(var(--i) * 90ms); }
-@keyframes grow { from { transform: scaleX(0); } }
-.lifecycle__label { grid-column: 2; font-family: var(--mono); font-size: .7rem; color: var(--muted); margin-top: 6px; }
-@media (max-width: 640px) {
-  .lifecycle { padding: var(--s2); }
-  .lifecycle__head { display: none; }
-  .lifecycle__row { grid-template-columns: 1fr; gap: 8px; }
-  .lifecycle__label { grid-column: 1; margin-top: 0; }
+/* 7b. Contribution matrix (agents page): what I did in each agent */
+.contrib { --cols: 10; background: var(--surface); border: 1px solid var(--line); border-radius: 20px; padding: var(--s3); }
+.contrib__legend { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-bottom: var(--s3); font-size: var(--fs-sm); color: var(--muted); }
+.contrib__legend span { display: inline-flex; align-items: center; gap: 8px; }
+.contrib__legend i { width: 18px; height: 4px; border-radius: 2px; display: inline-block; }
+.contrib__head { display: grid; grid-template-columns: minmax(150px, 1.4fr) repeat(var(--cols), minmax(0, 1fr)); column-gap: 0; padding-bottom: 12px; padding-right: 90px; border-bottom: 1px solid var(--line); }
+.contrib__corner { font-family: var(--mono); font-size: .7rem; color: var(--faint); padding-right: 16px; }
+.contrib__head { align-items: end; }
+.contrib__corner { align-self: end; }
+/* column labels are rotated so every name stays whole and readable */
+.contrib__col {
+  position: relative; height: var(--head-h, 150px); margin-right: 3px;
+  border-bottom: 2px solid var(--c);
 }
+.contrib__col span {
+  position: absolute; left: 50%; bottom: 10px; transform-origin: left bottom; transform: rotate(-45deg);
+  white-space: nowrap; font-size: .76rem; line-height: 1; color: var(--muted);
+}
+[data-family="craft"] { --c: var(--fam-craft); }
+[data-family="agentic"] { --c: var(--fam-agentic); }
+[data-family="testing"] { --c: var(--fam-testing); }
+[data-family="product"] { --c: var(--fam-product); }
+.contrib__row { display: grid; padding-right: 90px; grid-template-columns: minmax(150px, 1.4fr) repeat(var(--cols), minmax(0, 1fr)); column-gap: 0; align-items: center; padding-block: 16px; border-bottom: 1px solid var(--line); text-decoration: none; }
+.contrib__row:last-child { border-bottom: 0; }
+.contrib__name { font-weight: 600; font-size: .95rem; line-height: 1.25; padding-right: 16px; transition: color .2s; display: flex; flex-direction: column; gap: 4px; }
+.contrib__count { font-family: var(--mono); font-size: .68rem; font-weight: 400; color: var(--faint); }
+.contrib__row:hover .contrib__name { color: var(--cyan); }
+.contrib__bar { display: contents; }
+.contrib__bar i { height: 16px; margin-right: 3px; border-radius: 3px; background: var(--surface-2); border: 1px solid var(--line); transform-origin: left; }
+.contrib__bar i.on { background: var(--c); border-color: transparent; box-shadow: 0 0 12px -3px var(--c); }
+.contrib.is-visible .contrib__bar i.on { animation: grow .5s ease-out both; animation-delay: calc(var(--i) * 60ms); }
+.contrib__chips { display: none; }
+ul.contrib__chips { list-style: none; margin: 0; padding: 0; }
+.contrib__chips span, .contrib__chips li {
+  display: inline-flex; align-items: center; gap: 7px; font-size: .78rem; line-height: 1.2;
+  padding: 6px 10px; border-radius: 999px; background: var(--surface-2); border: 1px solid var(--line);
+}
+.contrib__chips span::before, .contrib__chips li::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--c); flex: none; }
+@media (max-width: 760px) {
+  .contrib { padding: var(--s2); }
+  .contrib__head { display: none; }
+  .contrib__row { display: flex; flex-direction: column; align-items: stretch; gap: 10px; padding-right: 0; }
+  .contrib__bar { display: grid; grid-template-columns: repeat(var(--cols), 1fr); gap: 2px; }
+  .contrib__bar i { margin: 0; height: 12px; }
+  .contrib__chips { display: flex; flex-wrap: wrap; gap: 6px; }
+}
+/* "What I did" on the agent case page */
+.did { display: grid; gap: var(--s3); }
+.did__group h3 { font-size: .98rem; margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
+.did__group h3 i { width: 18px; height: 4px; border-radius: 2px; background: var(--c); }
+.did .contrib__chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.did .contrib__chips li { font-size: .88rem; padding: 8px 14px; }
 
 /* 7c. Metrics */
 .metrics { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); }
@@ -540,3 +580,13 @@ a.card:hover .card__go { color: var(--cyan); transform: translateX(3px); }
   *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; scroll-behavior: auto !important; }
   .flow path.draw { stroke-dasharray: none; stroke-dashoffset: 0; }
 }
+
+/* Compact list: more interface projects (Design page) */
+.mini-grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+.mini { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 6px; }
+.mini h3 { font-size: .95rem; }
+.mini p { margin: 0; font-size: var(--fs-sm); color: var(--muted); }
+.mini .tag { align-self: flex-start; margin-top: 4px; }
+.stat-line { display: flex; align-items: baseline; gap: 14px; margin-top: var(--s3); }
+.stat-line b { font-size: clamp(2rem, 1.5rem + 2vw, 2.8rem); font-weight: 600; letter-spacing: -.03em; color: var(--cyan); }
+.stat-line span { color: var(--muted); max-width: 32ch; line-height: 1.4; }

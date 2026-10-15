@@ -5,7 +5,7 @@
    ========================================================================== */
 window.STRINGS = {
   /* ---------- page titles ---------- */
-  "title.home":    { en: "Camilla Rebouças — Conversation Designer & AI Agent Builder", pt: "Camilla Rebouças — Designer Conversacional & AI Agent Builder" },
+  "title.home":    { en: "Camilla Rebouças — AI Conversation Design Specialist", pt: "Camilla Rebouças — Especialista em Design Conversacional de IA" },
   "title.agents":  { en: "AI agents — Camilla Rebouças", pt: "Agentes de IA — Camilla Rebouças" },
   "title.work":    { en: "Design work — Camilla Rebouças", pt: "Projetos de design — Camilla Rebouças" },
   "title.about":   { en: "About — Camilla Rebouças", pt: "Sobre — Camilla Rebouças" },
@@ -40,11 +40,11 @@ window.STRINGS = {
   },
 
   /* ---------- home: hero & chat ---------- */
-  "hero.l1":   { en: "Conversation Designer", pt: "Designer Conversacional" },
-  "hero.l2":   { en: "&amp; AI Agent Builder", pt: "&amp; AI Agent Builder" },
+  "hero.l1":   { en: "AI Conversation", pt: "Especialista em" },
+  "hero.l2":   { en: "Design Specialist", pt: "Design Conversacional de IA" },
   "hero.lede": {
-    en: "I design how AI agents talk, reason and recover when they don't know — and then I build them. 16 years in design, from TV news graphics to enterprise agents at GOL Airlines.",
-    pt: "Desenho como agentes de IA conversam, raciocinam e se recuperam quando não sabem — e depois eu construo esses agentes. São 16 anos de design, da arte para telejornais aos agentes corporativos da GOL Linhas Aéreas."
+    en: "I design how AI agents talk, reason and recover when they don't know — and then I implement them. 16 years in design, from TV news graphics to enterprise agents at GOL Airlines.",
+    pt: "Desenho como agentes de IA conversam, raciocinam e se recuperam quando não sabem — e depois eu implemento esses agentes. São 16 anos de design, da arte para telejornais aos agentes corporativos da GOL Linhas Aéreas."
   },
   "hero.cta1": { en: "See AI agents", pt: "Ver agentes de IA" },
   "hero.cta2": { en: "See design work", pt: "Ver projetos de design" },
@@ -52,14 +52,14 @@ window.STRINGS = {
   "chat.title":  { en: "Portfolio agent", pt: "Agente do portfólio" },
   "chat.online": { en: "online", pt: "online" },
   "chat.sys1":   { en: "initializing portfolio…", pt: "inicializando portfólio…" },
-  "chat.sys2":   { en: "loading 7 agents, 8 design projects", pt: "carregando 7 agentes, 8 projetos de design" },
+  "chat.sys2":   { en: "loading 5 agents, 8 design projects", pt: "carregando 5 agentes, 8 projetos de design" },
   "chat.q":      { en: "So, what do you actually do?", pt: "E aí, o que você faz de verdade?" },
   "chat.a": {
-    en: "I turn scattered knowledge and real user needs into AI agents people trust. I design the persona, the dialogue, the guardrails and the metrics — then I build it in Copilot Studio.",
-    pt: "Transformo conhecimento espalhado e necessidades reais de usuários em agentes de IA em que as pessoas confiam. Desenho a persona, o diálogo, os guardrails e as métricas — e depois construo tudo no Copilot Studio."
+    en: "I turn scattered knowledge and real user needs into AI agents people trust. I design the persona, the dialogue, the guardrails and the metrics — then I implement it in Copilot Studio.",
+    pt: "Transformo conhecimento espalhado e necessidades reais de usuários em agentes de IA em que as pessoas confiam. Desenho a persona, o diálogo, os guardrails e as métricas — e depois implemento tudo no Copilot Studio."
   },
   "chat.grounded":  { en: "grounded in", pt: "baseado em" },
-  "chat.groundedV": { en: "7 agents, 16 years of design", pt: "7 agentes, 16 anos de design" },
+  "chat.groundedV": { en: "5 agents, 16 years of design", pt: "5 agentes, 16 anos de design" },
   "chat.fallback":  { en: "not needed ✓", pt: "não necessário ✓" },
   "chat.chipsLabel": { en: "Suggested replies", pt: "Respostas sugeridas" },
   "chat.chip1": { en: "Show me the agents", pt: "Me mostra os agentes" },
@@ -72,7 +72,7 @@ window.STRINGS = {
   "caps.title": { en: "Six layers of a good agent — I work on all of them", pt: "Seis camadas de um bom agente — eu trabalho em todas" },
   "caps.lede":  { en: "A conversational agent is more than a prompt. It needs a voice, a structure, reliable knowledge, limits, plumbing and proof that it works.", pt: "Um agente conversacional é mais do que um prompt. Ele precisa de voz, estrutura, conhecimento confiável, limites, integrações e prova de que funciona." },
   "cap.persona":   { en: "Persona & tone of voice", pt: "Persona e tom de voz" },
-  "cap.persona.t": { en: "Agents that sound like the brand and adapt to the moment — from a busy store counter to a premium customer on WhatsApp.", pt: "Agentes que soam como a marca e se adaptam ao momento — do balcão movimentado de uma loja a um cliente premium no WhatsApp." },
+  "cap.persona.t": { en: "Agents that sound like the brand and adapt to the moment — from an employee's quick question to a premium customer on WhatsApp.", pt: "Agentes que soam como a marca e se adaptam ao momento — da dúvida rápida de um colaborador a um cliente premium no WhatsApp." },
   "cap.dialog":    { en: "Dialogue & flow design", pt: "Design de diálogos e fluxos" },
   "cap.dialog.t":  { en: "Intents, routing and progressive disclosure: the short answer first, details on demand, and Adaptive Cards when a form beats a chat.", pt: "Intenções, roteamento e revelação progressiva: a resposta curta primeiro, detalhes sob demanda, e Adaptive Cards quando um formulário funciona melhor que o chat." },
   "cap.ground":    { en: "Knowledge & grounding", pt: "Conhecimento e grounding" },
@@ -105,35 +105,41 @@ window.STRINGS = {
   "fa.label": { en: "featured AI agents", pt: "agentes de IA em destaque" },
   "fa.title": { en: "Agents in production at GOL", pt: "Agentes em produção na GOL" },
   "fa.lede":  { en: "Pain, solution and results. Internal data and screens are left out for confidentiality.", pt: "Dor, solução e resultados. Dados internos e telas ficaram de fora por confidencialidade." },
-  "fa.all":   { en: "See all 7 agents", pt: "Ver os 7 agentes" },
+  "fa.all":   { en: "See all 5 agents", pt: "Ver os 5 agentes" },
   "fw.label": { en: "design foundations", pt: "fundamentos de design" },
   "fw.title": { en: "Where the conversation started", pt: "Onde a conversa começou" },
   "fw.lede":  { en: "Before generative AI, I designed GOL's first voice skill and products used by millions of passengers.", pt: "Antes da IA generativa, desenhei a primeira skill de voz da GOL e produtos usados por milhões de passageiros." },
   "fw.all":   { en: "See all design work", pt: "Ver todos os projetos de design" },
   "cta.label": { en: "next step", pt: "próximo passo" },
   "cta.title": { en: "Looking for someone to design your agents?", pt: "Procurando alguém para desenhar seus agentes?" },
-  "cta.text":  { en: "I'm open to Conversation Designer and AI agent roles, in Brazil or remote. Let's talk on LinkedIn.", pt: "Estou aberta a posições de Designer Conversacional e de agentes de IA, no Brasil ou remotas. Vamos conversar no LinkedIn." },
+  "cta.text":  { en: "I'm open to conversation design and AI agent roles, in Brazil or remote. Let's talk on LinkedIn.", pt: "Estou aberta a posições em design conversacional e agentes de IA, no Brasil ou remotas. Vamos conversar no LinkedIn." },
   "cta.btn":   { en: "Message me on LinkedIn", pt: "Me chama no LinkedIn" },
   "cta.about": { en: "About me", pt: "Sobre mim" },
 
   /* ---------- agents page ---------- */
   "ag.label":  { en: "AI agents portfolio", pt: "portfólio de agentes de IA" },
-  "ag.title":  { en: "Seven agents, one goal: answers people can trust", pt: "Sete agentes, um objetivo: respostas em que as pessoas confiam" },
-  "ag.lede":   { en: "Agents I designed and built at GOL Labs, GOL Airlines' innovation lab. For each one: the pain we found, the solution and the results — or the goals, when it's still in progress.", pt: "Agentes que desenhei e construí no GOL Labs, o laboratório de inovação da GOL Linhas Aéreas. Para cada um: a dor que encontramos, a solução e os resultados — ou as metas, quando ainda está em andamento." },
-  "ag.lcTitle": { en: "Where each agent is today", pt: "Onde cada agente está hoje" },
-  "ag.lcLede":  { en: "From an approved MVP to agents already in production. Select an agent to read its case.", pt: "De um MVP aprovado a agentes já em produção. Selecione um agente para ver o case." },
-  "ag.gridTitle": { en: "All agents", pt: "Todos os agentes" },
+  "ag.title":  { en: "Five agents, one goal: answers people can trust", pt: "Cinco agentes, um objetivo: respostas em que as pessoas confiam" },
+  "ag.lede":   { en: "Agents I designed and implemented at GOL Labs, GOL Airlines' innovation lab. For each one: the pain we found, the solution and the results — or the goals, for MVPs.", pt: "Agentes que desenhei e implementei no GOL Labs, o laboratório de inovação da GOL Linhas Aéreas. Para cada um: a dor que encontramos, a solução e os resultados — ou as metas, no caso dos MVPs." },
+  "ag.lcTitle": { en: "What I did in each agent", pt: "O que eu fiz em cada agente" },
+  "ag.lcLede":  { en: "My hands-on contribution, from conversation design to deployment. Select an agent to read its case.", pt: "Minha contribuição prática, do design conversacional ao deploy. Selecione um agente para ver o case." },
+  "contrib.areas": { en: "areas", pt: "áreas" },
+  "ag.gridTitle": { en: "Featured agents", pt: "Agentes em destaque" },
 
   /* ---------- work page ---------- */
   "wk.label": { en: "UX/UI & design portfolio", pt: "portfólio de UX/UI e design" },
   "wk.title": { en: "The design foundations behind every agent", pt: "Os fundamentos de design por trás de cada agente" },
   "wk.lede":  { en: "Voice skills, digital products, news graphics and brands. Each one taught me something I still use in every conversation I design.", pt: "Skills de voz, produtos digitais, arte para telejornais e marcas. Cada um me ensinou algo que ainda uso em toda conversa que desenho." },
   "wk.gridLabel": { en: "Projects", pt: "Projetos" },
+  "wk.stat":  { en: "interface design projects at GOL Airlines", pt: "projetos de design de interfaces na GOL Linhas Aéreas" },
+  "wk.moreLabel": { en: "more at GOL Airlines", pt: "mais na GOL Linhas Aéreas" },
+  "wk.moreTitle": { en: "More interface projects", pt: "Mais projetos de interface" },
+  "wk.imgAlt": { en: "Interface design for", pt: "Design de interface do projeto" },
+  "wk.moreLede":  { en: "A selection of the 50+ interface design projects I worked on at GOL Airlines — from airport kiosks to internal operations tools.", pt: "Uma seleção dos mais de 50 projetos de design de interfaces em que trabalhei na GOL Linhas Aéreas — de totens no aeroporto a ferramentas internas de operação." },
 
   /* ---------- case pages ---------- */
   "case.role":    { en: "My role", pt: "Meu papel" },
   "case.channel": { en: "Channel", pt: "Canal" },
-  "case.stage":   { en: "Stage", pt: "Estágio" },
+  "case.stage":   { en: "Status", pt: "Status" },
   "case.org":     { en: "Where", pt: "Onde" },
   "case.company": { en: "Company", pt: "Empresa" },
   "case.year":    { en: "Year", pt: "Ano" },
@@ -141,6 +147,8 @@ window.STRINGS = {
   "case.l.problem":  { en: "the problem", pt: "o problema" },
   "case.l.solution": { en: "the solution", pt: "a solução" },
   "case.l.arch":     { en: "architecture", pt: "arquitetura" },
+  "case.l.did":      { en: "my contribution", pt: "minha contribuição" },
+  "case.did":        { en: "What I did", pt: "O que eu fiz" },
   "case.l.flow":     { en: "decision flow", pt: "fluxo de decisão" },
   "case.l.results":  { en: "results", pt: "resultados" },
   "case.l.next":     { en: "next steps", pt: "próximos passos" },
@@ -178,7 +186,7 @@ window.STRINGS = {
   "ab.label": { en: "about me", pt: "sobre mim" },
   "ab.title": { en: "Hi, I'm Camilla.", pt: "Oi, eu sou a Camilla." },
   "ab.photoAlt": { en: "Portrait of Camilla Alves Rebouças, smiling, on a city street", pt: "Retrato de Camilla Alves Rebouças, sorrindo, em uma rua da cidade" },
-  "ab.b1": { en: "I'm a conversation designer and AI agent builder with 16 years in design.", pt: "Sou designer conversacional e AI agent builder, com 16 anos de design." },
+  "ab.b1": { en: "I'm an AI conversation design specialist with 16 years in design.", pt: "Sou especialista em design conversacional de IA, com 16 anos de design." },
   "ab.b2": {
     en: "At GOL Labs, GOL Airlines' innovation lab, I set the experience direction for GAL — the company's first generative-AI assistant — and lead a portfolio of AI and automation initiatives from discovery to rollout. I design each agent's persona, dialogue, knowledge and guardrails, and I build them hands-on in Copilot Studio and Power Platform.",
     pt: "No GOL Labs, o laboratório de inovação da GOL Linhas Aéreas, defini a direção de experiência da GAL — o primeiro assistente de IA generativa da empresa — e conduzo um portfólio de iniciativas de IA e automação do discovery ao rollout. Desenho a persona, o diálogo, o conhecimento e os guardrails de cada agente, e coloco a mão na massa para construí-los no Copilot Studio e na Power Platform."
@@ -232,8 +240,8 @@ window.STRINGS = {
   "ct.h1":    { en: "Let's talk", pt: "Vamos conversar" },
   "ct.title": { en: "Building an AI agent your users will trust?", pt: "Construindo um agente de IA em que seus usuários vão confiar?" },
   "ct.text":  {
-    en: "I'm open to Conversation Designer, Conversational AI and AI agent design roles — in Brazil or remote. The best way to reach me is a message on LinkedIn.",
-    pt: "Estou aberta a posições de Designer Conversacional, IA Conversacional e design de agentes de IA — no Brasil ou remotas. A melhor forma de falar comigo é uma mensagem no LinkedIn."
+    en: "I'm open to conversation design, conversational AI and AI agent roles — in Brazil or remote. The best way to reach me is a message on LinkedIn.",
+    pt: "Estou aberta a posições em design conversacional, IA conversacional e agentes de IA — no Brasil ou remotas. A melhor forma de falar comigo é uma mensagem no LinkedIn."
   },
 
   /* ---------- 404 ---------- */

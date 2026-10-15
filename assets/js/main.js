@@ -220,6 +220,14 @@
           (i < 3 ? `<path d="M${110 + i * 84} 113h12" ${L} stroke-width="2"/>` : "")).join(""));
       case "cargo":
         return base(`<path d="M70 160 C140 160 150 70 230 70 S320 110 340 70" style="stroke:var(--line-strong)" stroke-width="2" stroke-dasharray="6 6"/><circle cx="70" cy="160" r="7" style="fill:${Pp}"/><circle cx="340" cy="70" r="7" style="fill:var(--line-strong)"/><rect x="212" y="52" width="36" height="36" rx="6" style="fill:var(--surface);stroke:${C}" stroke-width="2"/><path d="M212 64h36M230 52v12" style="stroke:${C}" stroke-width="2"/><rect x="60" y="182" width="120" height="6" rx="3" style="fill:var(--line-strong)"/><rect x="60" y="182" width="78" height="6" rx="3" style="fill:${C}"/>`);
+      case "msite":
+        return base(`<rect x="150" y="18" width="100" height="190" rx="16" style="fill:var(--surface);stroke:var(--line-strong)" stroke-width="2"/><rect x="164" y="40" width="72" height="10" rx="5" style="fill:#FF7020"/><rect x="164" y="62" width="72" height="22" rx="6" style="fill:var(--surface-2);stroke:var(--line)"/><rect x="164" y="92" width="72" height="22" rx="6" style="fill:var(--surface-2);stroke:var(--line)"/><rect x="164" y="160" width="72" height="24" rx="12" style="fill:${C}"/><path d="M280 110h60M320 90l20 20-20 20" style="stroke:${Pp}" stroke-width="2.5" stroke-linecap="round" fill="none"/>`);
+      case "wallet":
+        return base(`<rect x="120" y="40" width="160" height="150" rx="14" style="fill:var(--surface);stroke:var(--line-strong)" stroke-width="2"/><rect x="120" y="40" width="160" height="34" rx="14" style="fill:#FF7020"/><rect x="136" y="88" width="60" height="8" rx="4" style="fill:var(--faint)"/><rect x="214" y="88" width="50" height="8" rx="4" style="fill:var(--faint)"/><rect x="170" y="116" width="60" height="60" rx="4" style="fill:var(--text);opacity:.85"/><rect x="290" y="60" width="150" height="120" rx="14" style="fill:var(--surface-2);stroke:${C}" stroke-width="2" transform="rotate(8 365 120)"/>`);
+      case "ride":
+        return base(`<path d="M60 170 C140 170 160 90 240 90 S330 60 350 60" style="stroke:var(--line-strong)" stroke-width="2" stroke-dasharray="6 6" fill="none"/><rect x="44" y="154" width="44" height="26" rx="8" style="fill:${C}"/><circle cx="54" cy="182" r="5" style="fill:var(--text)"/><circle cx="78" cy="182" r="5" style="fill:var(--text)"/><path d="M330 60l30-12 6 6-24 14 4 18-6 4-10-16-16 6-4-4z" style="fill:${Pp}"/><rect x="200" y="120" width="90" height="34" rx="17" style="fill:var(--surface);stroke:${C}" stroke-width="2"/><path d="M220 137l8 8 16-16" style="stroke:${C}" stroke-width="2.5" fill="none" stroke-linecap="round"/>`);
+      case "gift":
+        return base(`<rect x="110" y="56" width="180" height="114" rx="14" style="fill:#FF7020"/><rect x="190" y="56" width="18" height="114" style="fill:var(--text);opacity:.9"/><rect x="110" y="104" width="180" height="16" style="fill:var(--text);opacity:.9"/><circle cx="188" cy="54" r="12" style="fill:none;stroke:var(--text)" stroke-width="5"/><circle cx="212" cy="54" r="12" style="fill:none;stroke:var(--text)" stroke-width="5"/><rect x="300" y="80" width="80" height="12" rx="6" style="fill:var(--line-strong)"/><rect x="300" y="102" width="56" height="12" rx="6" style="fill:${C}"/>`);
       case "biometrics": {
         let dots = "";
         for (let y = 0; y < 7; y++) for (let x = 0; x < 9; x++) dots += `<circle cx="${130 + x * 18}" cy="${58 + y * 18}" r="1.6" style="fill:var(--line-strong)"/>`;
@@ -282,30 +290,72 @@
   }
 
   /* ---------- AGENTS PAGE ---------- */
+  /** Label of a contribution, with the per-agent override when there is one. */
+  const didName = (a, c) => t((a.didLabel && a.didLabel[c.id]) || c);
+  const familyName = (k) => t(P.families[k]);
+
   function renderAgents() {
-    const lc = document.getElementById("lifecycle");
-    if (lc) {
-      const sorted = [...P.agents].sort((a, b) => b.stage - a.stage);
-      lc.innerHTML = `
-        <div class="lifecycle__head" aria-hidden="true"><span>${esc(s("ui.agent"))}</span>
-          <div class="lifecycle__stages">${P.stages.map((st) => `<span>${esc(t(st))}</span>`).join("")}</div></div>
-        <div role="list">${sorted.map((a) => `
-          <a role="listitem" class="lifecycle__row" href="${href("agent.html?id=" + a.id)}"
-             aria-label="${esc(nameOf(a))}: ${esc(t(P.status[a.status]))}, ${esc(lang === "pt" ? a.versionPt : a.version)}">
-            <span class="lifecycle__name">${esc(nameOf(a))}</span>
-            <span class="lifecycle__bar" aria-hidden="true">${P.stages.map((_, i) => `<i class="${i <= a.stage ? "on" : ""}${i === a.stage ? " now" : ""}" style="--i:${i}"></i>`).join("")}</span>
-            <span class="lifecycle__label">${statusPill(a.status)}${(lang === "pt" ? a.versionPt : a.version) !== t(P.status[a.status]) ? ` <span class="muted">— ${esc(lang === "pt" ? a.versionPt : a.version)}</span>` : ""}</span>
-          </a>`).join("")}</div>`;
-      observeOnce(lc);
+    const box = document.getElementById("contrib");
+    if (box) {
+      const C = P.contributions;
+      const rows = P.agents.filter((a) => a.did && a.did.length);
+      box.style.setProperty("--cols", C.length);
+      box.innerHTML = `
+        <div class="contrib__legend" aria-hidden="true">${Object.keys(P.families).map((k) => `<span><i style="background:var(--fam-${k})"></i>${esc(familyName(k))}</span>`).join("")}</div>
+        <div class="contrib__head" aria-hidden="true">
+          <span class="contrib__corner">${esc(s("ui.agent"))}</span>
+          ${C.map((c, i) => `<span class="contrib__col" data-family="${c.family}"><span>${esc(t(c))}</span></span>`).join("")}
+        </div>
+        <div role="list">${rows.map((a) => {
+          const done = new Set(a.did);
+          const list = C.filter((c) => done.has(c.id));
+          return `
+          <a role="listitem" class="contrib__row" href="${href("agent.html?id=" + a.id)}"
+             aria-label="${esc(nameOf(a))} — ${esc(list.map((c) => didName(a, c)).join(", "))}">
+            <span class="contrib__name">${esc(nameOf(a))}<span class="contrib__count">${list.length} ${esc(s("contrib.areas"))}</span></span>
+            <span class="contrib__bar" aria-hidden="true">${C.map((c, i) => done.has(c.id)
+              ? `<i class="on" data-family="${c.family}" style="--i:${i}" title="${esc(didName(a, c))}"></i>`
+              : `<i style="--i:${i}"></i>`).join("")}</span>
+            <span class="contrib__chips" aria-hidden="true">${list.map((c) => `<span data-family="${c.family}">${esc(didName(a, c))}</span>`).join("")}</span>
+          </a>`;
+        }).join("")}</div>`;
+      // make the header tall enough for the longest rotated label (45°)
+      const fitHead = () => {
+        const w = Math.max(0, ...[...box.querySelectorAll(".contrib__col span")].map((el) => el.offsetWidth));
+        if (w) box.style.setProperty("--head-h", Math.ceil(w * Math.SQRT1_2 + 24) + "px");
+      };
+      fitHead();
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitHead);
+      observeOnce(box);
     }
     const grid = document.getElementById("agent-grid");
     if (grid) grid.innerHTML = P.agents.map(agentCard).join("");
+  }
+
+  /** "What I did" block for an agent case, grouped by family. */
+  function didBlock(a) {
+    const done = new Set(a.did);
+    return `<div class="did">${Object.keys(P.families).map((k) => {
+      const items = P.contributions.filter((c) => c.family === k && done.has(c.id));
+      if (!items.length) return "";
+      return `<div class="did__group" data-family="${k}"><h3><i aria-hidden="true"></i>${esc(familyName(k))}</h3>
+        <ul class="contrib__chips">${items.map((c) => `<li data-family="${k}">${esc(didName(a, c))}</li>`).join("")}</ul></div>`;
+    }).join("")}</div>`;
   }
 
   /* ---------- WORK PAGE ---------- */
   function renderWork() {
     const grid = document.getElementById("work-grid");
     if (grid) grid.innerHTML = P.projects.map(projectCard).join("");
+    const more = document.getElementById("more-grid");
+    if (more) more.innerHTML = P.moreProjects.map((p) => `
+      <article class="card">
+        <div class="thumb">${p.img ? `<img src="${p.img}" alt="${esc(s("wk.imgAlt"))} ${esc(nameOf(p))}" width="800" height="450" loading="lazy" decoding="async">` : thumb(p.kind)}</div>
+        <span class="card__meta">GOL Airlines</span>
+        <h3>${esc(nameOf(p))}</h3>
+        <p>${esc(t(p))}</p>
+        <div class="tags">${p.tags.map((x) => `<span class="tag">${esc(t(x))}</span>`).join("")}</div>
+      </article>`).join("");
   }
 
   /* ---------- AGENT CASE ---------- */
@@ -364,6 +414,7 @@ ${a.stack.map((x) => `  - <span class="s">${esc(x)}</span>`).join("\n")}`;
       ${caseSection(s("case.l.solution"), s("case.solution"), `<p>${esc(t(a.solution))}</p>
         <h3 style="margin:var(--s4) 0 var(--s2)">${esc(s("case.decisions"))}</h3>
         <ul class="ticks">${a.design.map((d) => `<li>${esc(t(d))}</li>`).join("")}</ul>`)}
+      ${a.did ? caseSection(s("case.l.did"), s("case.did"), didBlock(a)) : ""}
       ${caseSection(s("case.l.arch"), s("case.arch"), `
         <div class="grid grid--2" style="align-items:start">
           <figure class="arch" style="margin:0" aria-label="${esc(s("case.arch"))}">

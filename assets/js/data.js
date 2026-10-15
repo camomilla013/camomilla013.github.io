@@ -6,101 +6,64 @@
 const PORTFOLIO = (window.PORTFOLIO = {});
 
 /* --------------------------------------------------------------------------
-   STATUS — the lifecycle stage of each agent.
-   Keys are used in the `status` field of each agent below.
+   STATUS — shown as a pill on each agent card. Keys are used in `status`.
    -------------------------------------------------------------------------- */
 PORTFOLIO.status = {
-  live:     { en: "Live",            pt: "Em produção",   stage: 4 },
-  testing:  { en: "In testing",      pt: "Em testes",     stage: 3 },
-  building: { en: "In development",  pt: "Em desenvolvimento", stage: 2 },
-  planned:  { en: "Approved MVP",    pt: "MVP aprovado",  stage: 1 }
+  live: { en: "In production", pt: "Em produção" },
+  mvp:  { en: "MVP",           pt: "MVP" }
 };
 
-PORTFOLIO.stages = [
-  { en: "Discovery",  pt: "Discovery" },
-  { en: "Approved",   pt: "Aprovado" },
-  { en: "Build",      pt: "Construção" },
-  { en: "Testing",    pt: "Testes" },
-  { en: "Live",       pt: "Produção" }
+/* --------------------------------------------------------------------------
+   CONTRIBUTIONS — what Camilla did in each agent (agents page matrix and
+   the "What I did" section of each case). Names follow common job-market
+   terms so recruiters and search engines recognise them.
+   family: craft (design craft, incl. conversation), agentic (agentic build), testing, product
+   The order here is the column order of the matrix.
+   -------------------------------------------------------------------------- */
+PORTFOLIO.families = {
+  craft:   { en: "Design craft",   pt: "Ofício de design" },
+  agentic: { en: "Agentic build",  pt: "Construção agêntica" },
+  testing: { en: "Testing",        pt: "Testes" },
+  product: { en: "Product",        pt: "Produto" }
+};
+
+PORTFOLIO.contributions = [
+  { id: "discovery",     family: "craft",   en: "Discovery & user research",          pt: "Discovery e pesquisa com usuários" },
+  { id: "conv-design",   family: "craft",   en: "Conversation design",                pt: "Design conversacional" },
+  { id: "prompt",        family: "agentic", en: "Prompt engineering",                 pt: "Engenharia de prompt" },
+  { id: "orchestration", family: "agentic", en: "Agent orchestration",                pt: "Orquestração de agentes" },
+  { id: "rag",           family: "agentic", en: "RAG knowledge engineering",          pt: "Engenharia de conhecimento para RAG" },
+  { id: "dev",           family: "agentic", en: "Agent development (Copilot Studio)", pt: "Desenvolvimento de agentes (Copilot Studio)" },
+  { id: "alm",           family: "agentic", en: "ALM & deployment pipelines",         pt: "ALM e pipelines de deploy" },
+  { id: "testing",       family: "testing", en: "Testing & evaluation",               pt: "Testes e avaliação" },
+  { id: "metrics",       family: "testing", en: "Results measurement",                pt: "Mensuração de resultados" },
+  { id: "debug",         family: "testing", en: "Debugging",                          pt: "Debugging" },
+  { id: "pm",            family: "product", en: "AI product management",              pt: "Gestão de produto de IA" },
+  { id: "docs",          family: "product", en: "Technical documentation",            pt: "Documentação técnica" }
 ];
 
 /* --------------------------------------------------------------------------
    AI AGENTS
-   - id: used in the URL → agent.html?id=lia
+   - id: used in the URL → agent.html?id=gal
    - featured: true → shown on the home page
+   - status: "live" (in production) or "mvp"
+   - did: contribution ids (see PORTFOLIO.contributions) → agents page matrix
+   - didLabel: optional, renames a contribution for this agent only
    - metrics: results (kind "result") or goals (kind "goal")
    - architecture: drawn automatically as a diagram on the case page
    -------------------------------------------------------------------------- */
 PORTFOLIO.agents = [
   {
-    id: "lia",
-    name: "LIA",
-    featured: true,
-    status: "live",
-    stage: 4,
-    version: "V1 live · V2 in build",
-    versionPt: "V1 em produção · V2 em construção",
-    channel: "Microsoft Teams (desktop + mobile)",
-    stack: ["Copilot Studio", "Teams", "RAG", "SharePoint", "APIs"],
-    title: {
-      en: "Knowledge assistant for GOL's physical stores",
-      pt: "Assistente de conhecimento das lojas físicas da GOL"
-    },
-    short: {
-      en: "Gives store teams the right answer while the customer is still at the counter.",
-      pt: "Entrega a resposta certa para o time da loja enquanto o cliente ainda está no balcão."
-    },
-    role: {
-      en: "Product owner, conversation designer and low-code builder",
-      pt: "Product owner, designer conversacional e desenvolvedora low-code"
-    },
-    pain: {
-      en: "The knowledge needed to serve customers in GOL's 13 physical stores was spread across many sources. Sales agents took too long to find information during face-to-face service, and the customer waited at the counter.",
-      pt: "O conhecimento necessário para atender clientes nas 13 lojas físicas da GOL estava espalhado em muitas fontes. Os vendedores demoravam para encontrar informações durante o atendimento presencial, e o cliente esperava no balcão."
-    },
-    solution: {
-      en: "A conversational agent in Microsoft Teams, on desktop and mobile, grounded in a single curated knowledge base. I designed the persona, answer formats and fallbacks around the reality of a busy counter: short answers first, details on demand. V2 evolves into an orchestrator agent that routes questions to specialist agents and live API data.",
-      pt: "Um agente conversacional no Microsoft Teams, no desktop e no celular, com uma base de conhecimento única e curada. Desenhei a persona, os formatos de resposta e os fallbacks para a realidade de um balcão movimentado: resposta curta primeiro, detalhes sob demanda. A V2 evolui para um agente orquestrador que direciona perguntas para agentes especialistas e dados de APIs em tempo real."
-    },
-    design: [
-      { en: "Answer-first format: the action comes in the first line, policy details follow.", pt: "Formato resposta-primeiro: a ação vem na primeira linha, os detalhes da política depois." },
-      { en: "Knowledge curated into 5 approved bases, rewritten to be RAG-friendly.", pt: "Conhecimento curado em 5 bases aprovadas, reescritas para funcionar bem com RAG." },
-      { en: "Fallbacks that say what the agent doesn't know and where to look instead.", pt: "Fallbacks que dizem o que o agente não sabe e onde procurar." },
-      { en: "Tested with 16 store collaborators before the rollout.", pt: "Testado com 16 colaboradores das lojas antes do rollout." }
-    ],
-    metrics: [
-      { value: "97%",   kind: "result", label: { en: "assertiveness", pt: "de assertividade" } },
-      { value: "−90%",  kind: "result", label: { en: "average search time (goal was −50%)", pt: "no tempo médio de busca (meta era −50%)" } },
-      { value: "80%",   kind: "result", label: { en: "adoption among store teams", pt: "de adoção entre os times das lojas" } },
-      { value: "2,820", valuePt: "2.820", kind: "result", label: { en: "interactions in V1", pt: "interações na V1" } }
-    ],
-    compare: { label: { en: "Average search time reduction", pt: "Redução do tempo médio de busca" }, goal: 50, result: 90 },
-    architecture: {
-      channel: "Teams",
-      core: { en: "LIA orchestrator (V2)", pt: "Orquestrador LIA (V2)" },
-      children: [
-        { en: "Store knowledge agent", pt: "Agente de conhecimento" },
-        { en: "Specialist agents", pt: "Agentes especialistas" }
-      ],
-      sources: [
-        { en: "5 curated knowledge bases", pt: "5 bases curadas" },
-        { en: "Business APIs", pt: "APIs de negócio" }
-      ]
-    },
-    next: {
-      en: "Roll out V2 with orchestration and API integrations, so answers can include live operational data and not only documents.",
-      pt: "Lançar a V2 com orquestração e integrações via API, para que as respostas incluam dados operacionais em tempo real e não apenas documentos."
-    }
-  },
-
-  {
     id: "gal",
-    name: "GAL Copilot 2.0",
+    name: "GAL",
     featured: true,
     status: "live",
-    stage: 4,
-    version: "2.0 rolled out Feb 2026",
-    versionPt: "2.0 lançada em fev/2026",
+    version: "In production",
+    versionPt: "Em produção",
+    did: ["discovery", "conv-design", "prompt", "orchestration", "rag", "dev", "alm", "testing", "metrics", "debug", "pm", "docs"],
+    didLabel: {
+      "conv-design": { en: "Conversation design (Q&A topics)", pt: "Design conversacional (tópicos de Q&A)" }
+    },
     channel: "Microsoft Teams",
     stack: ["Copilot Studio", "Teams", "SharePoint", "Power Platform ALM"],
     title: {
@@ -130,7 +93,7 @@ PORTFOLIO.agents = [
     ],
     metrics: [
       { value: "1st",  valuePt: "1º", kind: "result", label: { en: "generative-AI assistant at GOL", pt: "assistente de IA generativa da GOL" } },
-      { value: "2.0", kind: "result", label: { en: "rolled out company-wide in February 2026", pt: "lançada para toda a empresa em fevereiro de 2026" } },
+      { value: "Feb 2026", valuePt: "fev/2026", kind: "result", label: { en: "company-wide rollout", pt: "rollout para toda a empresa" } },
       { value: "3",    kind: "result", label: { en: "environments with one standard release path (Dev, Test, Prod)", pt: "ambientes com um caminho padrão de release (Dev, HML, Prod)" } }
     ],
     architecture: {
@@ -152,13 +115,17 @@ PORTFOLIO.agents = [
   },
 
   {
-    id: "mentor-a3",
-    name: "Mentor A3 Lean",
+    id: "lean-mentor",
+    name: "Lean Mentor",
+    namePt: "Mentor Lean",
     featured: true,
     status: "live",
-    stage: 4,
-    version: "V1 live Aug 2026 · V2 in validation",
-    versionPt: "V1 em produção desde ago/2026 · V2 em validação",
+    version: "In production",
+    versionPt: "Em produção",
+    did: ["discovery", "conv-design", "prompt", "orchestration", "rag", "dev", "alm", "testing", "metrics", "debug", "pm", "docs"],
+    didLabel: {
+      orchestration: { en: "Multi-agent orchestration", pt: "Orquestração multiagente" }
+    },
     channel: "Microsoft Teams",
     stack: ["Copilot Studio", "Multi-agent", "Prompt engineering", "Evaluation rubric"],
     flow: [
@@ -220,10 +187,9 @@ PORTFOLIO.agents = [
     name: "Continuous Improvement Research Agent",
     namePt: "Agente de Pesquisa de Melhoria Contínua",
     featured: false,
-    status: "testing",
-    stage: 3,
-    version: "QA with 4 collaborators",
-    versionPt: "QA com 4 colaboradores",
+    status: "mvp",
+    version: "MVP",
+    versionPt: "MVP",
     channel: "Microsoft Teams",
     stack: ["Copilot Studio", "RAG", "SharePoint", "Entra ID"],
     title: {
@@ -273,14 +239,13 @@ PORTFOLIO.agents = [
   },
 
   {
-    id: "magno",
-    name: "Magno Service Writer",
-    namePt: "Agente de Atendimento Magno",
+    id: "magno-writer",
+    name: "Magno Writer Agent",
+    namePt: "Agente Redator Magno",
     featured: false,
-    status: "testing",
-    stage: 3,
-    version: "Usability testing",
-    versionPt: "Testes de usabilidade",
+    status: "mvp",
+    version: "MVP",
+    versionPt: "MVP",
     channel: { en: "WhatsApp (via service team)", pt: "WhatsApp (via time de atendimento)" },
     stack: ["Copilot Studio", "Tone of voice", "Prompt engineering", "Human-in-the-loop"],
     flow: [
@@ -338,14 +303,13 @@ PORTFOLIO.agents = [
   },
 
   {
-    id: "medif",
-    name: "MEDIF/FREMEC Service Agent",
-    namePt: "Agente de Atendimento MEDIF/FREMEC",
+    id: "medical-forms",
+    name: "Medical Forms Support Agent",
+    namePt: "Agente de Apoio a Formulários Médicos",
     featured: false,
-    status: "building",
-    stage: 2,
-    version: "In development",
-    versionPt: "Em desenvolvimento",
+    status: "mvp",
+    version: "MVP",
+    versionPt: "MVP",
     channel: { en: "Email (via service team)", pt: "E-mail (via time de atendimento)" },
     stack: ["Copilot Studio", "RAG", "Guardrails", "Validated response library"],
     flow: [
@@ -367,8 +331,8 @@ PORTFOLIO.agents = [
       pt: "Designer conversacional e guardrails de IA responsável"
     },
     pain: {
-      en: "Medical clearance requests (MEDIF/FREMEC) involve sensitive decisions, regulatory exceptions and clinical variation. Collaborators had few templates and tight deadlines, with real risk of answers that were legally sensitive or lacked empathy.",
-      pt: "Os pedidos de autorização médica (MEDIF/FREMEC) envolvem decisões sensíveis, exceções regulatórias e variação clínica. Os colaboradores tinham poucos modelos e prazos curtos, com risco real de respostas juridicamente sensíveis ou pouco empáticas."
+      en: "Medical clearance forms for passengers involve sensitive decisions, regulatory exceptions and clinical variation. Collaborators had few templates and tight deadlines, with real risk of answers that were legally sensitive or lacked empathy.",
+      pt: "Os formulários de autorização médica de passageiros envolvem decisões sensíveis, exceções regulatórias e variação clínica. Os colaboradores tinham poucos modelos e prazos curtos, com risco real de respostas juridicamente sensíveis ou pouco empáticas."
     },
     solution: {
       en: "An agent that reads the request and its supporting documents, checks the applicable rules and suggests a clear, empathetic email. It is grounded in a response library validated by GOL's Medical and Legal teams, and designed to stop short of any medical or legal decision.",
@@ -385,7 +349,7 @@ PORTFOLIO.agents = [
     ],
     architecture: {
       channel: { en: "Service desk", pt: "Mesa de atendimento" },
-      core: { en: "Service agent", pt: "Agente de atendimento" },
+      core: { en: "Support agent", pt: "Agente de apoio" },
       children: [
         { en: "Rule check", pt: "Verificação de regras" },
         { en: "Guardrails", pt: "Guardrails" }
@@ -398,69 +362,6 @@ PORTFOLIO.agents = [
     next: {
       en: "Run compliance tests with the Medical and Legal teams before piloting with the service team.",
       pt: "Rodar testes de conformidade com os times Médico e Jurídico antes do piloto com o atendimento."
-    }
-  },
-
-  {
-    id: "ground-logistics",
-    name: "Ground Logistics Requests",
-    namePt: "Pedidos de Logística Terrestre",
-    featured: false,
-    status: "planned",
-    stage: 1,
-    version: "MVP approved Sep 2026",
-    versionPt: "MVP aprovado em set/2026",
-    channel: "Microsoft Teams",
-    stack: ["Copilot Studio", "Adaptive Cards", "Dataverse", "Power Automate", "SharePoint"],
-    flow: [
-      { en: ["Guided request", "An Adaptive Card asks only what the trip needs."], pt: ["Pedido guiado", "Um Adaptive Card pergunta só o que a viagem precisa."] },
-      { en: ["Validation", "Missing or inconsistent data is caught before it reaches the analyst."], pt: ["Validação", "Dados faltantes ou inconsistentes são barrados antes de chegar ao analista."] },
-      { en: ["Protocol + notification", "The requester gets a protocol number; the team is notified."], pt: ["Protocolo + notificação", "O solicitante recebe um protocolo; o time é notificado."] },
-      { en: ["Status in the chat", "Anyone can check progress without calling."], pt: ["Status no chat", "Qualquer pessoa acompanha o andamento sem precisar ligar."] }
-    ],
-    title: {
-      en: "One channel for every ground transport request",
-      pt: "Um canal único para todos os pedidos de transporte terrestre"
-    },
-    short: {
-      en: "Replaces emails, calls and chat messages with one guided request, a protocol number and status tracking.",
-      pt: "Substitui e-mails, ligações e mensagens por um pedido guiado, com número de protocolo e acompanhamento de status."
-    },
-    role: {
-      en: "Product owner and solution designer",
-      pt: "Product owner e designer da solução"
-    },
-    pain: {
-      en: "Transport requests arrived by email, phone, Teams and WhatsApp with no standard. Hundreds of requests a month had to be checked manually, causing rework, no traceability and days of consolidation at every month's close.",
-      pt: "Os pedidos de transporte chegavam por e-mail, telefone, Teams e WhatsApp, sem padrão. Centenas de pedidos por mês precisavam ser conferidos manualmente, gerando retrabalho, falta de rastreabilidade e dias de consolidação a cada fechamento."
-    },
-    solution: {
-      en: "A single channel in Teams with a conversational Adaptive Card form, automatic protocol number, notifications and status lookup — so requests arrive complete the first time and every step is traceable.",
-      pt: "Um canal único no Teams com formulário conversacional em Adaptive Card, número de protocolo automático, notificações e consulta de status — para que os pedidos cheguem completos na primeira vez e cada etapa seja rastreável."
-    },
-    design: [
-      { en: "The form asks only what the operation needs, in the order people think about a trip.", pt: "O formulário pergunta só o que a operação precisa, na ordem em que as pessoas pensam uma viagem." },
-      { en: "Status lookup in the same chat, so nobody has to call to ask.", pt: "Consulta de status no mesmo chat, para ninguém precisar ligar para perguntar." }
-    ],
-    metrics: [
-      { value: "−50%", kind: "goal", label: { en: "average service time", pt: "no tempo médio de atendimento" } },
-      { value: "≥80%", kind: "goal", label: { en: "error-free executions", pt: "de execuções sem erro" } }
-    ],
-    architecture: {
-      channel: "Teams",
-      core: { en: "Request agent", pt: "Agente de pedidos" },
-      children: [
-        { en: "Adaptive Card form", pt: "Formulário Adaptive Card" },
-        { en: "Notifications & status", pt: "Notificações e status" }
-      ],
-      sources: [
-        { en: "Dataverse", pt: "Dataverse" },
-        { en: "Power Automate flows", pt: "Fluxos Power Automate" }
-      ]
-    },
-    next: {
-      en: "Build the MVP starting in November and measure service time against the current baseline.",
-      pt: "Construir o MVP a partir de novembro e medir o tempo de atendimento contra a linha de base atual."
     }
   }
 ];
@@ -730,6 +631,78 @@ PORTFOLIO.projects = [
 ];
 
 /* --------------------------------------------------------------------------
+   MORE INTERFACE PROJECTS AT GOL AIRLINES (cards without a case page)
+   - img: screenshot in assets/img/projects/ (WebP, 800×450)
+   - kind: illustration used when there is no image
+   -------------------------------------------------------------------------- */
+PORTFOLIO.moreProjects = [
+  { name: "Employee Mobile", namePt: "Colaborador Mobile", img: "assets/img/projects/colaborador-mobile.webp",
+    tags: [{ en: "Mobile", pt: "Mobile" }, { en: "Internal product", pt: "Produto interno" }],
+    en: "Redesign of the GOL employee app: a side menu organised by area — crew, approvals, people & culture, travel benefits — and a virtual business card with QR code.",
+    pt: "Redesign do app dos colaboradores da GOL: menu lateral organizado por área — tripulantes, aprovações, gente e cultura, benefício viagem — e cartão de visitas virtual com QR code." },
+  { name: "OC Mobile", img: "assets/img/projects/oc-mobile.webp",
+    tags: [{ en: "Tablet", pt: "Tablet" }, { en: "Flight operations", pt: "Operações de voo" }],
+    en: "Tablet portal for ramp coordinators: digital ramp checklist, chat with dispatch and real-time alerts. Part of the Paperless project, which replaced printed flight documents, and tested on site at Recife airport.",
+    pt: "Portal em tablet para os coordenadores de rampa: checklist de rampa digital, chat com o despacho e alertas em tempo real. Parte do projeto Paperless, que substituiu documentos de voo impressos, testado em campo no aeroporto de Recife." },
+  { name: "Sabre Historical Archive", namePt: "Dados Históricos Sabre", img: "assets/img/projects/sabre-historical.webp",
+    tags: [{ en: "Web app", pt: "Web app" }, { en: "Internal tool", pt: "Ferramenta interna" }],
+    en: "Web tool to search and export historical reservation data from Sabre — itinerary, ticketing, EMDs, baggage and contacts — with filters and export by user profile.",
+    pt: "Ferramenta web para consultar e exportar dados históricos de reservas do Sabre — itinerário, emissão, EMDs, bagagens e contatos — com filtros e exportação por perfil de usuário." },
+  { name: "Weight & Balance Backup", img: "assets/img/projects/weight-balance.webp",
+    tags: [{ en: "Web app", pt: "Web app" }, { en: "Flight safety", pt: "Segurança de voo" }],
+    en: "Contingency weight-and-balance system for flight dispatch, used when the main system is down: flight data entry, calculated weight and index, and the aircraft envelope chart.",
+    pt: "Sistema de contingência de peso e balanceamento para o despacho de voos, usado quando o sistema principal está indisponível: entrada dos dados do voo, peso e índice calculados e o gráfico de envelope da aeronave." },
+  { name: "Encantômetro", img: "assets/img/projects/encantometro.webp",
+    tags: [{ en: "Service design", pt: "Design de serviço" }, { en: "Survey", pt: "Pesquisa" }],
+    en: "Satisfaction survey for premium airport counters: each agent has a QR code display, and customers rate the service in seconds, in Portuguese, English or Spanish. Managers follow results in a back office.",
+    pt: "Pesquisa de satisfação dos balcões premium dos aeroportos: cada atendente tem um display com QR code e o cliente avalia o atendimento em segundos, em português, inglês ou espanhol. Gestores acompanham os resultados em um back office." },
+  { name: "Virtual Queue", namePt: "Fila Virtual", img: "assets/img/projects/fila-virtual.webp",
+    tags: [{ en: "Mobile web", pt: "Mobile web" }, { en: "Airport", pt: "Aeroporto" }],
+    en: "Boarding updates on the customer's own phone: gate confirmation, status changes and the call for each boarding group. A GOL Labs pilot on selected flights.",
+    pt: "Atualizações de embarque no celular do próprio cliente: confirmação de portão, mudanças de status e a chamada de cada grupo de embarque. Um piloto do GOL Labs em voos selecionados." },
+  { name: "Standby List", namePt: "Lista de Standby", img: "assets/img/projects/standby-list.webp",
+    tags: [{ en: "Web", pt: "Web" }, { en: "LGPD", pt: "LGPD" }],
+    en: "Public standby list for employees and dependants flying on the travel benefit: boarding order updated in real time, with names masked to comply with LGPD.",
+    pt: "Lista de standby pública para colaboradores e dependentes que viajam pelo benefício viagem: ordem de embarque atualizada em tempo real, com nomes mascarados para respeitar a LGPD." },
+  { name: "NEXAG", img: "assets/img/projects/nexag.webp",
+    tags: [{ en: "Handheld", pt: "Handheld" }, { en: "Usability testing", pt: "Teste de usabilidade" }],
+    en: "Handheld app for airport agents to find bookings, change seats on the aircraft map, rebook flights and request refunds. I ran the usability tests with agents at Congonhas airport.",
+    pt: "App em handheld para agentes de aeroporto localizarem reservas, trocarem assentos no mapa da aeronave, remarcarem voos e solicitarem reembolsos. Conduzi os testes de usabilidade com agentes no aeroporto de Congonhas." },
+  { name: "GOL Mobile Site", kind: "msite",
+    tags: [{ en: "B2C", pt: "B2C" }, { en: "Check-in", pt: "Check-in" }],
+    en: "Face-lift of GOL's mobile website, including a simpler check-in flow for single and multi-passenger bookings.",
+    pt: "Face-lift do site mobile da GOL, incluindo um fluxo de check-in mais simples para reservas com um ou vários passageiros." },
+  { name: "Jira Service Portal", namePt: "Central de Chamados do Jira", img: "assets/img/projects/jira-portal.webp",
+    tags: [{ en: "Redesign", pt: "Redesign" }, { en: "Internal tool", pt: "Ferramenta interna" }],
+    en: "Redesign of GOL's internal service portal: requests grouped by area — technology, legal, people, finance and more — on a clearer, friendlier home page.",
+    pt: "Redesign do portal de serviços interno da GOL: solicitações agrupadas por área — tecnologia, jurídico, pessoas, financeiro e outras — em uma home mais clara e amigável." },
+  { name: "B2B Website", namePt: "Site B2B", img: "assets/img/projects/site-b2b.webp",
+    tags: [{ en: "B2B", pt: "B2B" }, { en: "E-commerce", pt: "E-commerce" }],
+    en: "Purchase and post-sale flows for travel agencies and corporate customers, updated for the new fare families and baggage add-ons.",
+    pt: "Fluxos de compra e pós-venda para agências e clientes corporativos, atualizados para as novas famílias tarifárias e a compra de bagagem." },
+  { name: "Touchless Kiosk", namePt: "Totem", img: "assets/img/projects/totem-touchless.webp",
+    tags: [{ en: "Kiosk", pt: "Totem" }, { en: "Airport", pt: "Aeroporto" }],
+    en: "Touchless bag drop at the self-service kiosk: the customer scans the boarding pass and drops the bag without touching the screen.",
+    pt: "Despacho de bagagem sem toque no totem de autoatendimento: o cliente lê o cartão de embarque e despacha a mala sem tocar na tela." },
+  { name: "Boarding Documents on WhatsApp", namePt: "WhatsApp Documentos de Embarque", img: "assets/img/projects/whatsapp-docs.webp",
+    tags: [{ en: "Conversational", pt: "Conversacional" }, { en: "WhatsApp", pt: "WhatsApp" }],
+    en: "GAL, GOL's virtual assistant, checks passports, visas and vaccination certificates on WhatsApp before international flights, with photo examples to guide the customer.",
+    pt: "A GAL, assistente virtual da GOL, valida passaportes, vistos e certificados de vacina pelo WhatsApp antes de voos internacionais, com exemplos de foto para orientar o cliente." },
+  { name: "Boarding Pass in Wallet", namePt: "Cartão de embarque na Wallet", img: "assets/img/projects/wallet-pass.webp",
+    tags: [{ en: "Mobile", pt: "Mobile" }, { en: "B2C", pt: "B2C" }],
+    en: "Boarding pass for Apple Wallet and Google Wallet, designed to be read at a glance: route, boarding window, gate, seat, fare, loyalty tier and boarding group around the QR code.",
+    pt: "Cartão de embarque para Apple Wallet e Google Wallet, desenhado para leitura rápida: trecho, horário de embarque, portão, assento, tarifa, categoria de fidelidade e grupo de embarque ao redor do QR code." },
+  { name: "Uber / 99 Integrated Check-in", namePt: "Check-in integrado Uber/99", img: "assets/img/projects/uber-checkin.webp",
+    tags: [{ en: "Integration", pt: "Integração" }, { en: "B2C", pt: "B2C" }],
+    en: "Check-in inside the Uber and 99 apps on the way to the airport: the customer confirms the flight and gets the boarding pass, with live flight status, gate and seat, without leaving the ride.",
+    pt: "Check-in dentro dos apps Uber e 99 a caminho do aeroporto: o cliente confirma o voo e recebe o cartão de embarque, com status do voo, portão e assento, sem sair da corrida." },
+  { name: "GOL Gift", kind: "gift",
+    tags: [{ en: "E-commerce", pt: "E-commerce" }, { en: "B2C", pt: "B2C" }],
+    en: "Gift card purchase experience.",
+    pt: "Experiência de compra de vale-presente." }
+];
+
+/* --------------------------------------------------------------------------
    SKILLS FLOW — the animated infographic on the home page.
    Three columns: where each skill came from → the skill → what it builds
    in an AI agent. `w` (1–3) is how strongly one feeds the next.
@@ -797,7 +770,7 @@ PORTFOLIO.timeline = [
     text: { en: "Experience direction for GAL, GOL's first generative-AI assistant, and product ownership of a portfolio of eight AI and automation initiatives — from discovery to enterprise rollout. I design and build agents in Copilot Studio, set conversation standards for the squad and mentor designers.", pt: "Direção de experiência da GAL, o primeiro assistente de IA generativa da GOL, e product ownership de um portfólio de oito iniciativas de IA e automação — do discovery ao rollout corporativo. Desenho e construo agentes no Copilot Studio, defino padrões conversacionais do squad e faço mentoria de designers." } },
   { years: "2018 – 2022", org: "GOL Airlines · GOL Labs",
     role: { en: "Product Designer — Voicebots, automation & UX", pt: "Product Designer — Voicebots, automação e UX" },
-    text: { en: "GOL's first Alexa skill, Smart Fare, GOL ID biometric boarding, GOLLOG Online Sales and the Employee App — as UX lead in agile, cross-functional squads.", pt: "Primeira skill da GOL para Alexa, Tarifa Inteligente, embarque biométrico GOL ID, GOLLOG Vendas Online e o App dos Colaboradores — como UX lead em squads ágeis e multidisciplinares." } },
+    text: { en: "50+ interface design projects at GOL Airlines, including GOL's first Alexa skill, Smart Fare, GOL ID biometric boarding, GOLLOG Online Sales and the Employee App — as UX lead in agile, cross-functional squads.", pt: "Mais de 50 projetos de design de interfaces na GOL Linhas Aéreas, entre eles a primeira skill da GOL para Alexa, Tarifa Inteligente, embarque biométrico GOL ID, GOLLOG Vendas Online e o App dos Colaboradores — como UX lead em squads ágeis e multidisciplinares." } },
   { years: "2018", org: "Vivo (Telefônica Brasil)",
     role: { en: "UI/UX Designer", pt: "UI/UX Designer" },
     text: { en: "UX research and mobile-first redesign of Zuum, a Vivo + Mastercard digital account.", pt: "Pesquisa de UX e redesign mobile-first da Zuum, conta digital Vivo + Mastercard." } },
