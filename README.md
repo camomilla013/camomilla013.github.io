@@ -27,7 +27,7 @@ Se um dia mudar de usuário, troque `camomilla013` em todos os `.html` (VS Code:
 ### Links para compartilhar
 - Inglês: `https://camomilla013.github.io`
 - Português: `https://camomilla013.github.io/?lang=pt`
-- Um case direto: `https://camomilla013.github.io/agent.html?id=lia`
+- Um case direto: `https://camomilla013.github.io/agent.html?id=gal`
 
 ### LinkedIn e currículo
 - LinkedIn → **Perfil → Adicionar seção → Destaques → Adicionar link** → cole a URL. A imagem `assets/img/og-image.png` aparece como capa.
@@ -40,9 +40,9 @@ Se um dia mudar de usuário, troque `camomilla013` em todos os `.html` (VS Code:
 
 ```
 index.html          Home: hero em formato de chat, 6 camadas de um agente, infográfico, destaques
-agents.html         Portfólio de agentes de IA + gráfico de ciclo de vida
+agents.html         Portfólio de agentes de IA + matriz "O que eu fiz em cada agente"
 work.html           Portfólio de UX/UI e design
-agent.html          Template de case de agente   → agent.html?id=lia
+agent.html          Template de case de agente   → agent.html?id=gal
 project.html        Template de case de UX/UI    → project.html?id=alexa
 about.html          Sobre, linha do tempo, processos, ferramentas, formação
 contact.html        Contato (só LinkedIn)
@@ -68,10 +68,11 @@ Abra `assets/js/data.js` → `PORTFOLIO.agents`. Copie um bloco `{ ... }` inteir
 |---|---|
 | `id` | aparece na URL (`agent.html?id=...`), sem espaços |
 | `featured` | `true` = aparece na home |
-| `status` | `live`, `testing`, `building` ou `planned` |
-| `stage` | 0 Discovery · 1 Aprovado · 2 Construção · 3 Testes · 4 Produção |
+| `status` | `live` (em produção) ou `mvp` |
+| `did` | o que você fez no agente (ids de `PORTFOLIO.contributions`) → aparece na matriz da página de agentes e no case |
+| `didLabel` | opcional: renomeia uma contribuição só para aquele agente (ex.: "Orquestração multiagente") |
 | `metrics` | `kind: "result"` (resultado medido) ou `kind: "goal"` (meta) |
-| `compare` | opcional: gráfico meta × resultado (veja o da LIA) |
+| `compare` | opcional: gráfico meta × resultado (`{ label, goal: 50, result: 90 }`) |
 | `architecture` | o diagrama é desenhado sozinho a partir dessas listas |
 | `flow` | opcional: 4 passos do fluxo de decisão; sem ele, usa o padrão |
 
