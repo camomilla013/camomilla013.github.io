@@ -376,131 +376,16 @@ PORTFOLIO.agents = [
    - gallery: optional screens [{ img (WebP 1600×900), caption: { en, pt } }]
    - results: a paragraph { en, pt } or a list [{ en, pt }, …]
    - article: optional link to the long version (e.g. Medium), shown as a button
+   - prototype: optional link to a navigable prototype, highlighted in the case hero
    -------------------------------------------------------------------------- */
 PORTFOLIO.projects = [
-  {
-    id: "alexa",
-    name: "GOL Alexa Skill",
-    featured: true,
-    company: "GOL Airlines",
-    year: "2018–2022",
-    tags: ["Voice UX", "Intents", "Dialogue design"],
-    kind: "voice",
-    title: { en: "GOL's first voice experience", pt: "A primeira experiência de voz da GOL" },
-    short: {
-      en: "Flight status by voice — where my conversation design work began.",
-      pt: "Status de voo por voz — onde começou meu trabalho com design conversacional."
-    },
-    role: { en: "Designed, implemented and supported the skill", pt: "Desenhei, implementei e sustentei a skill" },
-    problem: {
-      en: "Passengers wanted a quick, hands-free way to check their next flight. Voice has no screen to fall back on: every answer must be short, ordered and unambiguous.",
-      pt: "Passageiros queriam uma forma rápida e sem as mãos de consultar o próximo voo. Voz não tem tela de apoio: cada resposta precisa ser curta, ordenada e sem ambiguidade."
-    },
-    approach: [
-      { en: "Mapped the intents and the questions people actually ask about a flight.", pt: "Mapeei as intenções e as perguntas que as pessoas realmente fazem sobre um voo." },
-      { en: "Designed an audio information architecture: the most important fact first, details on request.", pt: "Desenhei uma arquitetura de informação auditiva: o fato mais importante primeiro, detalhes sob demanda." },
-      { en: "Wrote reprompts and error recovery for when the assistant didn't understand.", pt: "Escrevi reprompts e recuperação de erro para quando o assistente não entendia." }
-    ],
-    results: {
-      en: "The airline's first conversational voice experience, launched and supported by the GOL Labs team.",
-      pt: "A primeira experiência conversacional por voz da companhia, lançada e sustentada pelo time do GOL Labs."
-    },
-    learnings: {
-      en: "Designing for the ear taught me to write for any conversational channel: say less, in the right order, and always offer a way forward.",
-      pt: "Desenhar para o ouvido me ensinou a escrever para qualquer canal conversacional: falar menos, na ordem certa, e sempre oferecer um caminho."
-    }
-  },
-  {
-    id: "smart-fare",
-    name: "Smart Fare",
-    namePt: "Tarifa Inteligente",
-    featured: true,
-    company: "GOL Airlines",
-    year: "2018–2022",
-    tags: ["Journey design", "Automation logic", "B2C"],
-    kind: "commerce",
-    title: { en: "A smarter way to buy a ticket", pt: "Um jeito mais inteligente de comprar passagem" },
-    short: {
-      en: "A new ticket-purchase feature adopted from day one, linked to an 80% EBIT increase in GOL Labs' first year.",
-      pt: "Uma nova funcionalidade na compra de passagens, adotada desde o primeiro dia e associada a 80% de EBIT no primeiro ano do GOL Labs."
-    },
-    role: { en: "UX lead: journey design and automation logic", pt: "UX lead: desenho de jornada e lógica de automação" },
-    problem: {
-      en: "Ticket purchase is a high-stakes, high-anxiety moment. The new fare feature had to fit into an existing flow without adding friction or doubt.",
-      pt: "A compra de passagem é um momento de alta tensão. A nova funcionalidade de tarifa precisava entrar num fluxo existente sem adicionar atrito ou dúvida."
-    },
-    approach: [
-      { en: "Led discovery and workshops with business owners, developers and architects.", pt: "Conduzi discovery e workshops com business owners, desenvolvedores e arquitetos." },
-      { en: "Designed the journey and the automation logic behind the fare.", pt: "Desenhei a jornada e a lógica de automação por trás da tarifa." },
-      { en: "Tested with users before production, following Discover, Explore, Test and Listen.", pt: "Testei com usuários antes da produção, seguindo Discover, Explore, Test e Listen." }
-    ],
-    results: {
-      en: "Adopted by customers from the first day in production, and one of the main drivers of the 80% EBIT increase in GOL Labs' first year.",
-      pt: "Adotada pelos clientes desde o primeiro dia em produção, e uma das principais responsáveis pelo EBIT de 80% no primeiro ano do GOL Labs."
-    },
-    learnings: {
-      en: "The best innovation is often invisible: it removes a decision from the user instead of adding a new one.",
-      pt: "A melhor inovação muitas vezes é invisível: ela tira uma decisão do usuário em vez de adicionar uma nova."
-    }
-  },
-  {
-    id: "gol-id",
-    name: "GOL ID Access",
-    namePt: "GOL ID Acesso",
-    featured: false,
-    company: "GOL Airlines",
-    year: "2019",
-    tags: ["Biometrics", "Mobile", "Design system", "UX writing", "Pilot"],
-    kind: "biometrics",
-    cover: "assets/img/projects/gol-id-cover.webp",
-    thumb: "assets/img/projects/gol-id-thumb.webp",
-    coverAlt: { en: "GOL ID Access screens: login, employee sign-up and email verification", pt: "Telas do GOL ID Acesso: login, cadastro de colaborador e verificação por e-mail" },
-    article: "https://medium.com/@careboucas/ui-ux-portfolio-3b8be226cd2d",
-    title: { en: "Face ID for corporate access", pt: "Reconhecimento facial no acesso corporativo" },
-    short: {
-      en: "An app for employees and visitors to enter GOL's headquarters with their face — a pioneering pilot in Latin America for what would later be tested at the boarding gate.",
-      pt: "Um app para colaboradores e visitantes entrarem na sede da GOL com o rosto — um piloto pioneiro na América Latina do que depois seria testado no portão de embarque."
-    },
-    role: { en: "End-to-end UX lead: design, UI, UX and writing at every stage, front-end refinement after development, and co-creation brainstorms with the GOL Labs team", pt: "UX lead do projeto de ponta a ponta: design, UI, UX e writing em todas as etapas, refinamento do front-end após o desenvolvimento e brainstorms de co-criação com o time do GOL Labs" },
-    problem: {
-      en: "Getting into GOL's headquarters meant identifying yourself at reception every time, and boarding depends on documents and queues. Facial biometrics could speed both up — but only if people trust it and understand, at every step, what is happening with their face.",
-      pt: "Entrar na sede da GOL exigia se identificar na recepção toda vez, e o embarque depende de documentos e filas. A biometria facial poderia acelerar os dois — mas só se as pessoas confiassem nela e entendessem, a cada etapa, o que está acontecendo com o seu rosto."
-    },
-    approach: [
-      { en: "Sketched the journeys on paper first — login, visitor sign-up, activation code and error states — to test ideas before going digital.", pt: "Desenhei as jornadas primeiro no papel — login, cadastro de visitante, código de ativação e estados de erro — para testar ideias antes de ir para o digital." },
-      { en: "Ran brainstorms with the GOL Labs team to co-design the best solution together, before locking the flows.", pt: "Conduzi brainstorms com o time do GOL Labs para desenharmos juntos a melhor solução, antes de fechar os fluxos." },
-      { en: "Designed three paths: employees log in with their network account and face ID; first-time visitors enter their details and capture their face; managers view and approve access requests.", pt: "Desenhei três caminhos: colaboradores entram com a conta de rede e o rosto; visitantes de primeira viagem informam seus dados e cadastram o rosto; gestores visualizam e aprovam as solicitações de acesso." },
-      { en: "Wrote guidance for the face capture — good lighting, no accessories, a step-by-step before starting — so the photo works on the first try.", pt: "Escrevi orientações para a captura do rosto — ambiente iluminado, sem adereços, um passo a passo antes de começar — para a foto dar certo na primeira tentativa." },
-      { en: "Reduced the time spent reading the face: we worked with the developers on technical measures to make the read faster.", pt: "Reduzimos o tempo de leitura do rosto: trabalhei com os devs em medidas técnicas para deixar a leitura mais rápida." },
-      { en: "Designed the waiting screen to show, step by step, what the app is doing while it reads the face, so the user always understands the wait.", pt: "Desenhei a tela de espera para mostrar, passo a passo, o que o app está fazendo enquanto lê o rosto, para o usuário sempre entender a espera." },
-      { en: "Wrote the app copy in Portuguese and English, from the sign-up guidance to push notifications and e-mails.", pt: "Escrevi os textos do app em português e inglês, das orientações de cadastro às notificações push e e-mails." },
-      { en: "Refined the front-end after the developers built it, polishing the implementation details.", pt: "Refinei o front-end depois que os devs desenvolveram, cuidando dos detalhes da implementação." },
-      { en: "Built a small design system — colors, typography and button variations — to keep the app consistent as it grew.", pt: "Criei um pequeno design system — cores, tipografia e variações de botões — para manter o app consistente conforme crescia." },
-      { en: "Ran the pilot at GOL's headquarters before the airport tests.", pt: "Rodamos o piloto na sede da GOL antes dos testes em aeroporto." }
-    ],
-    gallery: [
-      { img: "assets/img/projects/gol-id-sketches.webp", caption: { en: "Paper wireframes to test different ideas before going digital.", pt: "Wireframes em papel para testar ideias diferentes antes de ir para o digital." } },
-      { img: "assets/img/projects/gol-id-signup.webp", caption: { en: "Visitor sign-up and guided face capture: lighting, accessories and a step-by-step before starting.", pt: "Cadastro de visitante e captura guiada do rosto: iluminação, adereços e um passo a passo antes de começar." } },
-      { img: "assets/img/projects/gol-id-visitors.webp", caption: { en: "Visitor screens: profile, access requests and their status.", pt: "Telas do visitante: perfil, solicitações de acesso e seus status." } },
-      { img: "assets/img/projects/gol-id-manager.webp", caption: { en: "Access manager: view and approve requests.", pt: "Gestor de acessos: visualizar e aprovar solicitações." } },
-      { img: "assets/img/projects/gol-id-system.webp", caption: { en: "Design system: colors, typography and button variations.", pt: "Design system: cores, tipografia e variações de botões." } }
-    ],
-    results: {
-      en: "Once invited to a meeting, visitors request entry in the app and go straight through the facial recognition turnstiles — no second identification at reception. The company gained a new security layer, and the pilot, pioneering in Latin America, paved the way for facial boarding tests at the gate — part of the initiatives linked to GOL Labs' first-year EBIT growth.",
-      pt: "Convidados para uma reunião, os visitantes solicitam a entrada no app e passam direto pelas catracas com reconhecimento facial — sem se identificar de novo na recepção. A empresa ganhou uma nova camada de segurança, e o piloto, pioneiro na América Latina, abriu caminho para os testes de embarque facial no portão — parte das iniciativas associadas ao crescimento de EBIT do primeiro ano do GOL Labs."
-    },
-    learnings: {
-      en: "Waiting time shapes the experience: reducing it technically is only half the job, the interface also has to show clearly what is happening while the user waits. Trust is a design material too: people accept new technology when they can see what it is doing.",
-      pt: "O tempo de espera faz parte da experiência: reduzir a espera com medidas técnicas é só metade do trabalho, a interface também precisa mostrar com clareza o que está acontecendo enquanto o usuário aguarda. Confiança também é material de design: as pessoas aceitam tecnologia nova quando conseguem ver o que ela está fazendo."
-    }
-  },
   {
     id: "gollog",
     name: "GOLLOG Online Services",
     namePt: "GOLLOG Serviços Online",
-    featured: false,
+    featured: true,
     company: "GOL Airlines",
-    year: "2018–2022",
+    year: "2019–2020",
     tags: ["E-commerce", "B2B & B2C", "UX writing", "Responsive"],
     kind: "cargo",
     cover: "assets/img/projects/gollog-cover.webp",
@@ -594,6 +479,89 @@ PORTFOLIO.projects = [
     }
   },
   {
+    id: "gol-id",
+    name: "GOL ID Access",
+    namePt: "GOL ID Acesso",
+    featured: false,
+    company: "GOL Airlines",
+    year: "2019",
+    tags: ["Biometrics", "Mobile", "Design system", "UX writing", "Pilot"],
+    kind: "biometrics",
+    cover: "assets/img/projects/gol-id-cover.webp",
+    thumb: "assets/img/projects/gol-id-thumb.webp",
+    coverAlt: { en: "GOL ID Access screens: login, employee sign-up and email verification", pt: "Telas do GOL ID Acesso: login, cadastro de colaborador e verificação por e-mail" },
+    article: "https://medium.com/@careboucas/ui-ux-portfolio-3b8be226cd2d",
+    title: { en: "Face ID for corporate access", pt: "Reconhecimento facial no acesso corporativo" },
+    short: {
+      en: "An app for employees and visitors to enter GOL's headquarters with their face — a pioneering pilot in Latin America for what would later be tested at the boarding gate.",
+      pt: "Um app para colaboradores e visitantes entrarem na sede da GOL com o rosto — um piloto pioneiro na América Latina do que depois seria testado no portão de embarque."
+    },
+    role: { en: "End-to-end UX lead: design, UI, UX and writing at every stage, front-end refinement after development, and co-creation brainstorms with the GOL Labs team", pt: "UX lead do projeto de ponta a ponta: design, UI, UX e writing em todas as etapas, refinamento do front-end após o desenvolvimento e brainstorms de co-criação com o time do GOL Labs" },
+    problem: {
+      en: "Getting into GOL's headquarters meant identifying yourself at reception every time, and boarding depends on documents and queues. Facial biometrics could speed both up — but only if people trust it and understand, at every step, what is happening with their face.",
+      pt: "Entrar na sede da GOL exigia se identificar na recepção toda vez, e o embarque depende de documentos e filas. A biometria facial poderia acelerar os dois — mas só se as pessoas confiassem nela e entendessem, a cada etapa, o que está acontecendo com o seu rosto."
+    },
+    approach: [
+      { en: "Sketched the journeys on paper first — login, visitor sign-up, activation code and error states — to test ideas before going digital.", pt: "Desenhei as jornadas primeiro no papel — login, cadastro de visitante, código de ativação e estados de erro — para testar ideias antes de ir para o digital." },
+      { en: "Ran brainstorms with the GOL Labs team to co-design the best solution together, before locking the flows.", pt: "Conduzi brainstorms com o time do GOL Labs para desenharmos juntos a melhor solução, antes de fechar os fluxos." },
+      { en: "Designed three paths: employees log in with their network account and face ID; first-time visitors enter their details and capture their face; managers view and approve access requests.", pt: "Desenhei três caminhos: colaboradores entram com a conta de rede e o rosto; visitantes de primeira viagem informam seus dados e cadastram o rosto; gestores visualizam e aprovam as solicitações de acesso." },
+      { en: "Wrote guidance for the face capture — good lighting, no accessories, a step-by-step before starting — so the photo works on the first try.", pt: "Escrevi orientações para a captura do rosto — ambiente iluminado, sem adereços, um passo a passo antes de começar — para a foto dar certo na primeira tentativa." },
+      { en: "Reduced the time spent reading the face: we worked with the developers on technical measures to make the read faster.", pt: "Reduzimos o tempo de leitura do rosto: trabalhei com os devs em medidas técnicas para deixar a leitura mais rápida." },
+      { en: "Designed the waiting screen to show, step by step, what the app is doing while it reads the face, so the user always understands the wait.", pt: "Desenhei a tela de espera para mostrar, passo a passo, o que o app está fazendo enquanto lê o rosto, para o usuário sempre entender a espera." },
+      { en: "Wrote the app copy in Portuguese and English, from the sign-up guidance to push notifications and e-mails.", pt: "Escrevi os textos do app em português e inglês, das orientações de cadastro às notificações push e e-mails." },
+      { en: "Refined the front-end after the developers built it, polishing the implementation details.", pt: "Refinei o front-end depois que os devs desenvolveram, cuidando dos detalhes da implementação." },
+      { en: "Built a small design system — colors, typography and button variations — to keep the app consistent as it grew.", pt: "Criei um pequeno design system — cores, tipografia e variações de botões — para manter o app consistente conforme crescia." },
+      { en: "Ran the pilot at GOL's headquarters before the airport tests.", pt: "Rodamos o piloto na sede da GOL antes dos testes em aeroporto." }
+    ],
+    gallery: [
+      { img: "assets/img/projects/gol-id-sketches.webp", caption: { en: "Paper wireframes to test different ideas before going digital.", pt: "Wireframes em papel para testar ideias diferentes antes de ir para o digital." } },
+      { img: "assets/img/projects/gol-id-signup.webp", caption: { en: "Visitor sign-up and guided face capture: lighting, accessories and a step-by-step before starting.", pt: "Cadastro de visitante e captura guiada do rosto: iluminação, adereços e um passo a passo antes de começar." } },
+      { img: "assets/img/projects/gol-id-visitors.webp", caption: { en: "Visitor screens: profile, access requests and their status.", pt: "Telas do visitante: perfil, solicitações de acesso e seus status." } },
+      { img: "assets/img/projects/gol-id-manager.webp", caption: { en: "Access manager: view and approve requests.", pt: "Gestor de acessos: visualizar e aprovar solicitações." } },
+      { img: "assets/img/projects/gol-id-system.webp", caption: { en: "Design system: colors, typography and button variations.", pt: "Design system: cores, tipografia e variações de botões." } }
+    ],
+    results: {
+      en: "Once invited to a meeting, visitors request entry in the app and go straight through the facial recognition turnstiles — no second identification at reception. The company gained a new security layer, and the pilot, pioneering in Latin America, paved the way for facial boarding tests at the gate — part of the initiatives linked to GOL Labs' first-year EBIT growth.",
+      pt: "Convidados para uma reunião, os visitantes solicitam a entrada no app e passam direto pelas catracas com reconhecimento facial — sem se identificar de novo na recepção. A empresa ganhou uma nova camada de segurança, e o piloto, pioneiro na América Latina, abriu caminho para os testes de embarque facial no portão — parte das iniciativas associadas ao crescimento de EBIT do primeiro ano do GOL Labs."
+    },
+    learnings: {
+      en: "Waiting time shapes the experience: reducing it technically is only half the job, the interface also has to show clearly what is happening while the user waits. Trust is a design material too: people accept new technology when they can see what it is doing.",
+      pt: "O tempo de espera faz parte da experiência: reduzir a espera com medidas técnicas é só metade do trabalho, a interface também precisa mostrar com clareza o que está acontecendo enquanto o usuário aguarda. Confiança também é material de design: as pessoas aceitam tecnologia nova quando conseguem ver o que ela está fazendo."
+    }
+  },
+  {
+    id: "alexa",
+    name: "GOL Alexa Skill",
+    featured: true,
+    company: "GOL Airlines",
+    year: "2021–2022",
+    tags: ["Voice UX", "Intents", "Dialogue design"],
+    kind: "voice",
+    title: { en: "GOL's first voice experience", pt: "A primeira experiência de voz da GOL" },
+    short: {
+      en: "Flight status by voice — where my conversation design work began.",
+      pt: "Status de voo por voz — onde começou meu trabalho com design conversacional."
+    },
+    role: { en: "Designed, implemented and supported the skill", pt: "Desenhei, implementei e sustentei a skill" },
+    problem: {
+      en: "Passengers wanted a quick, hands-free way to check their next flight. Voice has no screen to fall back on: every answer must be short, ordered and unambiguous.",
+      pt: "Passageiros queriam uma forma rápida e sem as mãos de consultar o próximo voo. Voz não tem tela de apoio: cada resposta precisa ser curta, ordenada e sem ambiguidade."
+    },
+    approach: [
+      { en: "Mapped the intents and the questions people actually ask about a flight.", pt: "Mapeei as intenções e as perguntas que as pessoas realmente fazem sobre um voo." },
+      { en: "Designed an audio information architecture: the most important fact first, details on request.", pt: "Desenhei uma arquitetura de informação auditiva: o fato mais importante primeiro, detalhes sob demanda." },
+      { en: "Wrote reprompts and error recovery for when the assistant didn't understand.", pt: "Escrevi reprompts e recuperação de erro para quando o assistente não entendia." }
+    ],
+    results: {
+      en: "The airline's first conversational voice experience, launched and supported by the GOL Labs team.",
+      pt: "A primeira experiência conversacional por voz da companhia, lançada e sustentada pelo time do GOL Labs."
+    },
+    learnings: {
+      en: "Designing for the ear taught me to write for any conversational channel: say less, in the right order, and always offer a way forward.",
+      pt: "Desenhar para o ouvido me ensinou a escrever para qualquer canal conversacional: falar menos, na ordem certa, e sempre oferecer um caminho."
+    }
+  },
+  {
     id: "zuum",
     name: "Zuum Digital Account",
     namePt: "Zuum Conta Digital",
@@ -602,6 +570,10 @@ PORTFOLIO.projects = [
     year: "2018",
     tags: ["Fintech", "UX research", "Mobile-first"],
     kind: "fintech",
+    cover: "assets/img/projects/zuum-cover.webp",
+    thumb: "assets/img/projects/zuum-thumb.webp",
+    coverAlt: { en: "Zuum mobile-first website: home, app download and online deposit screens", pt: "Site mobile-first da Zuum: telas de home, download do app e depósito online" },
+    prototype: "https://xd.adobe.com/view/3fc26dd7-9e71-43f3-8c18-413d8bb241f9/",
     title: { en: "Making a digital account feel simple", pt: "Fazer uma conta digital parecer simples" },
     short: {
       en: "UX research and mobile-first redesign for a Vivo + Mastercard joint venture.",
@@ -626,46 +598,16 @@ PORTFOLIO.projects = [
     }
   },
   {
-    id: "globo",
-    name: "News graphics at Globo",
-    namePt: "Arte para telejornais na Globo",
-    featured: false,
-    company: "Globo",
-    year: "2013–2015",
-    tags: ["Information design", "Data visualization", "Motion"],
-    kind: "infographic",
-    title: { en: "Explaining complex news to millions", pt: "Explicar notícias complexas para milhões" },
-    short: {
-      en: "Maps, animated infographics and graphic systems for national TV news, including the 2014 World Cup and Elections.",
-      pt: "Mapas, infográficos animados e sistemas gráficos para telejornais nacionais, incluindo Copa e Eleições 2014."
-    },
-    role: { en: "Designer — art and information design", pt: "Designer — arte e design de informação" },
-    problem: {
-      en: "Live news needs complex information turned into something anyone understands in seconds, on deadline, every day.",
-      pt: "O telejornal precisa transformar informação complexa em algo que qualquer pessoa entenda em segundos, com prazo, todos os dias."
-    },
-    approach: [
-      { en: "Took briefs from editors, prioritised the production flow and reviewed on-air graphics at GloboNews.", pt: "Recebia briefings de editores, priorizava o fluxo de produção e revisava as artes no ar da GloboNews." },
-      { en: "Produced motion graphics, maps and animated infographics for Jornal Nacional, Jornal da Globo, Fantástico and SporTV.", pt: "Produzi motion graphics, mapas e infográficos animados para Jornal Nacional, Jornal da Globo, Fantástico e SporTV." },
-      { en: "Created visual identities for the 2014 FIFA World Cup and 2014 Elections coverage.", pt: "Criei identidades visuais para a cobertura da Copa do Mundo 2014 e das Eleições 2014." }
-    ],
-    results: {
-      en: "The animated idents for the 2014 Elections project won a journalism award.",
-      pt: "As vinhetas animadas do projeto Eleições 2014 conquistaram um prêmio de jornalismo."
-    },
-    learnings: {
-      en: "Information design is conversation design without words: the order in which you reveal things is the message.",
-      pt: "Design de informação é design conversacional sem palavras: a ordem em que você revela as coisas é a mensagem."
-    }
-  },
-  {
     id: "campus-party",
     name: "Campus Party Brazil",
     featured: false,
     company: "Campus Party Brasil",
-    year: "2017–2018",
+    year: "2017",
     tags: ["Art direction", "Web & app UI", "Design leadership"],
     kind: "brand",
+    cover: "assets/img/projects/campus-party-cover.webp",
+    thumb: "assets/img/projects/campus-party-thumb.webp",
+    coverAlt: { en: "Campus Party Bahia website: event home with countdown and the Arena, Camping and Open Campus sections", pt: "Site da Campus Party Bahia: home do evento com contagem regressiva e as seções Arena, Camping e Open Campus" },
     title: { en: "Design for Brazil's largest tech festival", pt: "Design para o maior festival de tecnologia do Brasil" },
     short: {
       en: "Head of Design for all digital visual communication: web, app, social and campaigns.",
@@ -681,8 +623,8 @@ PORTFOLIO.projects = [
       { en: "Designed web interfaces, landing pages, app content and campaigns across editions in several Brazilian states.", pt: "Desenhei interfaces web, landing pages, conteúdo do app e campanhas para edições em vários estados." }
     ],
     results: {
-      en: "A consistent visual system across a dozen editions in 2017 and 2018.",
-      pt: "Um sistema visual consistente em mais de uma dezena de edições em 2017 e 2018."
+      en: "A consistent visual system across a dozen editions in 2017.",
+      pt: "Um sistema visual consistente em mais de uma dezena de edições em 2017."
     },
     learnings: {
       en: "A system scales better than heroics: clear intake and reusable patterns kept quality high under pressure.",
@@ -692,11 +634,20 @@ PORTFOLIO.projects = [
 ];
 
 /* --------------------------------------------------------------------------
-   MORE INTERFACE PROJECTS AT GOL AIRLINES (cards without a case page)
+   MORE INTERFACE PROJECTS (cards without a case page)
    - img: screenshot in assets/img/projects/ (WebP, 800×450)
    - kind: illustration used when there is no image
+   - company / year: optional, shown above the title (default: GOL Airlines)
    -------------------------------------------------------------------------- */
 PORTFOLIO.moreProjects = [
+  { name: "Smart Fare", namePt: "Tarifa Inteligente", kind: "commerce", year: "2018–2022",
+    tags: [{ en: "Journey design", pt: "Desenho de jornada" }, { en: "B2C", pt: "B2C" }],
+    en: "A new ticket-purchase feature, from discovery workshops to the automation logic behind the fare. Adopted by customers from day one and one of the main drivers of the 80% EBIT increase in GOL Labs' first year.",
+    pt: "Uma nova funcionalidade na compra de passagens, dos workshops de discovery à lógica de automação por trás da tarifa. Adotada pelos clientes desde o primeiro dia e uma das principais responsáveis pelo EBIT de 80% no primeiro ano do GOL Labs." },
+  { name: "News graphics at Globo", namePt: "Arte para telejornais na Globo", kind: "infographic", company: "Globo", year: "2013–2015",
+    tags: [{ en: "Information design", pt: "Design de informação" }, { en: "Motion", pt: "Motion" }],
+    en: "Maps, animated infographics and graphic systems for national TV news, including the 2014 World Cup and Elections. The 2014 Elections idents won a journalism award.",
+    pt: "Mapas, infográficos animados e sistemas gráficos para telejornais nacionais, incluindo Copa e Eleições 2014. As vinhetas das Eleições 2014 ganharam um prêmio de jornalismo." },
   { name: "OC Mobile", img: "assets/img/projects/oc-mobile.webp",
     tags: [{ en: "Tablet", pt: "Tablet" }, { en: "Flight operations", pt: "Operações de voo" }],
     en: "Tablet portal for ramp coordinators: digital ramp checklist, chat with dispatch and real-time alerts. Part of the Paperless project, which replaced printed flight documents, and tested on site at Recife airport.",

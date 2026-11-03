@@ -535,6 +535,10 @@ ul.contrib__chips { list-style: none; margin: 0; padding: 0; }
 .gallery a:hover img { transform: scale(1.015); }
 .gallery figcaption { margin-top: 10px; font-size: var(--fs-sm); color: var(--muted); line-height: 1.55; max-width: 68ch; }
 .case-article { margin-top: var(--s3); }
+.case-proto { margin-top: var(--s3); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--s2) var(--s3); padding: var(--s3); background: color-mix(in srgb, var(--cyan) 8%, var(--surface)); border: 1px solid color-mix(in srgb, var(--cyan) 45%, transparent); border-radius: var(--radius); }
+.case-proto__text { flex: 1 1 260px; }
+.case-proto__text p { margin: 6px 0 0; color: var(--muted); font-size: var(--fs-sm); }
+.case-proto .btn { flex: 0 0 auto; }
 @media (prefers-reduced-motion: reduce) { .gallery img { transition: none; } .gallery a:hover img { transform: none; } }
 
 /* About */

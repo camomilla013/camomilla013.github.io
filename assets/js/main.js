@@ -352,7 +352,7 @@
     if (more) more.innerHTML = P.moreProjects.map((p) => `
       <article class="card">
         <div class="thumb">${p.img ? `<img src="${p.img}" alt="${esc(s("wk.imgAlt"))} ${esc(nameOf(p))}" width="800" height="450" loading="lazy" decoding="async">` : thumb(p.kind)}</div>
-        <span class="card__meta">GOL Airlines</span>
+        <span class="card__meta">${esc(p.company || "GOL Airlines")}${p.year ? ", " + esc(p.year) : ""}</span>
         <h3>${esc(nameOf(p))}</h3>
         <p>${esc(t(p))}</p>
         <div class="tags">${p.tags.map((x) => `<span class="tag">${esc(t(x))}</span>`).join("")}</div>
@@ -487,6 +487,10 @@ ${a.stack.map((x) => `  - <span class="s">${esc(x)}</span>`).join("\n")}`;
           <div><dt>${esc(s("case.year"))}</dt><dd>${esc(p.year)}</dd></div>
           <div><dt>${esc(s("case.focus"))}</dt><dd>${esc(p.tags.join(", "))}</dd></div>
         </dl>
+        ${p.prototype ? `<div class="case-proto">
+          <div class="case-proto__text"><span class="comment">${esc(s("case.l.proto"))}</span><p>${esc(s("case.protoText"))}</p></div>
+          <a class="btn btn--primary" href="${esc(p.prototype)}" target="_blank" rel="noopener">${esc(s("case.protoBtn"))} ${icon("external")}<span class="sr-only"> (${esc(s("ui.newTab"))})</span></a>
+        </div>` : ""}
         ${p.cover
           ? `<figure class="thumb case-cover"><img src="${p.cover}" alt="${esc(t(p.coverAlt))}" width="1600" height="900" fetchpriority="high" decoding="async"></figure>`
           : `<div class="thumb" style="margin-top:var(--s4);aspect-ratio:21/8">${thumb(p.kind)}</div>`}
