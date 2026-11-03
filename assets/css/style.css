@@ -525,6 +525,18 @@ ul.contrib__chips { list-style: none; margin: 0; padding: 0; }
 
 .next-case { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
 
+/* Case cover and screens gallery (UX/UI cases) */
+.case-cover { margin: var(--s4) 0 0; background: #1C1C22; }
+.gallery { display: grid; gap: var(--s4); }
+.gallery figure { margin: 0; }
+.gallery a { display: block; border-radius: 10px; overflow: hidden; border: 1px solid var(--line); background: #1C1C22; }
+.gallery a:focus-visible { outline: 2px solid var(--cyan); outline-offset: 3px; }
+.gallery img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; transition: transform .35s ease; }
+.gallery a:hover img { transform: scale(1.015); }
+.gallery figcaption { margin-top: 10px; font-size: var(--fs-sm); color: var(--muted); line-height: 1.55; max-width: 68ch; }
+.case-article { margin-top: var(--s3); }
+@media (prefers-reduced-motion: reduce) { .gallery img { transition: none; } .gallery a:hover img { transform: none; } }
+
 /* About */
 .about-intro { display: grid; gap: var(--s4); align-items: start; }
 @media (min-width: 860px) { .about-intro { grid-template-columns: 220px 1fr; gap: var(--s5); } }

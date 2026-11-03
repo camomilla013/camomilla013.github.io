@@ -371,6 +371,11 @@ PORTFOLIO.agents = [
    - id: used in the URL → project.html?id=alexa
    - tags: shown on the card
    - sections without content are hidden automatically on the case page
+   - cover: optional hero image, WebP 1600×900 (coverAlt describes it)
+   - thumb: optional card image, WebP 800×450
+   - gallery: optional screens [{ img (WebP 1600×900), caption: { en, pt } }]
+   - results: a paragraph { en, pt } or a list [{ en, pt }, …]
+   - article: optional link to the long version (e.g. Medium), shown as a button
    -------------------------------------------------------------------------- */
 PORTFOLIO.projects = [
   {
@@ -440,29 +445,44 @@ PORTFOLIO.projects = [
   },
   {
     id: "gol-id",
-    name: "GOL ID",
+    name: "GOL ID Access",
+    namePt: "GOL ID Acesso",
     featured: false,
     company: "GOL Airlines",
     year: "2018–2022",
-    tags: ["Biometrics", "Service design", "Pilot"],
+    tags: ["Biometrics", "Mobile", "Design system", "Pilot"],
     kind: "biometrics",
-    title: { en: "Boarding with your face", pt: "Embarque com o rosto" },
+    cover: "assets/img/projects/gol-id-cover.webp",
+    thumb: "assets/img/projects/gol-id-thumb.webp",
+    coverAlt: { en: "GOL ID Access screens: login, employee sign-up and email verification", pt: "Telas do GOL ID Acesso: login, cadastro de colaborador e verificação por e-mail" },
+    article: "https://medium.com/@careboucas/ui-ux-portfolio-3b8be226cd2d",
+    title: { en: "Face ID for corporate access", pt: "Reconhecimento facial no acesso corporativo" },
     short: {
-      en: "A pioneering facial biometrics boarding pilot in Latin America, also tested at GOL's headquarters.",
-      pt: "Um piloto pioneiro de embarque por biometria facial na América Latina, também testado na sede da GOL."
+      en: "An app for employees and visitors to enter GOL's headquarters with their face — a pioneering pilot in Latin America for what would later be tested at the boarding gate.",
+      pt: "Um app para colaboradores e visitantes entrarem na sede da GOL com o rosto — um piloto pioneiro na América Latina do que depois seria testado no portão de embarque."
     },
-    role: { en: "UX design and journey design", pt: "UX design e desenho de jornada" },
+    role: { en: "UX/UI design: journeys, wireframes, design system and interface", pt: "UX/UI design: jornadas, wireframes, design system e interface" },
     problem: {
-      en: "Boarding and building access depend on documents and queues. Biometrics could speed them up — but only if people trust it and understand what is happening.",
-      pt: "Embarque e acesso a prédios dependem de documentos e filas. A biometria poderia acelerar isso — mas só se as pessoas confiarem e entenderem o que está acontecendo."
+      en: "Getting into GOL's headquarters meant identifying yourself at reception every time, and boarding depends on documents and queues. Facial biometrics could speed both up — but only if people trust it and understand, at every step, what is happening with their face.",
+      pt: "Entrar na sede da GOL exigia se identificar na recepção toda vez, e o embarque depende de documentos e filas. A biometria facial poderia acelerar os dois — mas só se as pessoas confiassem nela e entendessem, a cada etapa, o que está acontecendo com o seu rosto."
     },
     approach: [
-      { en: "Designed the enrolment and boarding journeys, with clear feedback at every step.", pt: "Desenhei as jornadas de cadastro e embarque, com feedback claro em cada etapa." },
+      { en: "Sketched the journeys on paper first — login, visitor sign-up, activation code and error states — to test ideas before going digital.", pt: "Desenhei as jornadas primeiro no papel — login, cadastro de visitante, código de ativação e estados de erro — para testar ideias antes de ir para o digital." },
+      { en: "Designed three paths: employees log in with their network account and face ID; first-time visitors enter their details and capture their face; managers view and approve access requests.", pt: "Desenhei três caminhos: colaboradores entram com a conta de rede e o rosto; visitantes de primeira viagem informam seus dados e cadastram o rosto; gestores visualizam e aprovam as solicitações de acesso." },
+      { en: "Wrote guidance for the face capture — good lighting, no accessories, a step-by-step before starting — so the photo works on the first try.", pt: "Escrevi orientações para a captura do rosto — ambiente iluminado, sem adereços, um passo a passo antes de começar — para a foto dar certo na primeira tentativa." },
+      { en: "Built a small design system — colors, typography and button variations — to keep the app consistent as it grew.", pt: "Criei um pequeno design system — cores, tipografia e variações de botões — para manter o app consistente conforme crescia." },
       { en: "Ran the pilot at GOL's headquarters before the airport tests.", pt: "Rodamos o piloto na sede da GOL antes dos testes em aeroporto." }
     ],
+    gallery: [
+      { img: "assets/img/projects/gol-id-sketches.webp", caption: { en: "Paper wireframes to test different ideas before going digital.", pt: "Wireframes em papel para testar ideias diferentes antes de ir para o digital." } },
+      { img: "assets/img/projects/gol-id-signup.webp", caption: { en: "Visitor sign-up and guided face capture: lighting, accessories and a step-by-step before starting.", pt: "Cadastro de visitante e captura guiada do rosto: iluminação, adereços e um passo a passo antes de começar." } },
+      { img: "assets/img/projects/gol-id-visitors.webp", caption: { en: "Visitor screens: profile, access requests and their status.", pt: "Telas do visitante: perfil, solicitações de acesso e seus status." } },
+      { img: "assets/img/projects/gol-id-manager.webp", caption: { en: "Access manager: view and approve requests.", pt: "Gestor de acessos: visualizar e aprovar solicitações." } },
+      { img: "assets/img/projects/gol-id-system.webp", caption: { en: "Design system: colors, typography and button variations.", pt: "Design system: cores, tipografia e variações de botões." } }
+    ],
     results: {
-      en: "A pioneering pilot in Latin America, part of the initiatives linked to GOL Labs' first-year EBIT growth.",
-      pt: "Um piloto pioneiro na América Latina, parte das iniciativas associadas ao crescimento de EBIT do primeiro ano do GOL Labs."
+      en: "Once invited to a meeting, visitors request entry in the app and go straight through the facial recognition turnstiles — no second identification at reception. The company gained a new security layer, and the pilot, pioneering in Latin America, paved the way for facial boarding tests at the gate — part of the initiatives linked to GOL Labs' first-year EBIT growth.",
+      pt: "Convidados para uma reunião, os visitantes solicitam a entrada no app e passam direto pelas catracas com reconhecimento facial — sem se identificar de novo na recepção. A empresa ganhou uma nova camada de segurança, e o piloto, pioneiro na América Latina, abriu caminho para os testes de embarque facial no portão — parte das iniciativas associadas ao crescimento de EBIT do primeiro ano do GOL Labs."
     },
     learnings: {
       en: "Trust is a design material. People accept new technology when they can see what it is doing.",
@@ -471,65 +491,101 @@ PORTFOLIO.projects = [
   },
   {
     id: "gollog",
-    name: "GOLLOG Online Sales",
-    namePt: "GOLLOG Vendas Online",
+    name: "GOLLOG Online Services",
+    namePt: "GOLLOG Serviços Online",
     featured: false,
     company: "GOL Airlines",
     year: "2018–2022",
-    tags: ["B2B", "E-commerce", "Information architecture"],
+    tags: ["E-commerce", "B2B & B2C", "UX writing", "Responsive"],
     kind: "cargo",
-    title: { en: "Air cargo, bought online", pt: "Carga aérea, comprada online" },
+    cover: "assets/img/projects/gollog-cover.webp",
+    thumb: "assets/img/projects/gollog-thumb.webp",
+    coverAlt: { en: "GOLLOG quote results on desktop and mobile, with the recommended option first", pt: "Resultado da cotação da GOLLOG no desktop e no celular, com a opção recomendada em primeiro lugar" },
+    article: "https://medium.com/@careboucas/a-brand-new-cargo-services-experience-dcabb4ddc74d",
+    title: { en: "A brand-new air cargo experience", pt: "Uma nova experiência de carga aérea" },
     short: {
-      en: "Quote, booking, online payment and tracking for GOL's cargo business.",
-      pt: "Cotação, pedido, pagamento online e rastreamento para o negócio de cargas da GOL."
+      en: "Quote, booking, advance payment, tracking and a customer area — redesigned so individuals and small businesses, not only corporate clients, could ship air cargo online.",
+      pt: "Cotação, pedido, pagamento antecipado, rastreamento e área do cliente — redesenhados para que pessoas físicas e pequenas empresas, e não só clientes corporativos, pudessem enviar carga aérea online."
     },
-    role: { en: "UX/UI design", pt: "UX/UI design" },
+    role: { en: "UX/UI design: research, workshops, UX writing, wireframes, prototype and handoff", pt: "UX/UI design: pesquisa, workshops, UX writing, wireframes, protótipo e handoff" },
     problem: {
-      en: "Shipping air cargo used to require contact with a sales team. The first online phase had to make a complex B2B service feel as simple as buying a product.",
-      pt: "Enviar carga aérea exigia contato com um time comercial. A primeira fase online precisava fazer um serviço B2B complexo parecer tão simples quanto comprar um produto."
+      en: "The goal was to become Brazil's best air freight service for individuals and businesses. But the website offered only quotation and tracking, and the quotation had a high abandonment rate. Tests showed why: you had to know the service names to get a quote, fees were explained only in English, tracking asked for an AWB code most first-time senders had never seen, an optional step looked like a mandatory sign-up, there was no advance payment — and 60% of visits came from mobile, on a layout that wasn't responsive.",
+      pt: "A meta era se tornar o melhor serviço de frete aéreo do Brasil para pessoas e empresas. Mas o site oferecia só cotação e rastreamento, e a cotação tinha alta taxa de abandono. Os testes mostraram por quê: era preciso conhecer o nome dos serviços para cotar, as taxas eram explicadas só em inglês, o rastreamento pedia um código AWB que quem envia pela primeira vez nunca viu, uma etapa opcional parecia um cadastro obrigatório, não havia pagamento antecipado — e 60% dos acessos vinham do celular, em um layout que não era responsivo."
     },
     approach: [
-      { en: "Structured the flow into four clear stages: quote, booking, payment and tracking.", pt: "Estruturei o fluxo em quatro etapas claras: cotação, pedido, pagamento e rastreamento." },
-      { en: "Focused on conversion and on removing usability issues in each step.", pt: "Foco em conversão e em remover problemas de usabilidade em cada etapa." }
+      { en: "Benchmarked air cargo websites in Brazil and abroad, asked current and future customers which online services mattered, and studied the Air Transport Terms and how LGPD applied.", pt: "Fiz benchmarking de sites de carga aérea no Brasil e no exterior, perguntei a clientes atuais e futuros quais serviços online importavam e estudei as Condições Gerais de Transporte e a aplicação da LGPD." },
+      { en: "Ran design workshops with stakeholders and business owners on business rules, new features and backlog priority — and brought developers and architects in early to outline a feasible architecture.", pt: "Conduzi workshops de design com stakeholders e donos do negócio sobre regras, novas funcionalidades e prioridade de backlog — e envolvi desenvolvedores e arquitetos cedo para desenhar uma arquitetura viável." },
+      { en: "Replaced 'pick a service' with results: every option with price and delivery time, ranked, with a recommendation first.", pt: "Troquei o \"escolha um serviço\" por resultados: todas as opções com preço e prazo, ordenadas, com uma recomendação em primeiro lugar." },
+      { en: "Treated UX writing as core: cargo jargon was replaced or explained in plain-language tips, so the interface spoke to corporate clients and first-time senders alike.", pt: "Tratei o UX writing como peça central: os termos técnicos de carga foram trocados ou explicados com dicas em linguagem simples, para a interface falar tanto com clientes corporativos quanto com quem envia pela primeira vez." },
+      { en: "Turned the long paper form handed out at the store counter into a numbered online flow: fewer fields, pre-filled suggestions, automatic focus between fields and address lookup by ZIP code.", pt: "Transformei o longo formulário em papel entregue no balcão da loja em um fluxo online numerado: menos campos, sugestões pré-preenchidas, avanço automático entre campos e endereço preenchido pelo CEP." },
+      { en: "Validated the flows with a high-fidelity prototype and handed off in Zeplin, staying close to developers during the build.", pt: "Validei os fluxos com um protótipo de alta fidelidade e fiz o handoff no Zeplin, acompanhando de perto o time de desenvolvimento." }
+    ],
+    gallery: [
+      { img: "assets/img/projects/gollog-before.webp", caption: { en: "Before: to get a quote you had to pick a service by name, and tracking asked for an AWB code.", pt: "Antes: para cotar era preciso escolher o serviço pelo nome, e o rastreamento pedia um código AWB." } },
+      { img: "assets/img/projects/gollog-sketch.webp", caption: { en: "From paper sketch to the final quote: every option with price and delivery time, the recommended one first.", pt: "Do rascunho em papel à cotação final: todas as opções com preço e prazo, a recomendada em primeiro lugar." } },
+      { img: "assets/img/projects/gollog-flow.webp", caption: { en: "Quote and tracking rewritten in plain language.", pt: "Cotação e rastreamento reescritos em linguagem simples." } },
+      { img: "assets/img/projects/gollog-stores.webp", caption: { en: "Choosing the nearest store on a map, from the ZIP code.", pt: "Escolha da loja mais próxima no mapa, a partir do CEP." } },
+      { img: "assets/img/projects/gollog-account.webp", caption: { en: "Customer area: orders, status at a glance and order details.", pt: "Área do cliente: pedidos, status de cada um e detalhes do pedido." } }
     ],
     results: {
-      en: "Online sales launched on the GOLLOG website with features that were competitive in the air cargo market.",
-      pt: "Venda online lançada no site da GOLLOG com funcionalidades competitivas no mercado de cargas aéreas."
+      en: "Quotation, booking, advance payment, tracking, a store finder and a customer area launched on a responsive GOLLOG website, with features that were competitive in the air cargo market. The form that used to be a dead end became a flow users completed — and praised.",
+      pt: "Cotação, pedido, pagamento antecipado, rastreamento, busca de lojas e área do cliente lançados em um site da GOLLOG responsivo, com funcionalidades competitivas no mercado de cargas aéreas. O formulário que antes era um beco sem saída virou um fluxo que os usuários concluíam — e elogiavam."
     },
     learnings: {
-      en: "Complex services become simple when every step has one job.",
-      pt: "Serviços complexos ficam simples quando cada etapa tem uma única função."
+      en: "Complex services become simple when every step has one job — and when the words do as much design work as the layout.",
+      pt: "Serviços complexos ficam simples quando cada etapa tem uma única função — e quando as palavras fazem tanto trabalho de design quanto o layout."
     }
   },
   {
     id: "employee-app",
-    name: "GOL Employee App",
-    namePt: "App dos Colaboradores GOL",
+    name: "GOL Staff App",
+    namePt: "App do Colaborador GOL",
     featured: false,
     company: "GOL Airlines",
-    year: "2018–2022",
-    tags: ["Mobile", "Internal product", "UI design"],
+    year: "2019",
+    tags: ["Mobile", "Internal product", "Information architecture", "Usability testing"],
     kind: "mobile",
-    title: { en: "One app for everyday work life", pt: "Um app para o dia a dia de trabalho" },
+    cover: "assets/img/projects/employee-app-cover.webp",
+    thumb: "assets/img/projects/employee-app-thumb.webp",
+    coverAlt: { en: "GOL Staff App: customizable home, edit mode and side menu", pt: "App do Colaborador GOL: home personalizável, modo de edição e menu lateral" },
+    article: "https://medium.com/@careboucas/staff-mobile-app-human-resources-and-routine-requests-made-simple-c9f7dbe3fe5e",
+    title: { en: "HR and everyday requests, made simple", pt: "RH e solicitações do dia a dia, sem complicação" },
     short: {
-      en: "A friendly app to connect employees, company tools and HR.",
-      pt: "Um app amigável para conectar colaboradores, ferramentas da empresa e RH."
+      en: "Redesign of the app GOL's 15,000+ employees use for HR, approvals, travel benefits and routine requests — from a 15-item list to a customizable home.",
+      pt: "Redesign do app que os mais de 15 mil colaboradores da GOL usam para RH, aprovações, benefício viagem e solicitações do dia a dia — de uma lista de 15 itens a uma home personalizável."
     },
-    role: { en: "UX/UI design", pt: "UX/UI design" },
+    role: { en: "UX designer and product owner in discovery; UI design through development", pt: "UX designer e product owner na descoberta; UI design até o desenvolvimento" },
     problem: {
-      en: "Employees needed a single, easy place to reach company tools, talk to HR and connect with each other.",
-      pt: "Os colaboradores precisavam de um lugar único e fácil para acessar ferramentas da empresa, falar com o RH e se conectar entre si."
+      en: "The app was solid and widely used — requests to managers and HR, days off, personal flights, boarding passes, ethics and operations reports — but people couldn't find things. The home was a vertical list of 15 items, many with sub-items, and no clear hierarchy. Everyone saw features they had no access to, some buttons opened external websites, and the bright orange look no longer matched the brand. For 15,000+ people of different ages, countries and levels of digital familiarity, that was a real barrier.",
+      pt: "O app era sólido e muito usado — solicitações a gestores e ao RH, folgas, voos pessoais, cartões de embarque, relatos de ética e de operação —, mas as pessoas não encontravam as coisas. A home era uma lista vertical de 15 itens, muitos com subitens, sem hierarquia clara. Todos viam funcionalidades às quais não tinham acesso, alguns botões abriam sites externos, e o laranja intenso já não combinava com a marca. Para mais de 15 mil pessoas de idades, países e familiaridade digital diferentes, isso era uma barreira real."
     },
     approach: [
-      { en: "Designed a simple, attractive interface focused on the most frequent tasks.", pt: "Desenhei uma interface simples e atraente, focada nas tarefas mais frequentes." }
+      { en: "Documented the whole app with the departments that owned each feature, and ran 'as is' usability tests: colleagues completed tasks they did every day and showed where they got stuck. The findings built the case for a redesign.", pt: "Documentei o app inteiro com as áreas responsáveis por cada funcionalidade e conduzi testes de usabilidade do \"as is\": colegas realizavam tarefas do dia a dia e mostravam onde travavam. Os achados justificaram o redesign." },
+      { en: "Listened to the original architect and developers; together we concluded that rebuilding the app from scratch was better than a front-end facelift.", pt: "Ouvi o arquiteto e os desenvolvedores da versão original; juntos concluímos que reconstruir o app do zero era melhor que só trocar o front-end." },
+      { en: "Benchmarked super apps (Grab, Rappi), banking (Itaú), airlines (Delta, Emirates) and operating systems (iOS, Windows), then moved from paper drafts to visual concepts in Adobe XD.", pt: "Fiz benchmarking de superapps (Grab, Rappi), banco (Itaú), companhias aéreas (Delta, Emirates) e sistemas operacionais (iOS, Windows), e passei dos rascunhos em papel para conceitos visuais no Adobe XD." },
+      { en: "Mapped the full flowchart and tested a prototype up to the third navigation level with employees from many departments, so anyone could reach any item in the fewest steps.", pt: "Mapeei o fluxograma completo e testei um protótipo até o terceiro nível de navegação com colaboradores de várias áreas, para que qualquer pessoa chegasse a qualquer item no menor número de passos." },
+      { en: "Designed a customizable home (people choose their shortcuts and background), a side menu grouped into 7 categories with icons, and permission-based menus: people only see what they can use. Familiar task flows stayed familiar.", pt: "Desenhei uma home personalizável (cada um escolhe seus atalhos e o fundo), um menu lateral agrupado em 7 categorias com ícones e menus por permissão: cada pessoa só vê o que pode usar. Fluxos de tarefa conhecidos continuaram conhecidos." },
+      { en: "Proposed, with the developers, three social features to bring people together: a shared events calendar, profiles, and a colleague search by name, office, department or role.", pt: "Propus, junto com os desenvolvedores, três recursos sociais para aproximar as pessoas: um calendário de eventos compartilhado, perfis e uma busca de colegas por nome, base, área ou cargo." }
     ],
-    results: {
-      en: "A new internal app that brought tools, HR communication and social features together.",
-      pt: "Um novo app interno que reuniu ferramentas, comunicação com o RH e recursos sociais."
-    },
+    gallery: [
+      { img: "assets/img/projects/employee-app-before.webp", caption: { en: "Before: a 15-item list in bright orange, with sub-menus everywhere.", pt: "Antes: uma lista de 15 itens em laranja intenso, com submenus por toda parte." } },
+      { img: "assets/img/projects/employee-app-concepts.webp", caption: { en: "First visual concepts for the new home.", pt: "Primeiros conceitos visuais da nova home." } },
+      { img: "assets/img/projects/employee-app-approvals.webp", caption: { en: "Approval requests for managers.", pt: "Solicitações de aprovação para gestores." } },
+      { img: "assets/img/projects/employee-app-hr.webp", caption: { en: "Paycheck documents, vacations and boarding passes.", pt: "Holerites, férias e cartões de embarque." } },
+      { img: "assets/img/projects/employee-app-social.webp", caption: { en: "Social features: events calendar, profiles and colleague search.", pt: "Recursos sociais: calendário de eventos, perfis e busca de colegas." } },
+      { img: "assets/img/projects/employee-app-new.webp", caption: { en: "Features added after launch: crew time-off requests and an HR chatbot MVP.", pt: "Funcionalidades adicionadas depois do lançamento: solicitação de folgas para tripulantes e um MVP de chatbot do RH." } },
+      { img: "assets/img/projects/colaborador-mobile.webp", caption: { en: "A later evolution: side menu by area and a virtual business card with QR code.", pt: "Uma evolução posterior: menu lateral por área e cartão de visitas virtual com QR code." } }
+    ],
+    results: [
+      { en: "Built by a squad of 5 developers, with my design support through development; stakeholders then asked to bring more desktop-only features into the app.", pt: "Desenvolvido por um squad de 5 desenvolvedores, com meu apoio de design durante todo o desenvolvimento; depois, os stakeholders pediram para trazer ao app mais funcionalidades que só existiam no desktop." },
+      { en: "Fewer calls to HR: people download forms and documents straight from the app.", pt: "Menos chamados ao RH: as pessoas baixam formulários e documentos direto do app." },
+      { en: "Requests from anywhere: actions that once needed a desktop now happen on the phone — especially for airport staff.", pt: "Solicitações de qualquer lugar: ações que antes exigiam um computador agora são feitas no celular — principalmente por quem trabalha no aeroporto." },
+      { en: "During the pandemic, the app kept key documents within reach and avoided overwhelming HR.", pt: "Na pandemia, o app manteve documentos importantes ao alcance de todos e evitou sobrecarregar o RH." },
+      { en: "More frequent releases for Android and iOS, and a chatbot MVP answering the most common HR questions.", pt: "Atualizações mais frequentes para Android e iOS, e um MVP de chatbot respondendo às dúvidas mais comuns sobre RH." }
+    ],
     learnings: {
-      en: "Internal products deserve the same care as customer products — employees are users too.",
-      pt: "Produtos internos merecem o mesmo cuidado que produtos para clientes — colaboradores também são usuários."
+      en: "Employees are users too. Internal products deserve the same research and care as customer products — and a company of 15,000 people is as diverse an audience as any.",
+      pt: "Colaboradores também são usuários. Produtos internos merecem a mesma pesquisa e o mesmo cuidado que produtos para clientes — e uma empresa de 15 mil pessoas é um público tão diverso quanto qualquer outro."
     }
   },
   {
@@ -636,10 +692,6 @@ PORTFOLIO.projects = [
    - kind: illustration used when there is no image
    -------------------------------------------------------------------------- */
 PORTFOLIO.moreProjects = [
-  { name: "Employee Mobile", namePt: "Colaborador Mobile", img: "assets/img/projects/colaborador-mobile.webp",
-    tags: [{ en: "Mobile", pt: "Mobile" }, { en: "Internal product", pt: "Produto interno" }],
-    en: "Redesign of the GOL employee app: a side menu organised by area — crew, approvals, people & culture, travel benefits — and a virtual business card with QR code.",
-    pt: "Redesign do app dos colaboradores da GOL: menu lateral organizado por área — tripulantes, aprovações, gente e cultura, benefício viagem — e cartão de visitas virtual com QR code." },
   { name: "OC Mobile", img: "assets/img/projects/oc-mobile.webp",
     tags: [{ en: "Tablet", pt: "Tablet" }, { en: "Flight operations", pt: "Operações de voo" }],
     en: "Tablet portal for ramp coordinators: digital ramp checklist, chat with dispatch and real-time alerts. Part of the Paperless project, which replaced printed flight documents, and tested on site at Recife airport.",

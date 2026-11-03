@@ -52,7 +52,8 @@
     shield: '<path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/>',
     nodes: '<circle cx="12" cy="5" r="2.5"/><circle cx="5" cy="19" r="2.5"/><circle cx="19" cy="19" r="2.5"/><path d="M12 7.5v4M12 11.5l-5.5 5.5M12 11.5l5.5 5.5"/>',
     chart: '<path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/>',
-    send: '<path d="M4 12l16-8-6 16-2-7z"/>'
+    send: '<path d="M4 12l16-8-6 16-2-7z"/>',
+    external: '<path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/>'
   };
   const icon = (name) => `<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-${name}"/></svg>`;
   function injectSprite() {
@@ -190,7 +191,7 @@
   function projectCard(p) {
     return `
       <a class="card" href="${href("project.html?id=" + p.id)}">
-        <div class="thumb">${thumb(p.kind)}</div>
+        <div class="thumb">${p.thumb ? `<img src="${p.thumb}" alt="" width="800" height="450" loading="lazy" decoding="async">` : thumb(p.kind)}</div>
         <span class="card__meta">${esc(p.company)}, ${esc(p.year)}</span>
         <h3>${esc(nameOf(p))}</h3>
         <p>${esc(t(p.short))}</p>
@@ -365,6 +366,17 @@
       <div class="body">${body}</div></div></section>`;
   }
 
+  /** Screens of a UX/UI case: each one opens full size in a new tab. */
+  function galleryBlock(p) {
+    return `<div class="gallery">${p.gallery.map((g) => `
+      <figure>
+        <a href="${g.img}" target="_blank" rel="noopener" aria-label="${esc(t(g.caption))} (${esc(s("ui.fullSize"))})">
+          <img src="${g.img}" alt="" width="1600" height="900" loading="lazy" decoding="async">
+        </a>
+        <figcaption>${esc(t(g.caption))}</figcaption>
+      </figure>`).join("")}</div>`;
+  }
+
   function notFound(el, listUrl, listKey) {
     el.innerHTML = `<section class="case-hero"><div class="container">
       <span class="comment">404</span><h1>${esc(s("ui.notFound"))}</h1>
@@ -475,12 +487,19 @@ ${a.stack.map((x) => `  - <span class="s">${esc(x)}</span>`).join("\n")}`;
           <div><dt>${esc(s("case.year"))}</dt><dd>${esc(p.year)}</dd></div>
           <div><dt>${esc(s("case.focus"))}</dt><dd>${esc(p.tags.join(", "))}</dd></div>
         </dl>
-        <div class="thumb" style="margin-top:var(--s4);aspect-ratio:21/8">${thumb(p.kind)}</div>
+        ${p.cover
+          ? `<figure class="thumb case-cover"><img src="${p.cover}" alt="${esc(t(p.coverAlt))}" width="1600" height="900" fetchpriority="high" decoding="async"></figure>`
+          : `<div class="thumb" style="margin-top:var(--s4);aspect-ratio:21/8">${thumb(p.kind)}</div>`}
       </div></section>
       ${p.problem ? caseSection(s("case.l.problem"), s("case.challenge"), `<p>${esc(t(p.problem))}</p>`) : ""}
       ${p.approach ? caseSection(s("case.l.approach"), s("case.approach"), `<ul class="ticks">${p.approach.map((d) => `<li>${esc(t(d))}</li>`).join("")}</ul>`) : ""}
-      ${p.results ? caseSection(s("case.l.results"), s("case.results"), `<p>${esc(t(p.results))}</p>`) : ""}
+      ${p.gallery ? caseSection(s("case.l.gallery"), s("case.gallery"), galleryBlock(p)) : ""}
+      ${p.results ? caseSection(s("case.l.results"), s("case.results"), Array.isArray(p.results)
+          ? `<ul class="ticks">${p.results.map((d) => `<li>${esc(t(d))}</li>`).join("")}</ul>`
+          : `<p>${esc(t(p.results))}</p>`) : ""}
       ${p.learnings ? caseSection(s("case.l.learn"), s("case.learnings"), `<p>${esc(t(p.learnings))}</p>`) : ""}
+      ${p.article ? caseSection(s("case.l.article"), s("case.article"), `<p>${esc(s("case.articleText"))}</p>
+          <a class="btn btn--ghost case-article" href="${esc(p.article)}" target="_blank" rel="noopener">${esc(s("case.articleBtn"))} ${icon("external")}<span class="sr-only"> (${esc(s("ui.newTab"))})</span></a>`) : ""}
       <section class="case-section"><div class="container" style="display:block">
         <div class="next-case">
           <a class="btn btn--ghost" href="${href("work.html")}">${icon("back")} ${esc(s("ui.allWork"))}</a>
