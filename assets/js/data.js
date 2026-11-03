@@ -449,8 +449,8 @@ PORTFOLIO.projects = [
     namePt: "GOL ID Acesso",
     featured: false,
     company: "GOL Airlines",
-    year: "2018–2022",
-    tags: ["Biometrics", "Mobile", "Design system", "Pilot"],
+    year: "2019",
+    tags: ["Biometrics", "Mobile", "Design system", "UX writing", "Pilot"],
     kind: "biometrics",
     cover: "assets/img/projects/gol-id-cover.webp",
     thumb: "assets/img/projects/gol-id-thumb.webp",
@@ -461,15 +461,20 @@ PORTFOLIO.projects = [
       en: "An app for employees and visitors to enter GOL's headquarters with their face — a pioneering pilot in Latin America for what would later be tested at the boarding gate.",
       pt: "Um app para colaboradores e visitantes entrarem na sede da GOL com o rosto — um piloto pioneiro na América Latina do que depois seria testado no portão de embarque."
     },
-    role: { en: "UX/UI design: journeys, wireframes, design system and interface", pt: "UX/UI design: jornadas, wireframes, design system e interface" },
+    role: { en: "End-to-end UX lead: design, UI, UX and writing at every stage, front-end refinement after development, and co-creation brainstorms with the GOL Labs team", pt: "UX lead do projeto de ponta a ponta: design, UI, UX e writing em todas as etapas, refinamento do front-end após o desenvolvimento e brainstorms de co-criação com o time do GOL Labs" },
     problem: {
       en: "Getting into GOL's headquarters meant identifying yourself at reception every time, and boarding depends on documents and queues. Facial biometrics could speed both up — but only if people trust it and understand, at every step, what is happening with their face.",
       pt: "Entrar na sede da GOL exigia se identificar na recepção toda vez, e o embarque depende de documentos e filas. A biometria facial poderia acelerar os dois — mas só se as pessoas confiassem nela e entendessem, a cada etapa, o que está acontecendo com o seu rosto."
     },
     approach: [
       { en: "Sketched the journeys on paper first — login, visitor sign-up, activation code and error states — to test ideas before going digital.", pt: "Desenhei as jornadas primeiro no papel — login, cadastro de visitante, código de ativação e estados de erro — para testar ideias antes de ir para o digital." },
+      { en: "Ran brainstorms with the GOL Labs team to co-design the best solution together, before locking the flows.", pt: "Conduzi brainstorms com o time do GOL Labs para desenharmos juntos a melhor solução, antes de fechar os fluxos." },
       { en: "Designed three paths: employees log in with their network account and face ID; first-time visitors enter their details and capture their face; managers view and approve access requests.", pt: "Desenhei três caminhos: colaboradores entram com a conta de rede e o rosto; visitantes de primeira viagem informam seus dados e cadastram o rosto; gestores visualizam e aprovam as solicitações de acesso." },
       { en: "Wrote guidance for the face capture — good lighting, no accessories, a step-by-step before starting — so the photo works on the first try.", pt: "Escrevi orientações para a captura do rosto — ambiente iluminado, sem adereços, um passo a passo antes de começar — para a foto dar certo na primeira tentativa." },
+      { en: "Reduced the time spent reading the face: we worked with the developers on technical measures to make the read faster.", pt: "Reduzimos o tempo de leitura do rosto: trabalhei com os devs em medidas técnicas para deixar a leitura mais rápida." },
+      { en: "Designed the waiting screen to show, step by step, what the app is doing while it reads the face, so the user always understands the wait.", pt: "Desenhei a tela de espera para mostrar, passo a passo, o que o app está fazendo enquanto lê o rosto, para o usuário sempre entender a espera." },
+      { en: "Wrote the app copy in Portuguese and English, from the sign-up guidance to push notifications and e-mails.", pt: "Escrevi os textos do app em português e inglês, das orientações de cadastro às notificações push e e-mails." },
+      { en: "Refined the front-end after the developers built it, polishing the implementation details.", pt: "Refinei o front-end depois que os devs desenvolveram, cuidando dos detalhes da implementação." },
       { en: "Built a small design system — colors, typography and button variations — to keep the app consistent as it grew.", pt: "Criei um pequeno design system — cores, tipografia e variações de botões — para manter o app consistente conforme crescia." },
       { en: "Ran the pilot at GOL's headquarters before the airport tests.", pt: "Rodamos o piloto na sede da GOL antes dos testes em aeroporto." }
     ],
@@ -485,8 +490,8 @@ PORTFOLIO.projects = [
       pt: "Convidados para uma reunião, os visitantes solicitam a entrada no app e passam direto pelas catracas com reconhecimento facial — sem se identificar de novo na recepção. A empresa ganhou uma nova camada de segurança, e o piloto, pioneiro na América Latina, abriu caminho para os testes de embarque facial no portão — parte das iniciativas associadas ao crescimento de EBIT do primeiro ano do GOL Labs."
     },
     learnings: {
-      en: "Trust is a design material. People accept new technology when they can see what it is doing.",
-      pt: "Confiança é material de design. As pessoas aceitam tecnologia nova quando conseguem ver o que ela está fazendo."
+      en: "Waiting time shapes the experience: reducing it technically is only half the job, the interface also has to show clearly what is happening while the user waits. Trust is a design material too: people accept new technology when they can see what it is doing.",
+      pt: "O tempo de espera faz parte da experiência: reduzir a espera com medidas técnicas é só metade do trabalho, a interface também precisa mostrar com clareza o que está acontecendo enquanto o usuário aguarda. Confiança também é material de design: as pessoas aceitam tecnologia nova quando conseguem ver o que ela está fazendo."
     }
   },
   {
