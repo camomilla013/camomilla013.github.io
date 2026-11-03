@@ -21,7 +21,7 @@ PORTFOLIO.status = {
    The order here is the column order of the matrix.
    -------------------------------------------------------------------------- */
 PORTFOLIO.families = {
-  craft:   { en: "Design craft",   pt: "Ofício de design" },
+  craft:   { en: "Design craft",   pt: "Design" },
   agentic: { en: "Agentic build",  pt: "Construção agêntica" },
   testing: { en: "Testing",        pt: "Testes" },
   product: { en: "Product",        pt: "Produto" }
@@ -718,16 +718,16 @@ PORTFOLIO.moreProjects = [
    -------------------------------------------------------------------------- */
 PORTFOLIO.skillsFlow = {
   clusters: {
-    craft: { en: "Design craft", pt: "Ofício de design" },
-    talk:  { en: "Conversation", pt: "Conversa" },
+    craft: { en: "Design craft", pt: "Design" },
+    talk:  { en: "Conversation", pt: "Conversacional" },
     build: { en: "Build & product", pt: "Construção e produto" }
   },
   origins: [
     { id: "o-tv",     years: "2010–2015", en: "Graphics, video & animation", pt: "Gráficos, vídeo e animação" },
     { id: "o-art",    years: "2015–2018", en: "Art direction & head of design",      pt: "Direção de arte e head of design" },
-    { id: "o-ux",     years: "2018–2022", en: "UX/UI for digital products",          pt: "UX/UI de produtos digitais" },
-    { id: "o-voice",  years: "2018–2022", en: "Voice assistants",                    pt: "Assistentes de voz" },
-    { id: "o-ai",     years: "2022–now",  en: "Generative AI agents",                pt: "Agentes de IA generativa" }
+    { id: "o-ux",     years: "2016–now",  en: "UX/UI for digital products",          pt: "UX/UI de produtos digitais" },
+    { id: "o-voice",  years: "2021–2022", en: "Voice assistants",                    pt: "Assistentes de voz" },
+    { id: "o-ai",     years: "2024–now",  en: "Generative AI agents",                pt: "Agentes de IA generativa" }
   ],
   skills: [
     { id: "s-story",  cluster: "craft", en: "Storytelling",                   pt: "Storytelling" },
