@@ -374,6 +374,9 @@ PORTFOLIO.agents = [
    - cover: optional hero image, WebP 1600×900 (coverAlt describes it)
    - thumb: optional card image, WebP 800×450
    - gallery: optional screens [{ img (WebP 1600×900), caption: { en, pt } }]
+     add w and h to show an image in its own proportion instead of 16:9
+   - problem: a paragraph { en, pt } or a list of paragraphs [{ en, pt }, …]
+   - quotes: optional [{ en, pt, by: { en, pt } }], shown after the results
    - results: a paragraph { en, pt } or a list [{ en, pt }, …]
    - article: optional link to the long version (e.g. Medium), shown as a button
    - prototype: optional link to a navigable prototype, highlighted in the case hero
@@ -493,8 +496,8 @@ PORTFOLIO.projects = [
     article: "https://medium.com/@careboucas/ui-ux-portfolio-3b8be226cd2d",
     title: { en: "Face ID for corporate access", pt: "Reconhecimento facial no acesso corporativo" },
     short: {
-      en: "An app for employees and visitors to enter GOL's headquarters with their face — a pioneering pilot in Latin America for what would later be tested at the boarding gate.",
-      pt: "Um app para colaboradores e visitantes entrarem na sede da GOL com o rosto — um piloto pioneiro na América Latina do que depois seria testado no portão de embarque."
+      en: "An app for employees and visitors to enter GOL's headquarters with their face — piloted at Portaria 3 in 2019, with over 3,800 sign-ups in the first three weeks, and the basis for testing boarding at Congonhas.",
+      pt: "Um app para colaboradores e visitantes entrarem na sede da GOL com o rosto — testado na Portaria 3 em 2019, com mais de 3.800 cadastros nas primeiras três semanas, e base para testar o embarque no Congonhas."
     },
     role: { en: "End-to-end UX lead: design, UI, UX and writing at every stage, front-end refinement after development, and co-creation brainstorms with the GOL Labs team", pt: "UX lead do projeto de ponta a ponta: design, UI, UX e writing em todas as etapas, refinamento do front-end após o desenvolvimento e brainstorms de co-criação com o time do GOL Labs" },
     problem: {
@@ -504,14 +507,15 @@ PORTFOLIO.projects = [
     approach: [
       { en: "Sketched the journeys on paper first — login, visitor sign-up, activation code and error states — to test ideas before going digital.", pt: "Desenhei as jornadas primeiro no papel — login, cadastro de visitante, código de ativação e estados de erro — para testar ideias antes de ir para o digital." },
       { en: "Ran brainstorms with the GOL Labs team to co-design the best solution together, before locking the flows.", pt: "Conduzi brainstorms com o time do GOL Labs para desenharmos juntos a melhor solução, antes de fechar os fluxos." },
+      { en: "Designed six flow versions between June and October 2019: from the first core flow to the login with meetings and notifications, the Outlook integration for visitor invitations, and the turnstile release.", pt: "Desenhei seis versões de fluxo entre junho e outubro de 2019: do primeiro fluxo core ao login com reuniões e notificações, passando pela integração com o Outlook para convites de visitantes até a liberação da catraca." },
       { en: "Designed three paths: employees log in with their network account and face ID; first-time visitors enter their details and capture their face; managers view and approve access requests.", pt: "Desenhei três caminhos: colaboradores entram com a conta de rede e o rosto; visitantes de primeira viagem informam seus dados e cadastram o rosto; gestores visualizam e aprovam as solicitações de acesso." },
       { en: "Wrote guidance for the face capture — good lighting, no accessories, a step-by-step before starting — so the photo works on the first try.", pt: "Escrevi orientações para a captura do rosto — ambiente iluminado, sem adereços, um passo a passo antes de começar — para a foto dar certo na primeira tentativa." },
-      { en: "Reduced the time spent reading the face: we worked with the developers on technical measures to make the read faster.", pt: "Reduzimos o tempo de leitura do rosto: trabalhei com os devs em medidas técnicas para deixar a leitura mais rápida." },
-      { en: "Designed the waiting screen to show, step by step, what the app is doing while it reads the face, so the user always understands the wait.", pt: "Desenhei a tela de espera para mostrar, passo a passo, o que o app está fazendo enquanto lê o rosto, para o usuário sempre entender a espera." },
-      { en: "Wrote the app copy in Portuguese and English, from the sign-up guidance to push notifications and e-mails.", pt: "Escrevi os textos do app em português e inglês, das orientações de cadastro às notificações push e e-mails." },
+      { en: "Worked on the time it takes to read the face: together with the developers, we took technical measures to speed up the read, and designed the screens so the user always knows what is happening during the wait.", pt: "Trabalhei no tempo de leitura do rosto: com os devs, tomamos medidas técnicas para acelerar a leitura, e desenhei as telas para o usuário sempre saber o que está acontecendo durante a espera." },
+      { en: "Wrote the feedback for each step of the wait, such as 'Great, your picture was taken! Please wait…' and 'Excellent! Just wait while we check…', so the user never has to guess.", pt: "Escrevi o feedback de cada etapa da espera, como 'Ótimo, sua foto foi tirada! Aguarde…' e 'Excelente! Aguarde enquanto verificamos…', para o usuário nunca precisar adivinhar." },
+      { en: "Wrote the app copy in Portuguese and English, from capture guidance to push notifications and e-mails.", pt: "Escrevi os textos do app em português e inglês, das orientações de captura às notificações push e e-mails." },
       { en: "Refined the front-end after the developers built it, polishing the implementation details.", pt: "Refinei o front-end depois que os devs desenvolveram, cuidando dos detalhes da implementação." },
       { en: "Built a small design system — colors, typography and button variations — to keep the app consistent as it grew.", pt: "Criei um pequeno design system — cores, tipografia e variações de botões — para manter o app consistente conforme crescia." },
-      { en: "Ran the pilot at GOL's headquarters before the airport tests.", pt: "Rodamos o piloto na sede da GOL antes dos testes em aeroporto." }
+      { en: "Ran the pilot at GOL's headquarters, Portaria 3, from 29 August 2019, before the airport tests, which were the next step: testing the same technology on passenger boarding at Congonhas.", pt: "Rodamos o piloto na sede da GOL, na Portaria 3, a partir de 29 de agosto de 2019, antes dos testes em aeroporto. O próximo passo era testar a mesma tecnologia no embarque de passageiros em Congonhas." }
     ],
     gallery: [
       { img: "assets/img/projects/gol-id-sketches.webp", caption: { en: "Paper wireframes to test different ideas before going digital.", pt: "Wireframes em papel para testar ideias diferentes antes de ir para o digital." } },
@@ -521,12 +525,90 @@ PORTFOLIO.projects = [
       { img: "assets/img/projects/gol-id-system.webp", caption: { en: "Design system: colors, typography and button variations.", pt: "Design system: cores, tipografia e variações de botões." } }
     ],
     results: {
-      en: "Once invited to a meeting, visitors request entry in the app and go straight through the facial recognition turnstiles — no second identification at reception. The company gained a new security layer, and the pilot, pioneering in Latin America, paved the way for facial boarding tests at the gate — part of the initiatives linked to GOL Labs' first-year EBIT growth.",
-      pt: "Convidados para uma reunião, os visitantes solicitam a entrada no app e passam direto pelas catracas com reconhecimento facial — sem se identificar de novo na recepção. A empresa ganhou uma nova camada de segurança, e o piloto, pioneiro na América Latina, abriu caminho para os testes de embarque facial no portão — parte das iniciativas associadas ao crescimento de EBIT do primeiro ano do GOL Labs."
+      en: "In the first three weeks of the pilot (29 August to 20 September 2019), the reports show 3,816 sign-ups and over 12,000 access events, entries and exits. Average face recognition time fell from 2.98 s to 2 s between the 4 and 11 September reports, as a result of the technical measures we took with the developers, and held at 2 s until 20 September.",
+      pt: "Nas primeiras três semanas do piloto (29/08 a 20/09/2019), os relatórios registram 3.816 cadastros e mais de 12 mil eventos de acesso, entradas e saídas. O tempo médio de reconhecimento facial caiu de 2,98 s para 2 s entre os relatórios de 4 e 11 de setembro, fruto das medidas técnicas que tomamos com os devs, e se manteve em 2 s até 20 de setembro."
     },
     learnings: {
       en: "Waiting time shapes the experience: reducing it technically is only half the job, the interface also has to show clearly what is happening while the user waits. Trust is a design material too: people accept new technology when they can see what it is doing.",
       pt: "O tempo de espera faz parte da experiência: reduzir a espera com medidas técnicas é só metade do trabalho, a interface também precisa mostrar com clareza o que está acontecendo enquanto o usuário aguarda. Confiança também é material de design: as pessoas aceitam tecnologia nova quando conseguem ver o que ela está fazendo."
+    }
+  },
+  {
+    id: "sabre",
+    name: "Sabre Historical Archives",
+    namePt: "Dados Históricos Sabre",
+    featured: false,
+    company: "GOL Airlines",
+    year: "2023–2025",
+    tags: ["Internal tool", "UX for complex data", "Design system", "Role-based access"],
+    kind: "brand",
+    cover: "assets/img/projects/sabre-cover.webp",
+    thumb: "assets/img/projects/sabre-thumb.webp",
+    coverAlt: { en: "Sabre Historical Archives: search, choice between bookings and the PNR summary with itinerary and tickets", pt: "Dados Históricos Sabre: busca, escolha entre reservas e o resumo do PNR com itinerário e bilhetes" },
+    title: { en: "Data that no longer disappears", pt: "Dados que não somem mais" },
+    short: {
+      en: "An internal tool for GOL's customer service to look up bookings, tickets and services that Sabre has already deleted. The reservation system erases this data about 13 months after the flight — but by law, a customer can take the airline to court up to 5 years after the trip.",
+      pt: "Uma ferramenta interna para que o atendimento da GOL consulte reservas, bilhetes e serviços apagados pela Sabre. O sistema de reservas apaga esses dados cerca de 13 meses após o voo. Pela lei, um cliente pode entrar na Justiça até 5 anos depois da viagem."
+    },
+    role: {
+      en: "Lead product designer, from start to delivery: research on the legacy tools, information architecture, high-fidelity prototype, export model, training screens and follow-up of development and testing. I worked with the PO, the project manager, Customer Service (CRC) and the software vendor.",
+      pt: "Designer principal do produto, do início à entrega: pesquisa das ferramentas antigas, arquitetura da informação, protótipo em alta fidelidade, modelo de exportação, telas de treinamento e acompanhamento do desenvolvimento e dos testes. Trabalhei com a PO, a gerente de projeto, a área de Atendimento (CRC) e a fábrica de software."
+    },
+    problem: [
+      {
+        en: "GOL uses Sabre as its reservation system. Sabre shares the same database with many airlines and deletes data on a regular schedule: bookings (PNRs) 396 days after the last flight; tickets (VCRs) between 7 and 396 days, depending on status; paid services (EMDs) 400 days after issue or use. After that, the data doesn't show up even in the history.",
+        pt: "A GOL usa a Sabre como sistema de reservas. A Sabre compartilha a mesma base com várias companhias e apaga os dados com regularidade: reservas (PNRs) 396 dias após o último voo; bilhetes (VCRs) entre 7 e 396 dias, conforme o status; serviços pagos (EMDs) 400 dias após a emissão ou o uso. Depois disso, os dados não aparecem nem no histórico."
+      },
+      {
+        en: "The problem is that the law allows lawsuits up to 5 years after the trip. In those cases a loose report carries little weight, because it can easily be altered. The customer service, reconciliation and Procon teams needed to see the original record. Until then, looking up old data depended on three tools that didn't talk to each other — the Sabre Interact terminal, SQL Server reports and a Power BI dashboard (InfoPAX) — and none of them showed bookings Sabre had already deleted.",
+        pt: "O problema é que a lei permite ações judiciais até 5 anos depois da viagem. Nesses processos, um relatório solto vale pouco porque pode ser facilmente alterado. As equipes de atendimento, conciliação e Procon precisavam ver o registro original. Até então, a consulta a dados antigos dependia de três ferramentas que não conversavam entre si — o terminal Sabre Interact, relatórios em SQL Server e um painel de Power BI (InfoPAX) — e nenhuma delas mostrava reservas que a Sabre já tinha apagado."
+      },
+      {
+        en: "The design challenge: bring a huge volume of technical data — booking codes, coupons, fares, taxes and free-text histories — into a clear web interface. It had to feel familiar to people who had spent years on the Sabre terminal, and be safe enough for personal and legal data.",
+        pt: "O desafio de design: levar para uma interface web clara um volume enorme de dados técnicos, como códigos de reserva, cupons, tarifas, taxas e históricos em texto corrido. O resultado precisava ser familiar para quem passou anos no terminal Sabre e seguro o bastante para dados pessoais e jurídicos."
+      }
+    ],
+    approach: [
+      { en: "Studied the tools the team already used. With no market benchmark available, the references were Sabre Interact, InfoPAX and the old reports. I watched recorded sessions in which CRC analysts showed how they built a search.", pt: "Estudei as ferramentas que a equipe já usava. Sem benchmark de mercado, as referências foram o Sabre Interact, o InfoPAX e os relatórios antigos. Acompanhei sessões gravadas em que analistas da CRC mostravam como montavam uma consulta." },
+      { en: "Kept Sabre's mental model. Labels (Reservation, Itinerary, Ticketing/Pricing, Received from) and codes stayed as agents already knew them. What changed was the visual organisation: cards, hierarchy, spacing and colour.", pt: "Mantive o modelo mental do Sabre. Os rótulos (Reservation, Itinerary, Ticketing/Pricing, Received from) e os códigos ficaram como o agente já conhecia. A organização visual é que mudou: cards, hierarquia, espaço e cor." },
+      { en: "Reduced the search to a single field: the PNR. When the same code appears in different years, the screen lists the options with route and creation date so the person can pick the right booking.", pt: "Reduzi a busca a um campo só: o PNR. Quando o mesmo código aparece em anos diferentes, a tela lista as opções com rota e data de criação para a pessoa escolher a reserva certa." },
+      { en: "Organised the information in two levels in the sidebar. Tools at the top (New search, Users, Access history); search results below (Summary, PAX data, Remarks, PNR History). The header with the PNR and creation date is always visible.", pt: "Organizei a informação em dois níveis na barra lateral. Em cima ficam as ferramentas (Nova consulta, Usuários, Histórico de acessos). Embaixo, os resultados da consulta (Resumo, Dados de PAX, Remarks, PNR History). O cabeçalho com o PNR e a data de criação fica sempre visível." },
+      { en: "Used colour to separate types of information: blue for fares, green for itinerary and payment, beige for miscellaneous information. The eye finds the right block before reading.", pt: "Usei cor para separar tipos de informação. Azul para tarifa, verde para itinerário e pagamento, bege para informações diversas. O olho encontra o bloco certo antes de ler." },
+      { en: "Details open in modals. Ticket (VCR), expanded ticket, ticket history, services (EMD) and service history open over the booking, without taking the person out of context.", pt: "Detalhes abrem em modais. Bilhete (VCR), bilhete expandido, histórico do bilhete, serviços (EMD) e histórico de serviços abrem sobre a reserva, sem tirar a pessoa do contexto." },
+      { en: "Designed role-based access. The profiles are Administrator, Exporter and Reader, and the export button only appears for those with permission. The Access history screen logs every search and export for auditing.", pt: "Desenhei o acesso por perfil. Os perfis são Administrador, Exportador e Leitor, e o botão de exportar só aparece para quem tem permissão. A tela de Histórico de acessos registra cada consulta e exportação para auditoria." },
+      { en: "Proposed the export model: a 10-tab spreadsheet (PAX, Booking, Baggage, Remarks, PNR History, VCR, VCR History, Expanded VCR, EMD and EMD History) to validate fields and format with the CRC supervisors before development.", pt: "Propus o modelo de exportação. Fiz uma planilha com 10 abas (PAX, Reserva, Bagagem, Remarks, PNR History, VCR, VCR History, Expanded VCR, EMD e EMD History) para validar campos e formato com as supervisoras da CRC antes do desenvolvimento." },
+      { en: "Wrote the interface copy, including the empty state (\"Sorry, we couldn't find bookings for this PNR\"), error messages with cause and next step, and filter labels.", pt: "Escrevi os textos de interface. Inclui estado vazio (\"Desculpe, mas não encontramos reservas associadas a esse PNR\"), mensagens de erro com causa e próximo passo e rótulos de filtros." },
+      { en: "Built a small design system of colours, buttons, tabs, filters, cards and modals, and documented the specs in the prototype for the development team.", pt: "Montei um pequeno design system de cores, botões, abas, filtros, cards e modais, e documentei as especificações no protótipo para o time de desenvolvimento." },
+      { en: "Followed the delivery end to end: the kick-off with the software vendor, the front-end review, QA sign-off and the adjustment rounds between 2024 and 2025.", pt: "Acompanhei a entrega de ponta a ponta. Participei do kick-off com a fábrica de software, da revisão do front-end, da homologação com o QA e das rodadas de ajuste entre 2024 e 2025." },
+      { en: "Prepared the training: generated the screens in the Reader profile view for the CRC training material.", pt: "Preparei o treinamento. Gerei as telas na visão do perfil Leitor para o material de treinamento da CRC." }
+    ],
+    gallery: [
+      { img: "assets/img/projects/sabre-before.webp", w: 2000, h: 568, caption: { en: "Before: Sabre Interact, SQL Server reports and Power BI. None of the three showed data Sabre had already deleted. (Images blurred to protect customer data.)", pt: "Antes: Sabre Interact, relatórios em SQL Server e Power BI. Nenhuma das três mostrava dados já apagados pela Sabre. (Imagens desfocadas para proteger dados de clientes.)" } },
+      { img: "assets/img/projects/sabre-flow.webp", w: 2000, h: 1488, caption: { en: "The search flow has four steps: corporate login, search by PNR, choosing between bookings with the same code, and an empty state that points to the next step.", pt: "O fluxo de consulta tem quatro passos: login com a conta corporativa, busca por PNR, escolha entre reservas com o mesmo código e um estado vazio que orienta o próximo passo." } },
+      { img: "assets/img/projects/sabre-summary.webp", w: 2000, h: 1417, caption: { en: "The PNR Summary shows passengers, seats and special services, itinerary and tickets on a single screen. The structure echoes Interact, but is easier to read.", pt: "O Resumo do PNR mostra passageiros, assentos e serviços especiais, itinerário e bilhetes em uma tela só. A estrutura lembra o Interact, com leitura mais fácil." } },
+      { img: "assets/img/projects/sabre-pax.webp", w: 2000, h: 1488, caption: { en: "Passenger data in tabs: details, contact, baggage (with tags listed separately, as the data model required) and remarks.", pt: "Os dados do passageiro ficam em abas: detalhes, contato, bagagem (com as etiquetas separadas, como pediu a modelagem de dados) e remarks." } },
+      { img: "assets/img/projects/sabre-vcr.webp", w: 2000, h: 1042, caption: { en: "Ticket (VCR) in a modal, with fare, calculation and payment in cards of different colours, and access to the expanded ticket and coupon history.", pt: "Bilhete (VCR) em modal, com tarifa, cálculo e pagamento em cards de cores diferentes, e acesso ao bilhete expandido e ao histórico de cupons." } },
+      { img: "assets/img/projects/sabre-emd.webp", w: 2000, h: 1147, caption: { en: "An iteration with the business: services with many taxes show the total and a \"See all…\" link, instead of stretching the card.", pt: "Uma iteração com o negócio: serviços com muitas taxas mostram o total e um \"Ver todas…\", em vez de esticar o card." } },
+      { img: "assets/img/projects/sabre-pnr-history.webp", w: 2000, h: 811, caption: { en: "PNR History redesign (Dec 2024). The Air Itinerary filter turns Sabre's raw text into a table of flight changes; the full view keeps the original text.", pt: "Redesenho do PNR History (dez/2024). O filtro Air Itinerary transforma o texto do Sabre em uma tabela de alterações de voo. A visão completa mantém o texto original." } },
+      { img: "assets/img/projects/sabre-access.webp", w: 2000, h: 811, caption: { en: "Access management: users by profile and status, and a history of searches and exports for auditing.", pt: "Gestão de acessos: usuários por perfil e status, e histórico de consultas e exportações para auditoria." } },
+      { img: "assets/img/projects/sabre-profiles.webp", w: 2000, h: 811, caption: { en: "The same screen seen by different profiles. Without permission, you don't even see the option to export or manage.", pt: "A mesma tela vista por perfis diferentes. Quem não tem permissão nem vê a opção de exportar ou gerenciar." } },
+      { img: "assets/img/projects/sabre-export.webp", w: 2000, h: 589, caption: { en: "Export to PDF or CSV, choosing the data blocks, and error messages that explain what happened and what to do.", pt: "Exportação em PDF ou CSV, com escolha dos blocos de dados, e mensagens de erro que explicam o que aconteceu e o que fazer." } },
+      { img: "assets/img/projects/sabre-design-system.webp", w: 2000, h: 1367, caption: { en: "Design system: a palette with GOL orange, colours that separate types of information and components reused across 30+ screens.", pt: "Design system: paleta com o laranja GOL, cores que separam tipos de informação e componentes reutilizados nas mais de 30 telas." } }
+    ],
+    results: [
+      { en: "The prototype became the foundation of the whole project: the software vendor used the screens to split and detail the user stories.", pt: "O protótipo virou a base de todo o projeto: a fábrica de software usou as telas para dividir e detalhar as histórias de usuário." },
+      { en: "At the front-end delivery, in February 2024, the GOL team rated the work \"above expectations\", with few visual adjustments.", pt: "Na entrega do front-end, em fevereiro de 2024, o time da GOL avaliou o trabalho como \"acima do esperado\", com poucos ajustes visuais." },
+      { en: "The PNR History redesign was approved by the business area in the presentation meeting itself.", pt: "O redesenho do PNR History foi aprovado pela área de negócio na própria reunião de apresentação." },
+      { en: "In September 2025, the progressive test scenarios reached 100% completion in QA. In February 2026, infrastructure approved the historical database for production, and the launch moved into preparation.", pt: "Em setembro de 2025, os cenários de teste progressivos chegaram a 100% concluídos na homologação. Em fevereiro de 2026, a área de infraestrutura aprovou o banco de dados histórico para produção, e o lançamento passou à fase de preparação." },
+      { en: "Once in production, the tool will extend lookups from about 13 months to 5 years — the period the law allows for lawsuits — in the format agents already know.", pt: "Quando entrar em produção, a ferramenta vai estender a consulta de cerca de 13 meses para 5 anos — o prazo que a lei dá para ações judiciais —, no formato que os agentes já conhecem." }
+    ],
+    quotes: [
+      { en: "Really nice layout! Very similar to Sabre and intuitive.", pt: "Muito legal o layout! Bem semelhante ao Sabre e intuitivo.", by: { en: "Customer service analyst", pt: "Analista da área de Atendimento" } },
+      { en: "I believe 90% of what's there will make it in.", pt: "Acredito que 90% do que está aí vai constar.", by: { en: "Data modelling lead, reviewing the prototype", pt: "Responsável pela modelagem de dados, ao revisar o protótipo" } }
+    ],
+    learnings: {
+      en: "In an internal tool, being familiar is a design decision too. Keeping Sabre's vocabulary and logic made agents recognise the screen instantly, and the visual organisation did the rest. I also learned that a prototype is an alignment tool: when validating the export, users checked the fictional data instead of the layout, so I had to make clear what was being validated at each stage. And a data project depends on the database as much as on the interface. Many changes came from the data model — fields that didn't exist, rules for copying and exporting. Designing close to the data team avoided rework.",
+      pt: "Em ferramenta interna, ser familiar também é decisão de design. Manter o vocabulário e a lógica do Sabre fez os agentes reconhecerem a tela na hora, e a organização visual cuidou do resto. Aprendi também que protótipo é ferramenta de alinhamento. Na validação da exportação, os usuários conferiram os dados fictícios em vez do layout, e foi preciso deixar claro o que estava sendo validado em cada etapa. Por último, projeto com dados depende do banco tanto quanto da interface. Boa parte das mudanças veio da modelagem, como campos que não existiam e regras de cópia e exportação. Desenhar perto do time de dados evitou retrabalho."
     }
   },
   {
@@ -662,10 +744,6 @@ PORTFOLIO.moreProjects = [
     tags: [{ en: "Tablet", pt: "Tablet" }, { en: "Flight operations", pt: "Operações de voo" }],
     en: "Tablet portal for ramp coordinators: digital ramp checklist, chat with dispatch and real-time alerts. Part of the Paperless project, which replaced printed flight documents, and tested on site at Recife airport.",
     pt: "Portal em tablet para os coordenadores de rampa: checklist de rampa digital, chat com o despacho e alertas em tempo real. Parte do projeto Paperless, que substituiu documentos de voo impressos, testado em campo no aeroporto de Recife." },
-  { name: "Sabre Historical Archive", namePt: "Dados Históricos Sabre", img: "assets/img/projects/sabre-historical.webp",
-    tags: [{ en: "Web app", pt: "Web app" }, { en: "Internal tool", pt: "Ferramenta interna" }],
-    en: "Web tool to search and export historical reservation data from Sabre — itinerary, ticketing, EMDs, baggage and contacts — with filters and export by user profile.",
-    pt: "Ferramenta web para consultar e exportar dados históricos de reservas do Sabre — itinerário, emissão, EMDs, bagagens e contatos — com filtros e exportação por perfil de usuário." },
   { name: "Weight & Balance Backup", img: "assets/img/projects/weight-balance.webp",
     tags: [{ en: "Web app", pt: "Web app" }, { en: "Flight safety", pt: "Segurança de voo" }],
     en: "Contingency weight-and-balance system for flight dispatch, used when the main system is down: flight data entry, calculated weight and index, and the aircraft envelope chart.",
