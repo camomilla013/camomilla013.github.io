@@ -502,7 +502,8 @@ ${a.stack.map((x) => `  - <span class="s">${esc(x)}</span>`).join("\n")}`;
       </div></section>
       ${p.problem ? caseSection(s("case.l.problem"), s("case.challenge"), (Array.isArray(p.problem) ? p.problem : [p.problem]).map((x) => `<p>${esc(t(x))}</p>`).join("")) : ""}
       ${p.approach ? caseSection(s("case.l.approach"), s("case.approach"), `<ul class="ticks">${p.approach.map((d) => `<li>${esc(t(d))}</li>`).join("")}</ul>`) : ""}
-      ${p.gallery ? caseSection(s("case.l.gallery"), s("case.gallery"), galleryBlock(p)) : ""}
+      ${p.gallery ? caseSection(s("case.l.gallery"), s("case.gallery"), galleryBlock(p)
+          + (p.moreLink ? `<a class="btn btn--ghost case-more" href="${esc(p.moreLink.url)}" target="_blank" rel="noopener">${esc(t(p.moreLink.label))} ${icon("external")}<span class="sr-only"> (${esc(s("ui.newTab"))})</span></a>` : "")) : ""}
       ${p.results ? caseSection(s("case.l.results"), s("case.results"), (Array.isArray(p.results)
           ? `<ul class="ticks">${p.results.map((d) => `<li>${esc(t(d))}</li>`).join("")}</ul>`
           : `<p>${esc(t(p.results))}</p>`)

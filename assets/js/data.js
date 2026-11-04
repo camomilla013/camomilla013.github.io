@@ -653,7 +653,7 @@ PORTFOLIO.projects = [
     featured: false,
     company: "Vivo (Telefônica Brasil)",
     year: "2018",
-    tags: ["Fintech", "UX research", "Mobile-first"],
+    tags: ["Fintech", "UX research", "Mobile-first", "Social media"],
     kind: "fintech",
     cover: "assets/img/projects/zuum-cover.webp",
     thumb: "assets/img/projects/zuum-thumb.webp",
@@ -691,33 +691,47 @@ PORTFOLIO.projects = [
   },
   {
     id: "campus-party",
-    name: "Campus Party Brazil",
+    name: "Campus Party Brasil",
     featured: false,
     company: "Campus Party Brasil",
-    year: "2017",
-    tags: ["Art direction", "Web & app UI", "Design leadership"],
+    year: "2017–2018",
+    tags: ["Art direction", "Web UI", "Design leadership", "Social media", "Graphic design"],
     kind: "brand",
     cover: "assets/img/projects/campus-party-cover.webp",
     thumb: "assets/img/projects/campus-party-thumb.webp",
-    coverAlt: { en: "Campus Party Bahia website: event home with countdown and the Arena, Camping and Open Campus sections", pt: "Site da Campus Party Bahia: home do evento com contagem regressiva e as seções Arena, Camping e Open Campus" },
+    coverAlt: { en: "Collage of Campus Party Brasil social media posts: #CPBR11 campaign in São Paulo and the Bahia and Brasília editions", pt: "Colagem de posts de redes sociais da Campus Party Brasil: campanha #CPBR11 em São Paulo e as edições da Bahia e de Brasília" },
     title: { en: "Design for Brazil's largest tech festival", pt: "Design para o maior festival de tecnologia do Brasil" },
     short: {
-      en: "Head of Design for all digital visual communication: web, app, social and campaigns.",
-      pt: "Head of Design de toda a comunicação visual digital: web, app, redes sociais e campanhas."
+      en: "Head of Design for all of Campus Party Brasil's digital visual communication: website, app, social media and campaigns.",
+      pt: "Head of Design de toda a comunicação visual digital da Campus Party Brasil: site, app, redes sociais e campanhas."
     },
-    role: { en: "Head of Design", pt: "Head of Design" },
-    problem: {
-      en: "A festival present in many cities and countries needed a consistent digital presence, with requests coming from marketing, sales, content and accreditation at the same time.",
-      pt: "Um festival presente em várias cidades e países precisava de uma presença digital consistente, com demandas chegando de marketing, comercial, conteúdo e credenciamento ao mesmo tempo."
-    },
-    approach: [
-      { en: "Organised the design workflow and the intake of requests from every area.", pt: "Organizei o fluxo de trabalho de design e a entrada de demandas de todas as áreas." },
-      { en: "Designed web interfaces, landing pages, app content and campaigns across editions in several Brazilian states.", pt: "Desenhei interfaces web, landing pages, conteúdo do app e campanhas para edições em vários estados." }
+    role: { en: "Head of Design (promoted from Digital Designer)", pt: "Head of Design (promovida de Designer Digital)" },
+    problem: [
+      { en: "Campus Party is Brazil's largest technology and innovation festival, present in more than 12 countries, with over 70 editions around the world.", pt: "A Campus Party é o maior festival de tecnologia e inovação do Brasil, presente em mais de 12 países e com mais de 70 edições pelo mundo." },
+      { en: "In 2017 and 2018 it ran editions in several Brazilian states at once. Each one needed its own website, social media, ads and emails, while art requests arrived from Sales, Marketing, Content, Social Media and Accreditation at the same time.", pt: "Em 2017 e 2018, o festival teve edições em vários estados ao mesmo tempo. Cada uma precisava de site, redes sociais, anúncios e e-mails próprios, enquanto as demandas de arte chegavam juntas do Comercial, Marketing, Conteúdos, Social Media e Credenciamento." }
     ],
-    results: {
-      en: "A consistent visual system across a dozen editions in 2017.",
-      pt: "Um sistema visual consistente em mais de uma dezena de edições em 2017."
+    approach: [
+      { en: "Joined as Digital Designer and was promoted to Head of Design five months later, taking over all of the festival's digital visual communication in Brazil.", pt: "Entrei como Designer Digital e fui promovida a Head of Design cinco meses depois, assumindo toda a comunicação visual digital do festival no Brasil." },
+      { en: "Organised the design workflow and a single intake for art requests from Sales, Marketing, Content, Social Media and Accreditation.", pt: "Organizei o fluxo de trabalho de design e uma entrada única para as demandas de arte do Comercial, Marketing, Conteúdos, Social Media e Credenciamento." },
+      { en: "Produced the art for the website, the app and every Campus Party social channel in Brazil — Facebook, Instagram and Twitter — together with the social media team.", pt: "Produzi a arte do site, do app e de todas as redes sociais da Campus Party no Brasil — Facebook, Instagram e Twitter — junto com o time de social media." },
+      { en: "Gave each edition its own look inside one visual system, so the brand stayed recognisable from São Paulo to Salvador and Brasília.", pt: "Dei a cada edição uma cara própria dentro de um mesmo sistema visual, para a marca continuar reconhecível de São Paulo a Salvador e Brasília." },
+      { en: "Designed web interfaces, landing pages, email marketing, newsletters and digital ads.", pt: "Desenhei interfaces web, landing pages, e-mail marketing, newsletters e anúncios digitais." },
+      { en: "Created advertising for TV, internet, outdoor, print and digital media, with creative ideas built for impact and engagement.", pt: "Criei peças publicitárias para TV, internet, mídia exterior, impressa e digital, com ideias criativas pensadas para impacto e engajamento." }
+    ],
+    gallery: [
+      { img: "assets/img/projects/campus-party-social-sp.webp", caption: { en: "#CPBR11 campaign in São Paulo: the edition launch, programme areas like Campus Future and Campus Wellness, the app, CP Hack and the call for startups and makers.", pt: "Campanha da #CPBR11 em São Paulo: lançamento da edição, áreas da programação como Campus Future e Campus Wellness, o app, o CP Hack e a chamada para startups e makers." } },
+      { img: "assets/img/projects/campus-party-social-editions.webp", caption: { en: "Regional editions with their own palette inside the same system — Bahia and Brasília — plus engagement and seasonal posts.", pt: "Edições regionais com paleta própria dentro do mesmo sistema — Bahia e Brasília — além de posts de engajamento e datas comemorativas." } },
+      { img: "assets/img/projects/campus-party-site.webp", caption: { en: "Campus Party Bahia website: countdown to the event, ticket call, agenda and speaker highlights, plus the Arena, Camping and Open Campus sections.", pt: "Site da Campus Party Bahia: contagem regressiva para o evento, chamada para ingressos, agenda e destaques de palestrantes, além das seções Arena, Camping e Open Campus." } }
+    ],
+    moreLink: {
+      url: "https://camillareboucas.myportfolio.com/social-media",
+      label: { en: "See more social media art", pt: "Ver mais artes de redes sociais" }
     },
+    results: [
+      { en: "One consistent visual system across 16 editions and events: in 2017, Campus Party in Brasília, Minas Gerais and Bahia, Campus Weekend Pato Branco and six Campus Nights in Minas Gerais; in 2018, Campus Party Brasil in São Paulo and the editions in Brasília, Minas Gerais, Natal, Rondônia and Bahia.", pt: "Um sistema visual consistente em 16 edições e eventos: em 2017, Campus Party em Brasília, Minas Gerais e Bahia, Campus Weekend Pato Branco e seis Campus Night em Minas Gerais; em 2018, Campus Party Brasil em São Paulo e as edições de Brasília, Minas Gerais, Natal, Rondônia e Bahia." },
+      { en: "Requests from five areas flowing through one design workflow, keeping quality steady across simultaneous editions.", pt: "Demandas de cinco áreas passando por um único fluxo de design, mantendo a qualidade em edições simultâneas." },
+      { en: "Promoted from Digital Designer to Head of Design after five months.", pt: "Promoção de Designer Digital a Head of Design em cinco meses." }
+    ],
     learnings: {
       en: "A system scales better than heroics: clear intake and reusable patterns kept quality high under pressure.",
       pt: "Um sistema escala melhor que esforço heroico: entrada clara de demandas e padrões reutilizáveis mantiveram a qualidade sob pressão."
@@ -791,11 +805,7 @@ PORTFOLIO.moreProjects = [
   { name: "Uber / 99 Integrated Check-in", namePt: "Check-in integrado Uber/99", img: "assets/img/projects/uber-checkin.webp",
     tags: [{ en: "Integration", pt: "Integração" }, { en: "B2C", pt: "B2C" }],
     en: "Check-in inside the Uber and 99 apps on the way to the airport: the customer confirms the flight and gets the boarding pass, with live flight status, gate and seat, without leaving the ride.",
-    pt: "Check-in dentro dos apps Uber e 99 a caminho do aeroporto: o cliente confirma o voo e recebe o cartão de embarque, com status do voo, portão e assento, sem sair da corrida." },
-  { name: "GOL Gift", kind: "gift",
-    tags: [{ en: "E-commerce", pt: "E-commerce" }, { en: "B2C", pt: "B2C" }],
-    en: "Gift card purchase experience.",
-    pt: "Experiência de compra de vale-presente." }
+    pt: "Check-in dentro dos apps Uber e 99 a caminho do aeroporto: o cliente confirma o voo e recebe o cartão de embarque, com status do voo, portão e assento, sem sair da corrida." }
 ];
 
 /* --------------------------------------------------------------------------
