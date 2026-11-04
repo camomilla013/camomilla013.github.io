@@ -6,28 +6,28 @@ Site estático em **HTML, CSS e JavaScript puros**, bilíngue (inglês por padr�
 
 ## 1. Endereço do site
 
-Já configurado para o usuário **camomilla013**: o site fica em **https://camomilla013.github.io**.
-Se um dia mudar de usuário, troque `camomilla013` em todos os `.html` (VS Code: `Ctrl + Shift + H`).
+Já configurado para o usuário **madebycamilla**: o site fica em **https://madebycamilla.github.io**.
+Se um dia mudar de usuário, troque `madebycamilla` em todos os `.html` (VS Code: `Ctrl + Shift + H`).
 
 ---
 
 ## 2. Publicar no GitHub Pages (grátis)
 
 1. No GitHub, clique em **New repository**.
-2. Nome do repositório: **`camomilla013.github.io`** (exatamente assim).
-   Esse nome faz o site abrir na raiz: `https://camomilla013.github.io` e faz a página 404 funcionar.
+2. Nome do repositório: **`madebycamilla.github.io`** (exatamente assim).
+   Esse nome faz o site abrir na raiz: `https://madebycamilla.github.io` e faz a página 404 funcionar.
 3. Marque **Public** → **Create repository**.
 4. Na página do repositório: **Add file → Upload files** e arraste **todo o conteúdo desta pasta** (não a pasta em si — o `index.html` precisa ficar na raiz). Inclua o arquivo oculto `.nojekyll`.
 5. **Commit changes**.
 6. Vá em **Settings → Pages** → *Build and deployment* → Source: **Deploy from a branch** → Branch: **main** / **/(root)** → **Save**.
-7. Em 1–3 minutos o site estará em `https://camomilla013.github.io`.
+7. Em 1–3 minutos o site estará em `https://madebycamilla.github.io`.
 
-> Pelo VS Code: instale o Git, abra a pasta, use a aba **Source Control** → *Publish to GitHub* → escolha o nome `camomilla013.github.io` (público). Depois siga o passo 6.
+> Pelo VS Code: instale o Git, abra a pasta, use a aba **Source Control** → *Publish to GitHub* → escolha o nome `madebycamilla.github.io` (público). Depois siga o passo 6.
 
 ### Links para compartilhar
-- Inglês: `https://camomilla013.github.io`
-- Português: `https://camomilla013.github.io/?lang=pt`
-- Um case direto: `https://camomilla013.github.io/agent.html?id=gal`
+- Inglês: `https://madebycamilla.github.io`
+- Português: `https://madebycamilla.github.io/?lang=pt`
+- Um case direto: `https://madebycamilla.github.io/agent.html?id=gal`
 
 ### LinkedIn e currículo
 - LinkedIn → **Perfil → Adicionar seção → Destaques → Adicionar link** → cole a URL. A imagem `assets/img/og-image.png` aparece como capa.
