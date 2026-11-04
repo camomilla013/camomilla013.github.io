@@ -732,15 +732,15 @@ PORTFOLIO.projects = [
    - company / year: optional, shown above the title (default: GOL Airlines)
    -------------------------------------------------------------------------- */
 PORTFOLIO.moreProjects = [
+  { name: "News graphics at Globo", namePt: "Arte para telejornais na Globo", kind: "infographic", img: "assets/img/projects/globonews-cover.webp", url: "https://camillareboucas.myportfolio.com/infographics", company: "Globo", year: "2013–2015",
+    tags: [{ en: "Information design", pt: "Design de informação" }, { en: "Motion", pt: "Motion" }],
+    en: "Maps, animated infographics and graphic systems for national TV news, including the 2014 World Cup and Elections. The 2014 Elections idents won a journalism award.",
+    pt: "Mapas, infográficos animados e sistemas gráficos para telejornais nacionais, incluindo Copa e Eleições 2014. As vinhetas das Eleições 2014 ganharam um prêmio de jornalismo." },
   { name: "Smart Fare", namePt: "Tarifa Inteligente", kind: "commerce", year: "2018–2022",
     tags: [{ en: "Journey design", pt: "Desenho de jornada" }, { en: "B2C", pt: "B2C" }],
     en: "A new ticket-purchase feature, from discovery workshops to the automation logic behind the fare. Adopted by customers from day one and one of the main drivers of the 80% EBIT increase in GOL Labs' first year.",
     pt: "Uma nova funcionalidade na compra de passagens, dos workshops de discovery à lógica de automação por trás da tarifa. Adotada pelos clientes desde o primeiro dia e uma das principais responsáveis pelo EBIT de 80% no primeiro ano do GOL Labs." },
-  { name: "News graphics at Globo", namePt: "Arte para telejornais na Globo", kind: "infographic", company: "Globo", year: "2013–2015",
-    tags: [{ en: "Information design", pt: "Design de informação" }, { en: "Motion", pt: "Motion" }],
-    en: "Maps, animated infographics and graphic systems for national TV news, including the 2014 World Cup and Elections. The 2014 Elections idents won a journalism award.",
-    pt: "Mapas, infográficos animados e sistemas gráficos para telejornais nacionais, incluindo Copa e Eleições 2014. As vinhetas das Eleições 2014 ganharam um prêmio de jornalismo." },
-  { name: "OC Mobile", img: "assets/img/projects/oc-mobile.webp",
+   { name: "OC Mobile", img: "assets/img/projects/oc-mobile.webp",
     tags: [{ en: "Tablet", pt: "Tablet" }, { en: "Flight operations", pt: "Operações de voo" }],
     en: "Tablet portal for ramp coordinators: digital ramp checklist, chat with dispatch and real-time alerts. Part of the Paperless project, which replaced printed flight documents, and tested on site at Recife airport.",
     pt: "Portal em tablet para os coordenadores de rampa: checklist de rampa digital, chat com o despacho e alertas em tempo real. Parte do projeto Paperless, que substituiu documentos de voo impressos, testado em campo no aeroporto de Recife." },

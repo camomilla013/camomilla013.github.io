@@ -349,14 +349,19 @@
     const grid = document.getElementById("work-grid");
     if (grid) grid.innerHTML = P.projects.map(projectCard).join("");
     const more = document.getElementById("more-grid");
-    if (more) more.innerHTML = P.moreProjects.map((p) => `
-      <article class="card">
+    if (more) more.innerHTML = P.moreProjects.map((p) => {
+      const tag = p.url ? "a" : "article";
+      const link = p.url ? ` href="${esc(p.url)}" target="_blank" rel="noopener"` : "";
+      return `
+      <${tag} class="card"${link}>
         <div class="thumb">${p.img ? `<img src="${p.img}" alt="${esc(s("wk.imgAlt"))} ${esc(nameOf(p))}" width="800" height="450" loading="lazy" decoding="async">` : thumb(p.kind)}</div>
         <span class="card__meta">${esc(p.company || "GOL Airlines")}${p.year ? ", " + esc(p.year) : ""}</span>
         <h3>${esc(nameOf(p))}</h3>
         <p>${esc(t(p))}</p>
         <div class="tags">${p.tags.map((x) => `<span class="tag">${esc(t(x))}</span>`).join("")}</div>
-      </article>`).join("");
+        ${p.url ? `<div class="card__foot"><span class="card__go">${esc(s("wk.moreOpen"))} ${icon("arrow")}</span></div>` : ""}
+      </${tag}>`;
+    }).join("");
   }
 
   /* ---------- AGENT CASE ---------- */

@@ -130,11 +130,12 @@ window.STRINGS = {
 
   /* ---------- work page ---------- */
   "wk.label": { en: "UX/UI & design portfolio", pt: "portfólio de UX/UI e design" },
-  "wk.title": { en: "The design foundations behind every agent", pt: "Os fundamentos de design por trás de cada agente" },
-  "wk.lede":  { en: "Voice skills, digital products, news graphics and brands. Each one taught me something I still use in every conversation I design.", pt: "Skills de voz, produtos digitais, arte para telejornais e marcas. Cada um me ensinou algo que ainda uso em toda conversa que desenho." },
+  "wk.title": { en: "Real products that shaped how I design every agent", pt: "Produtos reais que moldaram como desenho cada agente" },
+  "wk.lede":  { en: "Voice, biometrics, fintech and internal tools: from the GOL Staff App and the GOL Alexa Skill to a Sabre historical data tool. Each one taught me something I still use in every conversation I design.", pt: "Cases de voz, biometria, fintech e ferramentas internas: do GOL Staff App e da skill da Alexa a uma ferramenta de dados históricos da Sabre. Cada um me ensinou algo que ainda uso em toda conversa que desenho." },
   "wk.gridLabel": { en: "Projects", pt: "Projetos" },
   "wk.stat":  { en: "interface design projects at GOL Airlines", pt: "projetos de design de interfaces na GOL Linhas Aéreas" },
   "wk.moreLabel": { en: "more projects", pt: "mais projetos" },
+  "wk.moreOpen": { en: "View infographics", pt: "Ver infográficos" },
   "wk.moreTitle": { en: "More design projects", pt: "Mais projetos de design" },
   "wk.imgAlt": { en: "Interface design for", pt: "Design de interface do projeto" },
   "wk.moreLede":  { en: "A selection of other projects, most of them from the 50+ interfaces I designed at GOL Airlines — from airport kiosks to internal operations tools — plus news graphics at Globo.", pt: "Uma seleção de outros projetos, a maioria entre as mais de 50 interfaces que desenhei na GOL Linhas Aéreas — de totens no aeroporto a ferramentas internas de operação — e a arte para telejornais na Globo." },
