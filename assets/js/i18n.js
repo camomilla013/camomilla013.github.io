@@ -5,7 +5,7 @@
    ========================================================================== */
 window.STRINGS = {
   /* ---------- page titles ---------- */
-  "title.home":    { en: "Camilla Rebouças — AI Conversation Design Specialist", pt: "Camilla Rebouças — Especialista em Design Conversacional de IA" },
+  "title.home":    { en: "Camilla Rebouças — Innovation & AI Product Designer", pt: "Camilla Rebouças — Designer de Produtos de Inovação e IA" },
   "title.agents":  { en: "AI agents — Camilla Rebouças", pt: "Agentes de IA — Camilla Rebouças" },
   "title.work":    { en: "Design work — Camilla Rebouças", pt: "Projetos de design — Camilla Rebouças" },
   "title.about":   { en: "About — Camilla Rebouças", pt: "Sobre — Camilla Rebouças" },
@@ -42,8 +42,8 @@ window.STRINGS = {
   },
 
   /* ---------- home: hero & chat ---------- */
-  "hero.l1":   { en: "AI Conversation", pt: "Especialista em" },
-  "hero.l2":   { en: "Design Specialist", pt: "Design Conversacional de IA" },
+  "hero.l1":   { en: "Innovation & AI", pt: "Designer de Produtos" },
+  "hero.l2":   { en: "Product Designer", pt: "de Inovação e IA" },
   "hero.lede": {
     en: "I design how AI agents talk, reason and recover when they don't know — and then I implement them. 16 years in design, from TV news graphics to enterprise agents at GOL Airlines.",
     pt: "Desenho como agentes de IA conversam, raciocinam e se recuperam quando não sabem — e depois eu implemento esses agentes. São 16 anos de design, da arte para telejornais aos agentes corporativos da GOL Linhas Aéreas."
@@ -97,7 +97,7 @@ window.STRINGS = {
   "fw.all":   { en: "See all design work", pt: "Ver todos os projetos de design" },
   "cta.label": { en: "next step", pt: "próximo passo" },
   "cta.title": { en: "Looking for someone to design your agents?", pt: "Procurando alguém para desenhar seus agentes?" },
-  "cta.text":  { en: "I'm open to conversation design and AI agent roles, in Brazil or remote. Let's talk on LinkedIn.", pt: "Estou aberta a posições em design conversacional e agentes de IA, no Brasil ou remotas. Vamos conversar no LinkedIn." },
+  "cta.text":  { en: "I'm open to product design roles in innovation and AI, in Brazil or remote. Let's talk on LinkedIn.", pt: "Estou aberta a posições de design de produtos em inovação e IA, no Brasil ou remotas. Vamos conversar no LinkedIn." },
   "cta.btn":   { en: "Message me on LinkedIn", pt: "Me chama no LinkedIn" },
   "cta.about": { en: "About me", pt: "Sobre mim" },
 
@@ -182,7 +182,7 @@ window.STRINGS = {
   "ab.label": { en: "about me", pt: "sobre mim" },
   "ab.title": { en: "Hi, I'm Camilla.", pt: "Oi, eu sou a Camilla." },
   "ab.photoAlt": { en: "Portrait of Camilla Alves Rebouças, smiling, on a city street", pt: "Retrato de Camilla Alves Rebouças, sorrindo, em uma rua da cidade" },
-  "ab.b1": { en: "I'm an AI conversation design specialist and senior product designer, with 16 years in design.", pt: "Sou especialista em design conversacional de IA e product designer sênior, com 16 anos de design." },
+  "ab.b1": { en: "I'm an innovation and AI product designer, with 16 years in design.", pt: "Sou designer de produtos de inovação e IA, com 16 anos de design." },
   "ab.b2": {
     en: "At GOL Labs, GOL Airlines' innovation lab, I set the experience direction for GAL — the company's first generative-AI assistant — and lead a portfolio of AI and automation initiatives from discovery to rollout. I design each agent's persona, dialogue, knowledge and guardrails, and I implement them hands-on in Copilot Studio and Power Platform.",
     pt: "No GOL Labs, o laboratório de inovação da GOL Linhas Aéreas, defini a direção de experiência da GAL — o primeiro assistente de IA generativa da empresa — e conduzo um portfólio de iniciativas de IA e automação do discovery ao rollout. Desenho a persona, o diálogo, o conhecimento e os guardrails de cada agente, e coloco a mão na massa para implementá-los no Copilot Studio e na Power Platform."
@@ -237,8 +237,8 @@ window.STRINGS = {
   "ct.h1":    { en: "Let's talk", pt: "Vamos conversar" },
   "ct.title": { en: "Want a digital product your users can trust?", pt: "Quer um produto digital em que seus usuários confiem?" },
   "ct.text":  {
-    en: "I'm open to Product Designer and conversation designer roles — in Brazil or remote. The best way to reach me is a message on LinkedIn.",
-    pt: "Estou aberta a posições de Product Designer e Designer conversacional — no Brasil ou remotas. A melhor forma de falar comigo é uma mensagem no LinkedIn."
+    en: "I'm open to Product Designer roles in innovation and AI — in Brazil or remote. The best way to reach me is a message on LinkedIn.",
+    pt: "Estou aberta a posições de Designer de Produtos em inovação e IA — no Brasil ou remotas. A melhor forma de falar comigo é uma mensagem no LinkedIn."
   },
 
   /* ---------- 404 ---------- */
