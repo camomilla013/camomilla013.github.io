@@ -537,6 +537,9 @@ PORTFOLIO.projects = [
     year: "2021–2022",
     tags: ["Voice UX", "Intents", "Dialogue design"],
     kind: "voice",
+    cover: "assets/img/projects/alexa-cover.webp",
+    thumb: "assets/img/projects/alexa-thumb.webp",
+    coverAlt: { en: "GOL skill open on an Echo Show: \"The flight has landed!\", with the hint \"Try saying 'Alexa, check another flight' or 'Alexa, exit'\"", pt: "Skill da GOL aberta em um Echo Show: \"O voo pousou no destino!\", com a dica \"Tente dizer 'Alexa, consultar outro voo' ou 'Alexa, sair'\"" },
     title: { en: "GOL's first voice experience", pt: "A primeira experiência de voz da GOL" },
     short: {
       en: "Flight status by voice — where my conversation design work began.",
@@ -586,7 +589,14 @@ PORTFOLIO.projects = [
     },
     approach: [
       { en: "Ran UX research to understand what people needed to know before signing up.", pt: "Conduzi pesquisa de UX para entender o que as pessoas precisavam saber antes de se cadastrar." },
-      { en: "Redesigned the responsive website, mobile-first.", pt: "Redesenhei o site responsivo, com abordagem mobile-first." }
+      { en: "Redesigned the responsive website, mobile-first.", pt: "Redesenhei o site responsivo, com abordagem mobile-first." },
+      { en: "Organised the menu around what people came to do: log in, download the app, get the Zuum card, learn how it works, deposit money or open a business account.", pt: "Organizei o menu em torno do que as pessoas vinham fazer: entrar, baixar o app, pedir o cartão Zuum, entender como funciona, depositar ou abrir conta para empresa." },
+      { en: "Designed the online deposit as a short form: pick your bank, confirm the destination account and enter the amount — with the minimum value, limits and deadlines explained in plain words.", pt: "Desenhei o depósito online como um formulário curto: escolher o banco, confirmar a conta de destino e informar o valor — com valor mínimo, limites e prazos explicados em linguagem simples." }
+    ],
+    gallery: [
+      { img: "assets/img/projects/zuum-home.webp", caption: { en: "Home on mobile and desktop: an institutional video, a clear call to open an account and help for new customers.", pt: "Home no celular e no desktop: vídeo institucional, um convite claro para abrir a conta e ajuda para quem acabou de chegar." } },
+      { img: "assets/img/projects/zuum-deposit.webp", caption: { en: "Online deposit: choose the bank, the destination account and the amount, with the deadline explained in plain words.", pt: "Depósito online: escolha do banco, da conta de destino e do valor, com o prazo explicado em linguagem simples." } },
+      { img: "assets/img/projects/zuum-screens.webp", caption: { en: "Menu organised by task, web password creation and the app download page.", pt: "Menu organizado por tarefa, criação de senha web e a página de download do app." } }
     ],
     results: {
       en: "A simpler, more fluid interface that translated financial complexity into clear choices.",
@@ -776,7 +786,7 @@ PORTFOLIO.timeline = [
   { years: "2022 – now", org: "GOL Airlines · GOL Labs",
     role: { en: "Senior Product Designer — Conversational AI & AI agents", pt: "Senior Product Designer — IA conversacional e agentes de IA" },
     text: { en: "Experience direction for GAL, GOL's first generative-AI assistant, and product ownership of a portfolio of eight AI and automation initiatives — from discovery to enterprise rollout. I design and build agents in Copilot Studio, set conversation standards for the squad and mentor designers.", pt: "Direção de experiência da GAL, o primeiro assistente de IA generativa da GOL, e product ownership de um portfólio de oito iniciativas de IA e automação — do discovery ao rollout corporativo. Desenho e construo agentes no Copilot Studio, defino padrões conversacionais do squad e faço mentoria de designers." } },
-  { years: "2018 – 2022", org: "GOL Airlines · GOL Labs",
+  { years: "2018 – now", org: "GOL Airlines · GOL Labs",
     role: { en: "Product Designer — Voicebots, automation & UX", pt: "Product Designer — Voicebots, automação e UX" },
     text: { en: "50+ interface design projects at GOL Airlines, including GOL's first Alexa skill, Smart Fare, GOL ID biometric boarding, GOLLOG Online Sales and the Employee App — as UX lead in agile, cross-functional squads.", pt: "Mais de 50 projetos de design de interfaces na GOL Linhas Aéreas, entre eles a primeira skill da GOL para Alexa, Tarifa Inteligente, embarque biométrico GOL ID, GOLLOG Vendas Online e o App dos Colaboradores — como UX lead em squads ágeis e multidisciplinares." } },
   { years: "2018", org: "Vivo (Telefônica Brasil)",
