@@ -527,7 +527,7 @@ ${a.stack.map((x) => `  - <span class="s">${esc(x)}</span>`).join("\n")}`;
       <div class="org">${esc(lang === "pt" && x.orgPt ? x.orgPt : x.org)}</div><p>${esc(t(x.text))}</p></li>`).join("");
     const tk = document.getElementById("toolkit");
     if (tk) tk.innerHTML = P.toolkit.map((g) => `
-      <div class="toolkit__group" data-cluster="${g.cluster}"><h3><i aria-hidden="true"></i>${esc(t(g.group))}</h3>
+      <div class="toolkit__group" data-cluster="${g.cluster}"><h3><i aria-hidden="true"></i>${esc(t(g.group))}</h3>${g.note ? `<p>${esc(t(g.note))}</p>` : ""}
       <div class="toolkit__items">${g.items.map((i) => `<span>${esc(i)}</span>`).join("")}</div></div>`).join("");
     const ed = document.getElementById("education");
     if (ed) ed.innerHTML = P.education.map((e) => `<li><b>${esc(e.school)}</b><span>${esc(t(e))}</span></li>`).join("");

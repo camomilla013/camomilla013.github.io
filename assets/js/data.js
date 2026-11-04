@@ -873,23 +873,41 @@ PORTFOLIO.skillsFlow = {
 PORTFOLIO.timeline = [
   { years: "2022 – now", org: "GOL Airlines · GOL Labs",
     role: { en: "Senior Product Designer — Conversational AI & AI agents", pt: "Senior Product Designer — IA conversacional e agentes de IA" },
-    text: { en: "Experience direction for GAL, GOL's first generative-AI assistant, and product ownership of a portfolio of eight AI and automation initiatives — from discovery to enterprise rollout. I design and build agents in Copilot Studio, set conversation standards for the squad and mentor designers.", pt: "Direção de experiência da GAL, o primeiro assistente de IA generativa da GOL, e product ownership de um portfólio de oito iniciativas de IA e automação — do discovery ao rollout corporativo. Desenho e construo agentes no Copilot Studio, defino padrões conversacionais do squad e faço mentoria de designers." } },
+    text: {
+      en: "Experience direction and product ownership of GAL, GOL's first generative-AI assistant and now its most used agent: around 300 users a day and 6,000 sessions a month, answering 15,000 employees in Teams — including anonymous ethics and conduct questions. I lead a portfolio of eight AI and automation initiatives, from a Lean A3 mentor to empathetic writer agents and knowledge search with cited sources, and implement them in Copilot Studio with GPT and Claude. I also set the squad's conversation and Dev/Test/Prod release standards and mentor designers.",
+      pt: "Direção de experiência e product ownership da GAL, o primeiro assistente de IA generativa da GOL e hoje o agente mais usado da empresa: cerca de 300 usuários por dia e 6 mil sessões por mês, atendendo 15 mil colaboradores no Teams — inclusive consultas anônimas de Ética e Conduta. Conduzo um portfólio de oito iniciativas de IA e automação, de um mentor de A3 Lean a agentes redatores com tom empático e busca com citação de fontes, e implemento esses agentes no Copilot Studio com GPT e Claude. Também defino os padrões conversacionais e de deploy entre Dev, HML e Prod do squad e faço mentoria de designers."
+    } },
   { years: "2018 – now", org: "GOL Airlines · GOL Labs",
     role: { en: "Product Designer — Voicebots, automation & UX", pt: "Product Designer — Voicebots, automação e UX" },
-    text: { en: "50+ interface design projects at GOL Airlines, including GOL's first Alexa skill, Smart Fare, GOL ID biometric boarding, GOLLOG Online Sales and the Employee App — as UX lead in agile, cross-functional squads.", pt: "Mais de 50 projetos de design de interfaces na GOL Linhas Aéreas, entre eles a primeira skill da GOL para Alexa, Tarifa Inteligente, embarque biométrico GOL ID, GOLLOG Vendas Online e o App dos Colaboradores — como UX lead em squads ágeis e multidisciplinares." } },
+    text: {
+      en: "50+ traditional and conversational interface projects as UX lead in agile, cross-functional squads, from discovery to measurement with the Double Diamond. Highlights: GOL's first Alexa skill, Smart Fare, GOL ID biometric boarding (a first in Latin America), GOLLOG Online Sales and the Employee App; the VoeGOL site and app on the Tangerina design system, mobile check-in and Apple and Google Wallet boarding passes; operations, airport and process-automation systems; and innovation and design-thinking workshops across the company.",
+      pt: "Mais de 50 projetos de interfaces tradicionais e conversacionais como UX lead em squads ágeis e multidisciplinares, do discovery à mensuração com o Double Diamond. Destaques: a primeira skill da GOL para Alexa, Tarifa Inteligente, embarque biométrico GOL ID (pioneiro na América Latina), GOLLOG Vendas Online e o App dos Colaboradores; o site e o app VoeGOL no design system Tangerina, o check-in mobile e o cartão de embarque para Apple e Google Wallet; sistemas de Operações, Aeroportos e automação de processos; e workshops de inovação e design thinking para toda a companhia."
+    } },
   { years: "2018", org: "Vivo (Telefônica Brasil)",
     role: { en: "UI/UX Designer", pt: "UI/UX Designer" },
-    text: { en: "UX research and mobile-first redesign of Zuum, a Vivo + Mastercard digital account.", pt: "Pesquisa de UX e redesign mobile-first da Zuum, conta digital Vivo + Mastercard." } },
+    text: {
+      en: "Dedicated to Zuum, the Vivo + Mastercard digital account: UX research and the mobile-first redesign of its responsive website, plus in-app push, social media and marketing campaign strategy, internal communications and sales presentations.",
+      pt: "Dedicação integral à Zuum, conta digital da joint venture Vivo + Mastercard: pesquisa de UX e redesign mobile-first do novo site responsivo, além de estratégia de pushes in-app, redes sociais e campanhas de marketing, endomarketing e apresentações para o time comercial."
+    } },
   { years: "2015 – 2018", org: "Campus Party Brasil · ZoeFilms",
     role: { en: "Head of Design / Art Director", pt: "Head of Design / Diretora de Arte" },
-    text: { en: "Digital visual communication for Brazil's largest technology festival; art direction, illustration and animation for TV series and campaigns.", pt: "Comunicação visual digital do maior festival de tecnologia do Brasil; direção de arte, ilustração e animação para séries de TV e campanhas." } },
+    text: {
+      en: "At Campus Party Brasil, the country's largest technology festival, I joined as a digital designer and became Head of Design five months later, running all digital visual communication — site, app, social media, landing pages, newsletters and campaigns for TV, outdoor and print — for editions across Brazil. Before that, as art director at ZoeFilms: visual concepts, storyboards and illustration for the TV Cultura animated series “Eu e o Quarteto Apavorante”, and 21 animations for a brand's YouTube campaign.",
+      pt: "Na Campus Party Brasil, o maior festival de tecnologia do país, entrei como designer digital e cinco meses depois assumi como Head of Design, responsável por toda a comunicação visual digital — site, app, redes sociais, landing pages, newsletters e campanhas para TV, mídia exterior e impressa — em edições por todo o Brasil. Antes disso, como diretora de arte na ZoeFilms: conceitos visuais, storyboards e ilustração da série animada “Eu e o Quarteto Apavorante”, da TV Cultura, e 21 animações para a campanha de uma marca no YouTube."
+    } },
   { years: "2013 – 2015", org: "Globo",
     role: { en: "Designer — Art & information design", pt: "Designer — Arte e design de informação" },
-    text: { en: "Daily news graphics, maps and animated infographics for national TV news. The 2014 Elections idents won a journalism award.", pt: "Arte diária, mapas e infográficos animados para telejornais nacionais. As vinhetas das Eleições 2014 ganharam prêmio de jornalismo." } },
+    text: {
+      en: "Daily news graphics, maps and animated infographics for national and local TV news — Jornal Nacional, Fantástico, SporTV and, above all, GloboNews, where I also took briefings from editors, organized the art desk's workflow and reviewed artwork. Visual identity for two GloboNews shows and special projects for the 2014 World Cup and Elections; the Elections idents won a journalism award.",
+      pt: "Arte diária, mapas e infográficos animados para telejornais nacionais e locais — Jornal Nacional, Fantástico, SporTV e, principalmente, GloboNews, onde também recebia briefings dos editores, organizava o fluxo de produção da equipe de arte e revisava as peças. Identidade visual de dois programas da GloboNews e projetos especiais da Copa e das Eleições 2014; as vinhetas das Eleições ganharam prêmio de jornalismo."
+    } },
   { years: "2010 – 2013", org: "Studios & agencies",
     orgPt: "Estúdios e agências",
     role: { en: "Video editor, 3D animator & illustrator", pt: "Editora de vídeo, animadora 3D e ilustradora" },
-    text: { en: "Where it started: editing, animation and illustration for TV and advertising.", pt: "Onde tudo começou: edição, animação e ilustração para TV e publicidade." } }
+    text: {
+      en: "Where it started: editing commercials and TV shows, 3D animation for TV ads at BlackHouse, illustration for a TV Cultura animated series at ZoeFilms, e-commerce design and photography, and motion graphics, 3D and campaign pieces for brands like Starbucks, Subway and Havaianas at Grupo Rai.",
+      pt: "Onde tudo começou: edição de comerciais e programas de TV, animação 3D para filmes publicitários na BlackHouse, ilustração para uma série animada da TV Cultura na ZoeFilms, design e fotografia para e-commerce, e motion graphics, 3D e peças de campanha para marcas como Starbucks, Subway e Havaianas no Grupo Rai."
+    } }
 ];
 
 PORTFOLIO.education = [
@@ -900,14 +918,18 @@ PORTFOLIO.education = [
 ];
 
 PORTFOLIO.toolkit = [
-  { group: { en: "Agents & AI", pt: "Agentes e IA" }, cluster: "talk",
-    items: ["Copilot Studio", "Microsoft 365 Copilot", "Azure OpenAI", "Alexa Skills", "ChatGPT · Claude · Gemini"] },
-  { group: { en: "Automation & data", pt: "Automação e dados" }, cluster: "build",
-    items: ["Power Automate", "Power Apps", "Dataverse", "SharePoint", "Adaptive Cards", "Entra ID", "Databricks"] },
-  { group: { en: "Delivery & governance", pt: "Entrega e governança" }, cluster: "build",
-    items: ["Azure DevOps", "Jira", "ALM pipelines (Dev/Test/Prod)", "Scrum · Kanban · Lean"] },
-  { group: { en: "Design & prototyping", pt: "Design e prototipação" }, cluster: "craft",
-    items: ["Figma", "Adobe Creative Cloud", "HTML & CSS", "VS Code", "Motion & 3D"] }
+  { group: { en: "AI & agents", pt: "IA e agentes" }, cluster: "talk",
+    note: { en: "Designing, prompting and implementing agents and voice assistants.", pt: "Para desenhar, escrever prompts e implementar agentes e assistentes de voz." },
+    items: ["Claude Code", "Copilot Studio", "Microsoft 365 Copilot", "Azure OpenAI", "ChatGPT · Claude · Gemini", "Alexa Skills"] },
+  { group: { en: "Design & research", pt: "Design e pesquisa" }, cluster: "craft",
+    note: { en: "Interfaces, prototypes and usability tests, plus solution mapping in Miro.", pt: "Interfaces, protótipos e testes de usabilidade, além do desenho de solução no Miro." },
+    items: ["Figma", "FigJam", "Sketch", "Miro", "Maze", "UserTesting", "Adobe Creative Cloud", "Motion & 3D", "HTML & CSS", "VS Code"] },
+  { group: { en: "Automation, data & metrics", pt: "Automação, dados e métricas" }, cluster: "build",
+    note: { en: "Flows, connectors and data behind each agent; usage metrics in Datadog and conversation and product-data analysis in Databricks.", pt: "Fluxos, conectores e dados por trás de cada agente; métricas de uso no Datadog e acompanhamento de conversas e análise de dados do produto no Databricks." },
+    items: ["Power Automate", "Power Apps", "Dataverse", "SharePoint", "Adaptive Cards", "Entra ID", "Datadog", "Databricks"] },
+  { group: { en: "Delivery & documentation", pt: "Entrega e documentação" }, cluster: "build",
+    note: { en: "Backlog in Notion and Jira, documentation in Confluence, and Office for AI/RAG knowledge documents, decks and spreadsheets.", pt: "Backlog no Notion e no Jira, documentação no Confluence e o pacote Office para documentos de conhecimento de IA/RAG, apresentações e planilhas." },
+    items: ["Jira", "Azure DevOps", "Notion", "Confluence", "Microsoft Office", "ALM pipelines (Dev/Test/Prod)", "Scrum · Kanban · Lean"] }
 ];
 
 /* Your public links. Only LinkedIn is shown in the contact page and footer. */

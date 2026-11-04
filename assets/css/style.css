@@ -574,6 +574,7 @@ ul.contrib__chips { list-style: none; margin: 0; padding: 0; }
 .toolkit__group[data-cluster="craft"] { --c: var(--viz-craft); }
 .toolkit__group[data-cluster="talk"] { --c: var(--viz-talk); }
 .toolkit__group[data-cluster="build"] { --c: var(--viz-build); }
+.toolkit__group p { color: var(--muted); font-size: var(--fs-sm); margin: calc(var(--s2) * -0.5) 0 var(--s2); }
 .toolkit__items { display: flex; flex-wrap: wrap; gap: 8px; }
 .toolkit__items span { font-size: .84rem; padding: 7px 12px; border-radius: 8px; background: var(--surface-2); border: 1px solid var(--line); transition: border-color .2s, box-shadow .2s; }
 .toolkit__items span:hover { border-color: var(--c); box-shadow: 0 0 14px -4px var(--c); }
