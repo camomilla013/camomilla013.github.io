@@ -200,7 +200,7 @@ window.STRINGS = {
   "ab.label": { en: "about me", pt: "sobre mim" },
   "ab.title": { en: "Hi, I'm Camilla.", pt: "Oi, eu sou a Camilla." },
   "ab.photoAlt": { en: "Portrait of Camilla Alves Rebouças, smiling, on a city street", pt: "Retrato de Camilla Alves Rebouças, sorrindo, em uma rua da cidade" },
-  "ab.b1": { en: "I'm an AI conversation design specialist with 16 years in design.", pt: "Sou especialista em design conversacional de IA, com 16 anos de design." },
+  "ab.b1": { en: "I'm a specialist in product design and generative AI, with 16 years in design.", pt: "Sou especialista em design de produto e IA generativa, com 16 anos de design." },
   "ab.b2": {
     en: "At GOL Labs, GOL Airlines' innovation lab, I set the experience direction for GAL — the company's first generative-AI assistant — and lead a portfolio of AI and automation initiatives from discovery to rollout. I design each agent's persona, dialogue, knowledge and guardrails, and I build them hands-on in Copilot Studio and Power Platform.",
     pt: "No GOL Labs, o laboratório de inovação da GOL Linhas Aéreas, defini a direção de experiência da GAL — o primeiro assistente de IA generativa da empresa — e conduzo um portfólio de iniciativas de IA e automação do discovery ao rollout. Desenho a persona, o diálogo, o conhecimento e os guardrails de cada agente, e coloco a mão na massa para construí-los no Copilot Studio e na Power Platform."
@@ -252,10 +252,10 @@ window.STRINGS = {
   /* ---------- contact ---------- */
   "ct.label": { en: "contact", pt: "contato" },
   "ct.h1":    { en: "Let's talk", pt: "Vamos conversar" },
-  "ct.title": { en: "Building an AI agent your users will trust?", pt: "Construindo um agente de IA em que seus usuários vão confiar?" },
+  "ct.title": { en: "Want a digital product your users can trust?", pt: "Quer um produto digital em que seus usuários confiem?" },
   "ct.text":  {
-    en: "I'm open to conversation design, conversational AI and AI agent roles — in Brazil or remote. The best way to reach me is a message on LinkedIn.",
-    pt: "Estou aberta a posições em design conversacional, IA conversacional e agentes de IA — no Brasil ou remotas. A melhor forma de falar comigo é uma mensagem no LinkedIn."
+    en: "I'm open to Product Designer and conversation designer roles — in Brazil or remote. The best way to reach me is a message on LinkedIn.",
+    pt: "Estou aberta a posições de Product Designer e Designer conversacional — no Brasil ou remotas. A melhor forma de falar comigo é uma mensagem no LinkedIn."
   },
 
   /* ---------- 404 ---------- */
