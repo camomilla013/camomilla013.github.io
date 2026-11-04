@@ -9,6 +9,10 @@
   "use strict";
   const SVGNS = "http://www.w3.org/2000/svg";
   let state = null; // persists across language re-renders
+  // The root element survives re-renders (only its contents are replaced), so anything
+  // attached to it or observing it is kept here and swapped out on the next render.
+  let onEscape = null;
+  let resizeObs = null;
 
   function render(root, ctx) {
     if (!root) return;
@@ -146,7 +150,9 @@
     root.querySelectorAll("[data-cluster-filter]").forEach((b) => b.addEventListener("click", () => {
       clusterFilter = clusterFilter === b.dataset.clusterFilter ? null : b.dataset.clusterFilter; focusIds = null; applyFocus();
     }));
-    root.addEventListener("keydown", (e) => { if (e.key === "Escape") { focusIds = null; clusterFilter = null; applyFocus(); } });
+    if (onEscape) root.removeEventListener("keydown", onEscape);
+    onEscape = (e) => { if (e.key === "Escape") { focusIds = null; clusterFilter = null; applyFocus(); } };
+    root.addEventListener("keydown", onEscape);
 
     const tableBtn = root.querySelector("#flow-table-btn");
     tableBtn.addEventListener("click", () => {
@@ -176,9 +182,10 @@
     });
 
     if ("ResizeObserver" in window) {
+      if (resizeObs) resizeObs.disconnect(); // the previous one watches a node that was just replaced
       let raf;
-      const ro = new ResizeObserver(() => { cancelAnimationFrame(raf); raf = requestAnimationFrame(draw); });
-      ro.observe(flow);
+      resizeObs = new ResizeObserver(() => { cancelAnimationFrame(raf); raf = requestAnimationFrame(draw); });
+      resizeObs.observe(flow);
     }
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => draw());
   }

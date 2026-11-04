@@ -39,7 +39,7 @@ Se um dia mudar de usuário, troque `madebycamilla` em todos os `.html` (VS Code
 ## 3. Estrutura
 
 ```
-index.html          Home: hero em formato de chat, 6 camadas de um agente, infográfico, destaques
+index.html          Home: hero com ilustração de fluxo de conversa, 6 camadas de um agente, infográfico, destaques
 agents.html         Portfólio de agentes de IA + matriz "O que eu fiz em cada agente"
 work.html           Portfólio de UX/UI e design
 agent.html          Template de case de agente   → agent.html?id=gal

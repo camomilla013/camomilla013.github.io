@@ -50,24 +50,6 @@ window.STRINGS = {
   },
   "hero.cta1": { en: "See AI agents", pt: "Ver agentes de IA" },
   "hero.cta2": { en: "See design work", pt: "Ver projetos de design" },
-  "chat.caption": { en: "A sample conversation in which the portfolio's agent introduces Camilla.", pt: "Uma conversa de exemplo em que o agente do portfólio apresenta a Camilla." },
-  "chat.title":  { en: "Portfolio agent", pt: "Agente do portfólio" },
-  "chat.online": { en: "online", pt: "online" },
-  "chat.sys1":   { en: "initializing portfolio…", pt: "inicializando portfólio…" },
-  "chat.sys2":   { en: "loading 5 agents, 8 design projects", pt: "carregando 5 agentes, 8 projetos de design" },
-  "chat.q":      { en: "So, what do you actually do?", pt: "E aí, o que você faz de verdade?" },
-  "chat.a": {
-    en: "I turn scattered knowledge and real user needs into AI agents people trust. I design the persona, the dialogue, the guardrails and the metrics — then I implement it in Copilot Studio.",
-    pt: "Transformo conhecimento espalhado e necessidades reais de usuários em agentes de IA em que as pessoas confiam. Desenho a persona, o diálogo, os guardrails e as métricas — e depois implemento tudo no Copilot Studio."
-  },
-  "chat.grounded":  { en: "grounded in", pt: "baseado em" },
-  "chat.groundedV": { en: "5 agents, 16 years of design", pt: "5 agentes, 16 anos de design" },
-  "chat.fallback":  { en: "not needed ✓", pt: "não necessário ✓" },
-  "chat.chipsLabel": { en: "Suggested replies", pt: "Respostas sugeridas" },
-  "chat.chip1": { en: "Show me the agents", pt: "Me mostra os agentes" },
-  "chat.chip2": { en: "How do your skills connect?", pt: "Como suas habilidades se conectam?" },
-  "chat.chip3": { en: "Tell me your story", pt: "Conta sua história" },
-  "chat.input": { en: "Want to talk? Message me on LinkedIn", pt: "Quer conversar? Me chama no LinkedIn" },
 
   /* ---------- home: capabilities ---------- */
   "caps.label": { en: "what I bring to an agent", pt: "o que eu levo para um agente" },

@@ -259,55 +259,9 @@ main { display: block; }
 }
 .hero__lede { font-size: var(--fs-md); color: var(--muted); max-width: 46ch; margin-bottom: var(--s4); line-height: 1.55; }
 
-.chat {
-  position: relative;
-  background: var(--surface); border: 1px solid var(--line-strong); border-radius: 20px;
-  box-shadow: 0 30px 80px -40px rgba(0, 229, 255, .35), 0 0 0 1px rgba(162, 89, 255, .08);
-  overflow: hidden;
-}
-.chat__bar {
-  display: flex; align-items: center; gap: 10px; padding: 12px 16px;
-  border-bottom: 1px solid var(--line); background: var(--surface-2);
-  font-family: var(--mono); font-size: .76rem; color: var(--muted);
-}
-.chat__avatar { width: 26px; height: 26px; border-radius: 8px; background: linear-gradient(135deg, var(--cyan), var(--purple)); display: grid; place-items: center; color: #08080B; font-weight: 700; font-size: .7rem; }
-.chat__title { color: var(--text); font-family: var(--font); font-weight: 600; font-size: .86rem; }
-.chat__online { margin-left: auto; display: inline-flex; align-items: center; gap: 6px; }
-.chat__online::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--st-live); box-shadow: 0 0 8px var(--st-live); }
-.chat__body { padding: 18px 16px 8px; display: flex; flex-direction: column; gap: 14px; min-height: 360px; }
+/* terminal-style system line (used on the 404 page) */
 .chat__sys { font-family: var(--mono); font-size: .74rem; color: var(--faint); line-height: 1.7; }
 .chat__sys b { color: var(--st-live); font-weight: 500; }
-.msg { max-width: 88%; padding: 12px 14px; border-radius: 16px; font-size: .95rem; line-height: 1.55; }
-.msg p { margin: 0; }
-.msg--user { align-self: flex-end; background: color-mix(in srgb, var(--purple) 22%, var(--surface-2)); border: 1px solid color-mix(in srgb, var(--purple) 40%, transparent); border-bottom-right-radius: 4px; }
-.msg--agent { align-self: flex-start; background: var(--surface-2); border: 1px solid var(--line); border-bottom-left-radius: 4px; }
-.caret { display: inline-block; width: 8px; height: 1.05em; margin-left: 2px; vertical-align: -2px; background: var(--cyan); animation: blink 1s steps(1) infinite; }
-@keyframes blink { 50% { opacity: 0; } }
-.trace {
-  font-family: var(--mono); font-size: .72rem; color: var(--muted);
-  border: 1px dashed var(--line-strong); border-radius: 10px; padding: 10px 12px;
-  display: grid; grid-template-columns: auto 1fr; gap: 2px 12px; align-self: stretch;
-}
-.trace dt { color: var(--faint); }
-.trace dd { margin: 0; color: var(--text); }
-.trace .ok { color: var(--st-live); }
-.chips { display: flex; flex-wrap: wrap; gap: 8px; padding: 6px 16px 18px; }
-.chip {
-  display: inline-flex; align-items: center; gap: 8px; text-decoration: none;
-  font-size: .84rem; font-weight: 500; padding: 9px 14px; border-radius: 999px; min-height: 40px;
-  border: 1px solid color-mix(in srgb, var(--cyan) 55%, transparent); color: var(--text);
-  background: color-mix(in srgb, var(--cyan) 8%, transparent);
-  transition: background .2s, box-shadow .2s;
-}
-.chip:hover { background: color-mix(in srgb, var(--cyan) 18%, transparent); box-shadow: var(--glow); }
-.chat [data-step] { transition: opacity .35s ease, transform .35s ease; }
-.chat [data-step].is-hidden { opacity: 0; transform: translateY(6px); }
-.chat__input {
-  display: flex; align-items: center; gap: 10px; margin: 0 16px 16px; padding: 10px 14px;
-  border: 1px solid var(--line); border-radius: 12px; color: var(--faint); font-size: .84rem;
-}
-.chat__input span { flex: 1; }
-.chat__input svg { width: 16px; height: 16px; }
 
 /* 6. CARDS & STATUS -------------------------------------------------------- */
 .card {

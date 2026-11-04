@@ -30,10 +30,14 @@
   const s = (key) => (S[key] ? t(S[key]) : key);
   const nameOf = (item) => (lang === "pt" && item.namePt ? item.namePt : item.name);
   const valueOf = (m) => (lang === "pt" && m.valuePt ? m.valuePt : m.value);
+  const page = document.body.dataset.page;
+  /** The 404 page can be served at any nested path, so its internal links start at the site root. */
+  const ROOT = page === "notfound" ? "/" : "";
   /** Internal link that keeps the chosen language when it isn't the default. */
   const href = (url) => {
-    if (lang === "en") return url;
-    return url + (url.includes("?") ? "&" : "?") + "lang=" + lang;
+    const u = ROOT && !url.startsWith("/") ? ROOT + url : url;
+    if (lang === "en") return u;
+    return u + (u.includes("?") ? "&" : "?") + "lang=" + lang;
   };
   const esc = (str) => String(str).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 
@@ -68,7 +72,6 @@
     { page: "about", url: "about.html", key: "nav.about" },
     { page: "contact", url: "contact.html", key: "nav.contact" }
   ];
-  const page = document.body.dataset.page;
   const activeNav = { agent: "agents", project: "work" }[page] || page;
 
   function renderHeader() {
@@ -103,10 +106,16 @@
       menuBtn.setAttribute("aria-expanded", open);
       menuBtn.innerHTML = icon(open ? "close" : "menu");
     });
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && nav.classList.contains("is-open")) { menuBtn.click(); menuBtn.focus(); }
-    });
   }
+
+  /* Escape closes the mobile menu. Bound once, on the document, and it looks up the
+     current header each time, because the header is rebuilt on every language change. */
+  document.addEventListener("keydown", (e) => {
+    if (e.key !== "Escape") return;
+    const nav = document.getElementById("site-nav");
+    const menuBtn = document.getElementById("menu-toggle");
+    if (nav && menuBtn && nav.classList.contains("is-open")) { menuBtn.click(); menuBtn.focus(); }
+  });
 
   function renderFooter() {
     const el = document.getElementById("site-footer");
@@ -166,7 +175,7 @@
     const url = new URL(location.href);
     if (lang === "en") url.searchParams.delete("lang"); else url.searchParams.set("lang", lang);
     history.replaceState(null, "", url);
-    renderAll(false);
+    renderAll();
   }
 
   /* ---------- reusable pieces ---------- */
@@ -251,43 +260,12 @@
   }
 
   /* ---------- HOME ---------- */
-  let chatPlayed = false;
   function renderHome() {
     const fa = document.getElementById("featured-agents");
     if (fa) fa.innerHTML = P.agents.filter((a) => a.featured).map(agentCard).join("");
     const fw = document.getElementById("featured-work");
     if (fw) fw.innerHTML = P.projects.filter((p) => p.featured).map(projectCard).join("");
     if (window.SkillsFlow) window.SkillsFlow.render(document.getElementById("skills-flow"), { lang, t, s });
-    playChat();
-  }
-
-  function playChat() {
-    const chat = document.querySelector(".chat");
-    if (!chat) return;
-    const steps = [...chat.querySelectorAll("[data-step]")];
-    const answer = chat.querySelector("[data-stream]");
-    if (chatPlayed || reduceMotion) { steps.forEach((el) => el.classList.remove("is-hidden")); chatPlayed = true; return; }
-    chatPlayed = true;
-    const full = answer.textContent;
-    steps.forEach((el) => el.classList.add("is-hidden"));
-    const show = (n) => steps.filter((el) => +el.dataset.step === n).forEach((el) => el.classList.remove("is-hidden"));
-    setTimeout(() => show(1), 350);
-    setTimeout(() => {
-      answer.textContent = "";
-      const caret = document.createElement("span"); caret.className = "caret";
-      answer.after(caret);
-      show(2);
-      let i = 0;
-      const tick = () => {
-        // if the language changed mid-animation, finish immediately with the new text
-        if (answer.dataset.done) { caret.remove(); return; }
-        i += 2;
-        answer.textContent = full.slice(0, i);
-        if (i < full.length) setTimeout(tick, 16);
-        else { caret.remove(); answer.dataset.done = "1"; setTimeout(() => show(3), 200); setTimeout(() => show(4), 600); }
-      };
-      tick();
-    }, 1100);
   }
 
   /* ---------- AGENTS PAGE ---------- */
@@ -543,11 +521,7 @@ ${a.stack.map((x) => `  - <span class="s">${esc(x)}</span>`).join("\n")}`;
   }
   window.observeOnce = observeOnce;
 
-  function renderAll(first) {
-    if (!first) {
-      const ans = document.querySelector("[data-stream]");
-      if (ans) ans.dataset.done = "1";
-    }
+  function renderAll() {
     renderHeader();
     renderFooter();
     applyStaticText();
@@ -555,5 +529,5 @@ ${a.stack.map((x) => `  - <span class="s">${esc(x)}</span>`).join("\n")}`;
   }
 
   injectSprite();
-  renderAll(true);
+  renderAll();
 })();
