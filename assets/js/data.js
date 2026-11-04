@@ -920,10 +920,10 @@ PORTFOLIO.education = [
 PORTFOLIO.toolkit = [
   { group: { en: "AI & agents", pt: "IA e agentes" }, cluster: "talk",
     note: { en: "Designing, prompting and implementing agents and voice assistants.", pt: "Para desenhar, escrever prompts e implementar agentes e assistentes de voz." },
-    items: ["Claude Code", "Copilot Studio", "Microsoft 365 Copilot", "Azure OpenAI", "ChatGPT · Claude · Gemini", "Alexa Skills"] },
+    items: ["Claude Code", "Copilot Studio", "Microsoft 365 Copilot", "Azure OpenAI", "ChatGPT · Claude · Gemini", "Alexa Skills", "VS Code", "GitHub"] },
   { group: { en: "Design & research", pt: "Design e pesquisa" }, cluster: "craft",
     note: { en: "Interfaces, prototypes and usability tests, plus solution mapping in Miro.", pt: "Interfaces, protótipos e testes de usabilidade, além do desenho de solução no Miro." },
-    items: ["Figma", "FigJam", "Sketch", "Miro", "Maze", "UserTesting", "Adobe Creative Cloud", "Motion & 3D", "HTML & CSS", "VS Code"] },
+    items: ["Figma", "FigJam", "Sketch", "Miro", "Maze", "UserTesting", "Adobe Creative Cloud", "Motion & 3D", "HTML & CSS"] },
   { group: { en: "Automation, data & metrics", pt: "Automação, dados e métricas" }, cluster: "build",
     note: { en: "Flows, connectors and data behind each agent; usage metrics in Datadog and conversation and product-data analysis in Databricks.", pt: "Fluxos, conectores e dados por trás de cada agente; métricas de uso no Datadog e acompanhamento de conversas e análise de dados do produto no Databricks." },
     items: ["Power Automate", "Power Apps", "Dataverse", "SharePoint", "Adaptive Cards", "Entra ID", "Datadog", "Databricks"] },
