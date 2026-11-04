@@ -175,6 +175,7 @@ window.STRINGS = {
   "case.gallery":   { en: "Inside the project", pt: "Por dentro do projeto" },
   "case.article":   { en: "The full story", pt: "A história completa" },
   "case.articleText": { en: "This page is the short version. The Medium article walks through the whole process: research, benchmarks, wireframes and the reasoning behind each design decision.", pt: "Esta página é a versão curta. O artigo no Medium mostra o processo completo: pesquisa, benchmarks, wireframes e o raciocínio por trás de cada decisão de design." },
+  "case.quotesTitle": { en: "What users said during validation", pt: "O que os usuários disseram durante a validação" },
   "case.protoText": { en: "Click through the screens of the mobile-first website in the Adobe XD prototype.", pt: "Navegue pelas telas do site mobile-first no protótipo do Adobe XD." },
   "case.protoBtn":  { en: "Open the prototype", pt: "Abrir o protótipo" },
   "case.articleBtn": { en: "Read the full article on Medium", pt: "Ler o artigo completo no Medium (em inglês)" },

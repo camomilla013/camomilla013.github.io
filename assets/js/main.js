@@ -371,7 +371,7 @@
     return `<div class="gallery">${p.gallery.map((g) => `
       <figure>
         <a href="${g.img}" target="_blank" rel="noopener" aria-label="${esc(t(g.caption))} (${esc(s("ui.fullSize"))})">
-          <img src="${g.img}" alt="" width="1600" height="900" loading="lazy" decoding="async">
+          <img src="${g.img}" alt="" width="${g.w || 1600}" height="${g.h || 900}"${g.w ? ' class="is-natural"' : ""} loading="lazy" decoding="async">
         </a>
         <figcaption>${esc(t(g.caption))}</figcaption>
       </figure>`).join("")}</div>`;
@@ -495,12 +495,13 @@ ${a.stack.map((x) => `  - <span class="s">${esc(x)}</span>`).join("\n")}`;
           ? `<figure class="thumb case-cover"><img src="${p.cover}" alt="${esc(t(p.coverAlt))}" width="1600" height="900" fetchpriority="high" decoding="async"></figure>`
           : `<div class="thumb" style="margin-top:var(--s4);aspect-ratio:21/8">${thumb(p.kind)}</div>`}
       </div></section>
-      ${p.problem ? caseSection(s("case.l.problem"), s("case.challenge"), `<p>${esc(t(p.problem))}</p>`) : ""}
+      ${p.problem ? caseSection(s("case.l.problem"), s("case.challenge"), (Array.isArray(p.problem) ? p.problem : [p.problem]).map((x) => `<p>${esc(t(x))}</p>`).join("")) : ""}
       ${p.approach ? caseSection(s("case.l.approach"), s("case.approach"), `<ul class="ticks">${p.approach.map((d) => `<li>${esc(t(d))}</li>`).join("")}</ul>`) : ""}
       ${p.gallery ? caseSection(s("case.l.gallery"), s("case.gallery"), galleryBlock(p)) : ""}
-      ${p.results ? caseSection(s("case.l.results"), s("case.results"), Array.isArray(p.results)
+      ${p.results ? caseSection(s("case.l.results"), s("case.results"), (Array.isArray(p.results)
           ? `<ul class="ticks">${p.results.map((d) => `<li>${esc(t(d))}</li>`).join("")}</ul>`
-          : `<p>${esc(t(p.results))}</p>`) : ""}
+          : `<p>${esc(t(p.results))}</p>`)
+          + (p.quotes ? `<div class="quotes"><h3>${esc(s("case.quotesTitle"))}</h3>${p.quotes.map((q) => `<blockquote class="quote"><p>“${esc(t(q))}”</p><footer>— ${esc(t(q.by))}</footer></blockquote>`).join("")}</div>` : "")) : ""}
       ${p.learnings ? caseSection(s("case.l.learn"), s("case.learnings"), `<p>${esc(t(p.learnings))}</p>`) : ""}
       ${p.article ? caseSection(s("case.l.article"), s("case.article"), `<p>${esc(s("case.articleText"))}</p>
           <a class="btn btn--ghost case-article" href="${esc(p.article)}" target="_blank" rel="noopener">${esc(s("case.articleBtn"))} ${icon("external")}<span class="sr-only"> (${esc(s("ui.newTab"))})</span></a>`) : ""}
