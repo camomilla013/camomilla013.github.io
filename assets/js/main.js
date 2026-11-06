@@ -511,6 +511,53 @@ ${a.stack.map((x) => `  - <span class="s">${esc(x)}</span>`).join("\n")}`;
     if (ed) ed.innerHTML = P.education.map((e) => `<li><b>${esc(e.school)}</b><span>${esc(t(e))}</span></li>`).join("");
   }
 
+  /* ---------- PRODUCT MANAGEMENT PAGE (unlisted: product.html) ---------- */
+  function renderProduct() {
+    const pm = P.pm;
+    if (!pm) return;
+    const sum = document.getElementById("pm-summary");
+    if (sum) sum.innerHTML = pm.summary.map((m) => `<div class="metric"><b>${esc(m.value)}</b><span>${esc(t(m.label))}</span></div>`).join("");
+
+    const proc = document.getElementById("pm-process");
+    if (proc) proc.innerHTML = pm.process.map((f) => { const [h, d] = t(f); return `<li><b>${esc(h)}</b><span>${esc(d)}</span></li>`; }).join("");
+
+    const list = document.getElementById("pm-list");
+    if (list) list.innerHTML = pm.products.map((p, i) => `
+      <article class="pm-item" aria-labelledby="pm-${p.id}">
+        <div class="pm-item__top">
+          <span class="pm-item__index" aria-hidden="true">${String(i + 1).padStart(2, "0")}</span>
+          <span class="card__name">${esc(nameOf(p))}</span>
+          <span class="status status--${p.stage}">${esc(t(p.stageLabel))}</span>
+        </div>
+        <h3 id="pm-${p.id}">${esc(t(p.title))}</h3>
+        <div class="pm-item__grid">
+          <div class="pm-item__main">
+            <h4 class="pm-item__label">${esc(s("pm.problem"))}</h4>
+            <p>${esc(t(p.problem))}</p>
+            <h4 class="pm-item__label">${esc(s("pm.decisions"))}</h4>
+            <ul class="ticks">${p.decisions.map((d) => `<li>${esc(t(d))}</li>`).join("")}</ul>
+            <dl class="pm-facts">
+              <div><dt>${esc(s("pm.role"))}</dt><dd>${esc(t(p.role))}</dd></div>
+              <div><dt>${esc(s("pm.stakeholders"))}</dt><dd>${esc(t(p.stakeholders))}</dd></div>
+            </dl>
+          </div>
+          <aside class="pm-item__side">
+            <h4 class="pm-item__label">${esc(s("pm.success"))}</h4>
+            <ul class="pm-kpis">${p.metrics.map((m) => `
+              <li><em class="${m.kind === "result" ? "is-result" : ""}">${esc(m.kind === "result" ? s("ui.result") : s("ui.goal"))}</em><b>${esc(valueOf(m))}</b><span>${esc(t(m.label))}</span></li>`).join("")}
+            </ul>
+            <div class="tags" aria-label="${esc(s("pm.stack"))}">${p.stack.map((x) => `<span class="tag">${esc(x)}</span>`).join("")}</div>
+            ${p.caseId ? `<a class="btn btn--ghost pm-item__case" href="${href("agent.html?id=" + p.caseId)}">${esc(s("pm.case"))}<span class="sr-only">: ${esc(nameOf(p))}</span> ${icon("arrow")}</a>` : ""}
+          </aside>
+        </div>
+      </article>`).join("");
+
+    const tk = document.getElementById("pm-toolkit");
+    if (tk) tk.innerHTML = pm.toolkit.map((g) => `
+      <div class="toolkit__group" data-cluster="${g.cluster}"><h3><i aria-hidden="true"></i>${esc(t(g.group))}</h3>
+      <div class="toolkit__items">${t(g.items).map((i) => `<span>${esc(i)}</span>`).join("")}</div></div>`).join("");
+  }
+
   /* ---------- helpers ---------- */
   function observeOnce(el) {
     if (!("IntersectionObserver" in window) || reduceMotion) { el.classList.add("is-visible"); return; }
@@ -525,7 +572,7 @@ ${a.stack.map((x) => `  - <span class="s">${esc(x)}</span>`).join("\n")}`;
     renderHeader();
     renderFooter();
     applyStaticText();
-    ({ home: renderHome, agents: renderAgents, work: renderWork, agent: renderAgentCase, project: renderProjectCase, about: renderAbout }[page] || (() => {}))();
+    ({ home: renderHome, agents: renderAgents, work: renderWork, agent: renderAgentCase, project: renderProjectCase, about: renderAbout, product: renderProduct }[page] || (() => {}))();
   }
 
   injectSprite();
