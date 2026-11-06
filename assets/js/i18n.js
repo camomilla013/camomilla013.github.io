@@ -112,8 +112,8 @@ window.STRINGS = {
 
   /* ---------- work page ---------- */
   "wk.label": { en: "UX/UI & design portfolio", pt: "portfólio de UX/UI e design" },
-  "wk.title": { en: "Real products that shaped how I design every agent", pt: "Produtos reais que moldaram como desenho cada agente" },
-  "wk.lede":  { en: "Voice, biometrics, fintech and internal tools: from the GOL Staff App and the GOL Alexa Skill to a Sabre historical data tool. Each one taught me something I still use in every conversation I design.", pt: "Cases de voz, biometria, fintech e ferramentas internas: do GOL Staff App e da skill da Alexa a uma ferramenta de dados históricos da Sabre. Cada um me ensinou algo que ainda uso em toda conversa que desenho." },
+  "wk.title": { en: "Case studies, start to finish", pt: "Cases completos, do início ao fim" },
+  "wk.lede":  { en: "Each project told end to end: the problem, the process, the design decisions and the results. From air cargo and facial recognition to fintech, voice and internal tools.", pt: "Cada projeto contado de ponta a ponta: o problema, o processo, as decisões de design e os resultados. De carga aérea e reconhecimento facial a fintech, voz e ferramentas internas." },
   "wk.gridLabel": { en: "Projects", pt: "Projetos" },
   "wk.stat":  { en: "interface design projects at GOL Airlines", pt: "projetos de design de interfaces na GOL Linhas Aéreas" },
   "wk.moreLabel": { en: "more projects", pt: "mais projetos" },
