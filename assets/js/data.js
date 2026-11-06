@@ -67,12 +67,12 @@ PORTFOLIO.agents = [
     channel: "Microsoft Teams",
     stack: ["Copilot Studio", "Teams", "SharePoint", "Power Platform ALM"],
     title: {
-      en: "GOL's first generative-AI assistant for employees",
-      pt: "O primeiro assistente de IA generativa da GOL para colaboradores"
+      en: "GOL's first generative-AI assistant — and its most-used agent",
+      pt: "O primeiro assistente de IA generativa da GOL — e o agente mais usado"
     },
     short: {
-      en: "A company-wide Q&A agent in Teams, rebuilt so knowledge can change without breaking production.",
-      pt: "Um agente de perguntas e respostas para toda a empresa no Teams, reconstruído para o conhecimento mudar sem quebrar a produção."
+      en: "A company-wide Q&A agent in Teams since 2024, relaunched in 2026 on a new architecture so knowledge can change without breaking production.",
+      pt: "Um agente de perguntas e respostas para toda a empresa no Teams desde 2024, relançado em 2026 em uma nova arquitetura para o conhecimento mudar sem quebrar a produção."
     },
     role: {
       en: "Experience direction, conversation design and low-code development",
@@ -92,8 +92,9 @@ PORTFOLIO.agents = [
       { en: "Knowledge maintenance designed as part of the product, not an afterthought.", pt: "Manutenção do conhecimento desenhada como parte do produto, não como um detalhe posterior." }
     ],
     metrics: [
-      { value: "1st",  valuePt: "1º", kind: "result", label: { en: "generative-AI assistant at GOL", pt: "assistente de IA generativa da GOL" } },
-      { value: "Feb 2026", valuePt: "fev/2026", kind: "result", label: { en: "company-wide rollout", pt: "rollout para toda a empresa" } },
+      { value: "#1", valuePt: "nº 1", kind: "result", label: { en: "most-used agent at GOL every day", pt: "agente mais usado da GOL todos os dias" } },
+      { value: "2024", kind: "result", label: { en: "GAL 1.0 launched to the whole company (February)", pt: "GAL 1.0 lançada para a empresa toda (fevereiro)" } },
+      { value: "2026", kind: "result", label: { en: "GAL 2.0 relaunched on a new Copilot Studio architecture (February)", pt: "GAL 2.0 relançada em nova arquitetura no Copilot Studio (fevereiro)" } },
       { value: "3",    kind: "result", label: { en: "environments with one standard release path (Dev, Test, Prod)", pt: "ambientes com um caminho padrão de release (Dev, HML, Prod)" } }
     ],
     architecture: {
@@ -143,8 +144,8 @@ PORTFOLIO.agents = [
       pt: "Questiona premissas, sugere uma estrutura melhor e pontua relatórios A3 como um mentor Lean faria."
     },
     role: {
-      en: "Product owner, conversation designer and agent architect",
-      pt: "Product owner, designer conversacional e arquiteta do agente"
+      en: "Product manager, conversation designer and agent architect",
+      pt: "Product manager, designer conversacional e arquiteta do agente"
     },
     pain: {
       en: "Employees struggled to apply the A3 method in practice and depended on a few Lean mentors, who spent 2–3 hours of manual analysis on every PDCA cycle. The result was a bottleneck, slow feedback and inconsistent use of the method.",
@@ -837,7 +838,7 @@ PORTFOLIO.skillsFlow = {
     { id: "s-prompt", cluster: "talk",  en: "Prompt engineering",             pt: "Engenharia de prompt" },
     { id: "s-rag",    cluster: "build", en: "Knowledge curation & RAG",       pt: "Curadoria de conhecimento e RAG" },
     { id: "s-lowcode", cluster: "build", en: "Low-code automation",           pt: "Automação low-code" },
-    { id: "s-product", cluster: "build", en: "Product ownership & metrics",   pt: "Product ownership e métricas" }
+    { id: "s-product", cluster: "build", en: "Product management & metrics", pt: "Gestão de produto e métricas" }
   ],
   outcomes: [
     { id: "a-persona", en: "Persona & voice",              pt: "Persona e voz" },
@@ -874,8 +875,8 @@ PORTFOLIO.timeline = [
   { years: "2019 – now", org: "GOL Airlines · GOL Labs",
     role: { en: "Senior Product Designer — Conversational AI & AI agents", pt: "Senior Product Designer — IA conversacional e agentes de IA" },
     text: {
-      en: "Experience direction and product ownership of GAL, GOL's first generative-AI assistant and now its most used agent: around 300 users a day and 6,000 sessions a month, answering 15,000 employees in Teams — including anonymous ethics and conduct questions. I lead a portfolio of eight AI and automation initiatives, from a Lean A3 mentor to empathetic writer agents and knowledge search with cited sources, and implement them in Copilot Studio with GPT and Claude. 50+ traditional and conversational interface projects as UX lead in agile, cross-functional squads, from discovery to measurement with the Double Diamond — including the VoeGOL site and app on the Tangerina design system, mobile check-in and Apple and Google Wallet boarding passes. I also set the squad's conversation and Dev/Test/Prod release standards and mentor designers.",
-      pt: "Direção de experiência e product ownership da GAL, o primeiro assistente de IA generativa da GOL e hoje o agente mais usado da empresa: cerca de 300 usuários por dia e 6 mil sessões por mês, atendendo 15 mil colaboradores no Teams — inclusive consultas anônimas de Ética e Conduta. Conduzo um portfólio de oito iniciativas de IA e automação, de um mentor de A3 Lean a agentes redatores com tom empático e busca com citação de fontes, e implemento esses agentes no Copilot Studio com GPT e Claude. Mais de 50 projetos de interfaces tradicionais e conversacionais como UX lead em squads ágeis e multidisciplinares, do discovery à mensuração com o Double Diamond — entre eles o site e o app VoeGOL no design system Tangerina, o check-in mobile e o cartão de embarque para Apple e Google Wallet. Também defino os padrões conversacionais e de deploy entre Dev, HML e Prod do squad e faço mentoria de designers."
+      en: "Experience direction and product management of GAL, GOL's first generative-AI assistant and now its most used agent: around 300 users a day and 6,000 sessions a month, answering 15,000 employees in Teams — including anonymous ethics and conduct questions. I lead a portfolio of eight AI and automation initiatives, from a Lean A3 mentor to empathetic writer agents and knowledge search with cited sources, and implement them in Copilot Studio with GPT and Claude. 50+ traditional and conversational interface projects as UX lead in agile, cross-functional squads, from discovery to measurement with the Double Diamond — including the VoeGOL site and app on the Tangerina design system, mobile check-in and Apple and Google Wallet boarding passes. I also set the squad's conversation and Dev/Test/Prod release standards and mentor designers.",
+      pt: "Direção de experiência e gestão de produto da GAL, o primeiro assistente de IA generativa da GOL e hoje o agente mais usado da empresa: cerca de 300 usuários por dia e 6 mil sessões por mês, atendendo 15 mil colaboradores no Teams — inclusive consultas anônimas de Ética e Conduta. Conduzo um portfólio de oito iniciativas de IA e automação, de um mentor de A3 Lean a agentes redatores com tom empático e busca com citação de fontes, e implemento esses agentes no Copilot Studio com GPT e Claude. Mais de 50 projetos de interfaces tradicionais e conversacionais como UX lead em squads ágeis e multidisciplinares, do discovery à mensuração com o Double Diamond — entre eles o site e o app VoeGOL no design system Tangerina, o check-in mobile e o cartão de embarque para Apple e Google Wallet. Também defino os padrões conversacionais e de deploy entre Dev, HML e Prod do squad e faço mentoria de designers."
     } },
   { years: "2018 – 2019", org: "GOL Airlines · GOL Labs",
     role: { en: "Product Designer — Voicebots, automation & UX", pt: "Product Designer — Voicebots, automação e UX" },

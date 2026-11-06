@@ -46,7 +46,7 @@ agent.html          Template de case de agente   → agent.html?id=gal
 project.html        Template de case de UX/UI    → project.html?id=alexa
 about.html          Sobre, linha do tempo, processos, ferramentas, formação
 contact.html        Contato (só LinkedIn)
-product.html        ⚑ Página oculta para vagas de PM/PO (sem link no menu nem na home; noindex)
+product.html        ⚑ Página oculta para vagas de Product Manager (sem link no menu nem na home; noindex)
 404.html            Página não encontrada (um "fallback" bem desenhado)
 .nojekyll           Diz ao GitHub Pages para servir os arquivos como estão
 assets/
@@ -85,7 +85,7 @@ Todo texto tem `en` e `pt`. Nomes podem ter `namePt`.
 `voice`, `commerce`, `cargo`, `biometrics`, `mobile`, `fintech`, `infographic`, `brand`.
 Seções sem conteúdo (`problem`, `approach`, `results`, `learnings`) somem automaticamente.
 
-### Página oculta de Product Manager / Product Owner
+### Página oculta de Product Manager
 - Endereço para mandar em candidaturas: `https://madebycamilla.github.io/product.html` (português: `?lang=pt`).
 - Não tem link no menu, na home nem em nenhuma outra página, e tem `noindex` para não aparecer no Google. Mas ela fica pública no repositório — qualquer pessoa com o link consegue abrir.
 - Todo o conteúdo está em `assets/js/product-data.js` → `PORTFOLIO.pm.products`. Campos: `stage` (`live`, `testing`, `building`, `foundation`), `stageLabel`, `role`, `problem`, `decisions`, `metrics`, `stakeholders`, `stack` e `caseId` (opcional, liga ao case do agente).
